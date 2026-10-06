@@ -1,0 +1,315 @@
+/* ========================================
+   LAYOUT
+======================================== */
+
+.detail-konfirmasi-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f9fc;
+  font-family: "Nunito Sans", Arial, sans-serif;
+}
+
+.detail-konfirmasi-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.detail-konfirmasi-content {
+  flex: 1;
+  padding: 22px 28px 40px;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.detail-konfirmasi-header {
+  width: 100%;
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border-radius: 6px;
+
+  margin-bottom: 24px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.detail-konfirmasi-header h1 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+
+  color: #5b5b5b;
+}
+
+/* ========================================
+   DETAIL CARD
+======================================== */
+
+.detail-konfirmasi-card {
+  width: 100%;
+
+  background: #ffffff;
+  border-radius: 6px;
+
+  overflow: hidden;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+/* ========================================
+   CARD TITLE
+======================================== */
+
+.detail-konfirmasi-card-title {
+  width: 100%;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 18px;
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #d9d9d9;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+
+  color: #555555;
+}
+
+/* ========================================
+   CARD CONTENT
+======================================== */
+
+.detail-konfirmasi-card-content {
+  padding: 24px 38px 34px;
+
+  box-sizing: border-box;
+}
+
+/* ========================================
+   DETAIL ROW
+======================================== */
+
+.detail-konfirmasi-row {
+  display: grid;
+
+  grid-template-columns: 105px 15px 1fr;
+
+  align-items: start;
+
+  margin-bottom: 14px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 11px;
+
+  color: #555555;
+}
+
+.detail-konfirmasi-row span {
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.detail-konfirmasi-row b {
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.detail-konfirmasi-row p {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+
+  color: #555555;
+
+  line-height: 1.45;
+}
+
+/* ========================================
+   CONTENT TEXT
+======================================== */
+
+.detail-konfirmasi-content-row {
+  margin-bottom: 15px;
+}
+
+.detail-konfirmasi-content-row p {
+  max-width: 760px;
+  text-align: justify;
+}
+
+/* ========================================
+   PHOTO
+======================================== */
+
+.detail-konfirmasi-photo-row {
+  margin-bottom: 16px;
+}
+
+.detail-konfirmasi-photo-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  margin-top: -2px;
+}
+
+.detail-konfirmasi-photo-wrapper img {
+  width: 194px;
+  height: 122px;
+
+  object-fit: cover;
+
+  display: block;
+
+  border: 1px solid #d5d5d5;
+  border-radius: 2px;
+
+  background: #ffffff;
+}
+
+.detail-konfirmasi-photo-wrapper span {
+  margin-top: 5px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 8px;
+  font-weight: 400;
+
+  color: #999999;
+}
+
+/* ========================================
+   BUTTON AREA
+======================================== */
+
+.detail-konfirmasi-buttons {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 27px;
+}
+
+/* ========================================
+   KEMBALI
+======================================== */
+
+.detail-konfirmasi-back-button {
+  height: 25px;
+
+  padding: 0 15px;
+
+  border: none;
+  border-radius: 3px;
+
+  background: #eba064;
+  color: #ffffff;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  transition: background 0.2s ease;
+}
+
+.detail-konfirmasi-back-button:hover {
+  background: #df9054;
+}
+
+/* ========================================
+   PRATINJAU
+======================================== */
+
+.detail-konfirmasi-preview-button {
+  height: 25px;
+
+  padding: 0 15px;
+
+  border: none;
+  border-radius: 3px;
+
+  background: #68a7e8;
+  color: #ffffff;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  transition: background 0.2s ease;
+}
+
+.detail-konfirmasi-preview-button:hover {
+  background: #5797da;
+}
+
+/* ========================================
+   DATA TIDAK DITEMUKAN
+======================================== */
+
+.detail-konfirmasi-card > p {
+  margin: 0;
+
+  padding: 30px 38px 10px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 12px;
+
+  color: #666666;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+  .detail-konfirmasi-content {
+    padding: 20px;
+  }
+
+  .detail-konfirmasi-card-content {
+    padding: 24px 28px 30px;
+  }
+
+  .detail-konfirmasi-row {
+    grid-template-columns: 100px 15px 1fr;
+  }
+
+  .detail-konfirmasi-photo-wrapper img {
+    width: 180px;
+    height: 115px;
+  }
+}

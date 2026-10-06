@@ -1,0 +1,552 @@
+/* ========================================
+   LAYOUT
+======================================== */
+
+.kontak-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f9fc;
+}
+
+.kontak-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.kontak-content {
+  flex: 1;
+  padding: 22px 28px;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.kontak-header {
+  width: 100%;
+  height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border-radius: 6px;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  margin-bottom: 24px;
+}
+
+.kontak-header h1 {
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+
+  color: #5b5b5b;
+}
+
+/* ========================================
+   CARD
+======================================== */
+
+.kontak-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  box-sizing: border-box;
+}
+
+.kontak-card-content {
+  padding: 22px 28px 42px;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   BUAT PENGATURAN
+======================================== */
+
+.kontak-create-button {
+  height: 38px;
+
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #80a9c3;
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+
+  margin-bottom: 30px;
+}
+
+.kontak-create-button:hover {
+  background: #719bb7;
+}
+
+/* ========================================
+   TABLE WRAPPER
+======================================== */
+
+.kontak-table-wrapper {
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 5px;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  background: #ffffff;
+}
+
+/* ========================================
+   TABLE
+======================================== */
+
+.kontak-table {
+  width: 100%;
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  table-layout: fixed;
+
+  background: #ffffff;
+
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+
+  color: #555555;
+}
+
+/* ========================================
+   TABLE HEADER
+======================================== */
+
+.kontak-table thead th {
+  height: 27px;
+
+  padding: 0 12px;
+
+  background: #e8f2f8;
+
+  border-top: 1px solid #dce8ee;
+  border-bottom: 1px solid #dce8ee;
+
+  border-left: none;
+  border-right: none;
+
+  box-sizing: border-box;
+
+  text-align: left;
+
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+
+  color: #4f5b62;
+}
+
+.kontak-table thead th:first-child {
+  border-top-left-radius: 5px;
+}
+
+.kontak-table thead th:last-child {
+  border-top-right-radius: 5px;
+}
+
+/* ========================================
+   TABLE BODY
+======================================== */
+
+.kontak-table tbody td {
+  height: 34px;
+
+  padding: 0 12px;
+
+  background: #ffffff;
+
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+  border-bottom: 1px solid #e5e5e5;
+
+  box-sizing: border-box;
+
+  vertical-align: middle;
+
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+
+  color: #555555;
+}
+
+.kontak-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ========================================
+   COLUMN WIDTH
+======================================== */
+
+.kontak-no {
+  width: 11%;
+  text-align: center !important;
+}
+
+.kontak-table th:nth-child(2),
+.kontak-table td:nth-child(2) {
+  width: 19%;
+}
+
+.kontak-table th:nth-child(3),
+.kontak-table td:nth-child(3) {
+  width: 50%;
+}
+
+.kontak-action-header {
+  width: 20%;
+  text-align: center !important;
+}
+
+/* ========================================
+   ACTION CELL
+======================================== */
+
+.kontak-action-cell {
+  width: 20%;
+
+  padding: 0 12px !important;
+
+  box-sizing: border-box;
+
+  vertical-align: middle;
+}
+
+/* ========================================
+   ACTION WRAPPER
+======================================== */
+
+.kontak-actions {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 8px;
+
+  box-sizing: border-box;
+}
+
+/* ========================================
+   EDIT BUTTON
+======================================== */
+
+.kontak-edit-button {
+  height: 20px;
+  min-width: 39px;
+
+  padding: 0 8px;
+
+  border: none;
+  border-radius: 3px;
+
+  background: #ffc107;
+  color: #333333;
+
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.kontak-edit-button:hover {
+  background: #eab000;
+}
+
+/* ========================================
+   DELETE BUTTON
+======================================== */
+
+.kontak-delete-button {
+  height: 20px;
+  min-width: 42px;
+
+  padding: 0 7px;
+
+  border: none;
+  border-radius: 3px;
+
+  background: #dc3545;
+  color: #5a4a4e;
+
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.kontak-delete-button:hover {
+  background: #c82333;
+}
+
+/* ========================================
+   DELETE OVERLAY
+======================================== */
+
+.kontak-delete-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.22);
+}
+
+/* ========================================
+   DELETE MODAL
+======================================== */
+
+.kontak-delete-modal {
+  width: 430px;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* ========================================
+   MODAL HEADER
+======================================== */
+
+.kontak-delete-modal-header {
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 24px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.kontak-delete-modal-header h2 {
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+
+  color: #5f5f5f;
+}
+
+/* ========================================
+   MODAL CLOSE
+======================================== */
+
+.kontak-delete-close {
+  width: 28px;
+  height: 28px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 31px;
+  font-weight: 300;
+
+  line-height: 1;
+
+  color: #3f3f3f;
+
+  cursor: pointer;
+}
+
+/* ========================================
+   MODAL BODY
+======================================== */
+
+.kontak-delete-modal-body {
+  padding: 36px 35px 40px;
+  box-sizing: border-box;
+}
+
+.kontak-delete-question {
+  margin: 0 0 14px;
+
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+
+  color: #666666;
+}
+
+.kontak-delete-description {
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+
+  color: #777777;
+}
+
+/* ========================================
+   MODAL ACTION
+======================================== */
+
+.kontak-delete-modal-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 34px;
+}
+
+/* ========================================
+   KEMBALI
+======================================== */
+
+.kontak-delete-cancel {
+  height: 38px;
+
+  padding: 0 17px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #f0a15f;
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.kontak-delete-cancel:hover {
+  background: #df8e4d;
+}
+
+/* ========================================
+   HAPUS
+======================================== */
+
+.kontak-delete-confirm {
+  height: 38px;
+
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #d92525;
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.kontak-delete-confirm:hover {
+  background: #bd1f1f;
+}
+.kontak-notification {
+  position: fixed;
+  top: 85px;
+  right: 25px;
+  z-index: 9999;
+  min-width: 280px;
+  padding: 13px 18px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  animation: kontakNotification 0.25s ease;
+}
+
+.kontak-notification.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-left: 4px solid #4caf50;
+}
+
+.kontak-notification.error {
+  background: #ffebee;
+  color: #c62828;
+  border-left: 4px solid #e53935;
+}
+
+@keyframes kontakNotification {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,410 @@
+.halaman-edit-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f9fc;
+}
+
+.halaman-edit-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.halaman-edit-content {
+  flex: 1;
+  padding: 28px 32px 40px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.halaman-edit-header {
+  width: 100%;
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 30px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border-radius: 6px;
+
+  margin-bottom: 24px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.halaman-edit-header h1 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.halaman-edit-card {
+  width: 100%;
+
+  background: #ffffff;
+  border-radius: 6px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+
+  overflow: visible;
+  position: relative;
+}
+
+.halaman-edit-card-title {
+  width: 100%;
+
+  padding: 14px 20px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #dddddd;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+.halaman-edit-card-content {
+  padding: 28px 58px 34px;
+
+  box-sizing: border-box;
+
+  overflow: visible;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.halaman-edit-form-group {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.halaman-edit-form-group label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.halaman-edit-form-group input[type="text"] {
+  width: 100%;
+  height: 43px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 12px;
+
+  color: #555555;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.halaman-edit-form-group input[type="text"]:focus {
+  border-color: #82b6d4;
+}
+
+/* =========================
+   CUSTOM DROPDOWN
+========================= */
+
+.halaman-edit-custom-dropdown {
+  position: relative;
+
+  width: 100%;
+
+  z-index: 1;
+}
+
+.halaman-edit-custom-dropdown.dropdown-open {
+  z-index: 99999;
+}
+
+/* =========================
+   TRIGGER
+========================= */
+
+.halaman-edit-dropdown-trigger {
+  width: 100%;
+  height: 43px;
+
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #b5b5b5;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  outline: none;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.halaman-edit-dropdown-trigger.has-value {
+  color: #666666;
+}
+
+.halaman-edit-dropdown-trigger:hover {
+  border-color: #82b6d4;
+}
+
+.halaman-edit-dropdown-trigger.open {
+  border-color: #82b6d4;
+  border-radius: 4px 4px 0 0;
+}
+
+/* =========================
+   ARROW
+========================= */
+
+.halaman-edit-dropdown-arrow {
+  width: 13px;
+  height: auto;
+
+  object-fit: contain;
+
+  display: block;
+
+  flex-shrink: 0;
+
+  transition: transform 0.2s ease;
+}
+
+.halaman-edit-dropdown-arrow.rotate {
+  transform: rotate(180deg);
+}
+
+/* =========================
+   DROPDOWN MENU
+========================= */
+
+.halaman-edit-dropdown-menu {
+  position: absolute;
+
+  top: 43px;
+  left: 0;
+
+  width: 100%;
+
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #dddddd;
+  border-top: none;
+
+  border-radius: 0 0 4px 4px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+
+  overflow: hidden;
+
+  z-index: 999999;
+}
+
+/* =========================
+   OPTION
+========================= */
+
+.halaman-edit-dropdown-option {
+  width: 100%;
+  height: 39px;
+
+  padding: 0 14px;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  border: none;
+  outline: none;
+
+  background: #ffffff;
+
+  color: #666666;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.halaman-edit-dropdown-option:hover,
+.halaman-edit-dropdown-option.selected {
+  background: #e7f3fb;
+  color: #5f7b8d;
+}
+
+/* =========================
+   TEXTAREA
+========================= */
+
+.halaman-edit-form-group textarea {
+  width: 100%;
+  height: 145px;
+
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  resize: vertical;
+
+  outline: none;
+
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 12px;
+
+  color: #555555;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.halaman-edit-form-group textarea:focus {
+  border-color: #82b6d4;
+}
+
+/* =========================
+   FILE
+========================= */
+
+.halaman-edit-form-group input[type="file"] {
+  width: 100%;
+  height: 43px;
+
+  padding: 9px 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 12px;
+
+  color: #aaaaaa;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   SIMPAN
+========================= */
+
+.halaman-edit-save-button {
+  border: none;
+
+  border-radius: 4px;
+
+  padding: 9px 17px;
+
+  background: #80b4d3;
+
+  color: #ffffff;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+
+  transition: background 0.2s ease;
+}
+
+.halaman-edit-save-button:hover {
+  background: #70a8ca;
+}
+
+/* =========================
+   DROPDOWN SAFETY
+========================= */
+
+.halaman-edit-card,
+.halaman-edit-card-content,
+.halaman-edit-main,
+.halaman-edit-content {
+  overflow: visible;
+}

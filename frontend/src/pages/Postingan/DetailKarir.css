@@ -1,0 +1,256 @@
+/* ========================================
+   DETAIL KARIR LAYOUT
+======================================== */
+
+.detail-karir-content {
+  flex: 1;
+  padding: 20px 28px 30px;
+  box-sizing: border-box;
+  background: #f4f9fc;
+}
+
+/* ========================================
+   PAGE TITLE
+======================================== */
+
+.detail-karir-title-card {
+  width: 100%;
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 22px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.18);
+
+  margin-bottom: 24px;
+}
+
+.detail-karir-title-card h1 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 24px;
+  font-weight: 600;
+
+  color: #5d5d5d;
+}
+
+/* ========================================
+   DETAIL CARD
+======================================== */
+
+.detail-karir-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.18);
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+/* ========================================
+   CARD HEADER
+======================================== */
+
+.detail-karir-card-header {
+  width: 100%;
+
+  padding: 18px 22px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.detail-karir-card-header h2 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* ========================================
+   DETAIL BODY
+======================================== */
+
+.detail-karir-body {
+  padding: 30px 42px 45px;
+
+  box-sizing: border-box;
+}
+
+/* ========================================
+   DETAIL ROW
+======================================== */
+
+.detail-karir-row {
+  display: flex;
+
+  align-items: center;
+
+  min-height: 27px;
+
+  margin-bottom: 2px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 11px;
+
+  color: #555555;
+}
+
+/* ========================================
+   LABEL
+======================================== */
+
+.detail-karir-label {
+  width: 120px;
+
+  flex-shrink: 0;
+
+  font-weight: 600;
+
+  color: #5d5d5d;
+}
+
+/* ========================================
+   SEPARATOR
+======================================== */
+
+.detail-karir-separator {
+  width: 28px;
+
+  flex-shrink: 0;
+
+  text-align: center;
+
+  font-weight: 600;
+
+  color: #666666;
+}
+
+/* ========================================
+   VALUE
+======================================== */
+
+.detail-karir-value {
+  flex: 1;
+
+  color: #666666;
+
+  font-weight: 400;
+}
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.detail-karir-actions {
+  display: flex;
+
+  align-items: center;
+
+  margin-top: 30px;
+}
+
+.detail-karir-back-button {
+  height: 36px;
+
+  padding: 0 17px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #f0a15f;
+
+  color: #ffffff;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+
+  transition: background 0.2s ease;
+}
+
+.detail-karir-back-button:hover {
+  background: #e8944f;
+}
+
+/* ========================================
+   NOT FOUND
+======================================== */
+
+.detail-karir-not-found {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 12px;
+
+  color: #888888;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+  .detail-karir-content {
+    padding: 18px;
+  }
+
+  .detail-karir-body {
+    padding: 28px 30px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .detail-karir-content {
+    padding: 15px;
+  }
+
+  .detail-karir-title-card {
+    min-height: 70px;
+    padding: 0 20px;
+  }
+
+  .detail-karir-title-card h1 {
+    font-size: 21px;
+  }
+
+  .detail-karir-body {
+    padding: 24px 20px 32px;
+  }
+
+  .detail-karir-label {
+    width: 105px;
+  }
+
+  .detail-karir-separator {
+    width: 20px;
+  }
+}

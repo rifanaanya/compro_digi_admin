@@ -1,0 +1,411 @@
+.sidebar {
+  width: 270px;
+  min-width: 270px;
+  min-height: 100vh;
+  height: auto;
+  align-self: stretch;
+
+  background: #ffffff;
+  border-right: 1px solid #e5e5e5;
+
+  padding: 16px 16px 20px;
+  box-sizing: border-box;
+
+  flex-shrink: 0;
+  overflow-y: auto;
+
+  transition: width 0.25s ease;
+}
+
+/* =========================
+   HIDE SCROLLBAR
+========================= */
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar {
+  scrollbar-width: none;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.sidebar-logo {
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-bottom: 1px solid #e5e5e5;
+
+  margin-bottom: 12px;
+}
+
+.sidebar-logo img {
+  width: 90px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.sidebar-section {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.sidebar-section:last-child {
+  border-bottom: none;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.sidebar-title {
+  margin: 0 0 10px 12px;
+
+  font-size: 12px;
+  line-height: 1.2;
+
+  font-weight: 500;
+
+  color: #b5b5b5;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.sidebar-menu {
+  width: 100%;
+  min-height: 38px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 12px;
+  margin-bottom: 2px;
+
+  box-sizing: border-box;
+
+  border-radius: 5px;
+
+  color: #b8b8b8;
+
+  font-size: 12px;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.sidebar-menu svg {
+  width: 20px;
+  height: 20px;
+
+  flex-shrink: 0;
+}
+
+.sidebar-menu span {
+  flex: 1;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.sidebar-menu:hover {
+  background: #f3f8fb;
+  color: #6b879c;
+}
+
+/* =========================
+   ACTIVE
+========================= */
+
+.sidebar-menu.active {
+  background: #dceef8;
+  color: #647d90;
+  font-weight: 600;
+}
+
+/* =========================
+   CUSTOM ICON
+========================= */
+
+.sidebar-menu-icon {
+  width: 20px;
+  height: 20px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
+
+/* =========================
+   ARROW
+========================= */
+
+.menu-arrow {
+  width: 13px !important;
+  height: 13px !important;
+
+  flex-shrink: 0;
+
+  color: #b8b8b8;
+
+  margin-left: auto;
+
+  transition: transform 0.2s ease;
+}
+
+.menu-arrow.arrow-open {
+  transform: rotate(180deg);
+}
+
+/* =========================
+   SUBMENU
+========================= */
+
+.sidebar-submenu {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 0 6px 0;
+  padding-left: 68px;
+}
+
+/* =========================
+   SUBMENU ITEM
+========================= */
+
+.sidebar-submenu-item {
+  min-height: 30px;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 12px;
+
+  color: #b8b8b8;
+
+  cursor: pointer;
+
+  padding-right: 10px;
+
+  box-sizing: border-box;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.sidebar-submenu-item:hover {
+  color: #66829a;
+}
+
+.sidebar-submenu-item.active {
+  color: #66829a;
+  font-weight: 600;
+}
+
+/* =========================
+   POSTINGAN TITLE
+========================= */
+
+.posting-section-title {
+  margin-top: 14px;
+  padding-top: 14px;
+
+  border-top: 1px solid #e5e5e5;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.sidebar-section:last-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* =========================
+   DASHBOARD LAYOUT
+========================= */
+
+.dashboard-layout {
+  display: flex;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f4f9fc;
+
+  align-items: stretch;
+}
+
+/* =========================
+   COLLAPSED SIDEBAR
+========================= */
+
+.sidebar-collapsed {
+  width: 94px;
+  min-width: 94px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* LOGO */
+.sidebar-collapsed .sidebar-logo {
+  height: 74px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+}
+
+.sidebar-collapsed .sidebar-logo img {
+  width: 54px;
+  height: auto;
+}
+
+/* HIDE TEXT */
+.sidebar-collapsed .sidebar-title,
+.sidebar-collapsed .sidebar-menu span,
+.sidebar-collapsed .menu-arrow {
+  display: none;
+}
+
+/* SECTION */
+.sidebar-collapsed .sidebar-section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* MENU */
+.sidebar-collapsed .sidebar-menu {
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
+  min-height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  margin: 0 auto 10px;
+
+  gap: 0;
+
+  border-radius: 6px;
+}
+
+/* ICON */
+.sidebar-collapsed .sidebar-menu svg,
+.sidebar-collapsed .sidebar-menu-icon {
+  width: 20px;
+  height: 20px;
+
+  margin: 0;
+}
+
+/* ACTIVE MENU */
+.sidebar-collapsed .sidebar-menu.active {
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
+  min-height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  background: #dceef8;
+  color: #647d90;
+
+  border-radius: 6px;
+}
+
+/* SUBMENU HIDDEN */
+.sidebar-collapsed .sidebar-submenu {
+  display: none;
+}
+
+.sidebar-collapsed .posting-section-title {
+  display: block;
+
+  height: 1px;
+  min-height: 1px;
+
+  margin: 14px 4px 14px;
+  padding: 0;
+
+  border-top: 1px solid #e5e5e5;
+
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+}
+
+/* =========================
+   COLLAPSED DIVIDER
+========================= */
+
+.sidebar-collapsed .sidebar-section {
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+}
+
+/* =========================
+   COLLAPSED CONTACT
+========================= */
+
+.sidebar-collapsed .sidebar-section:last-child {
+  border-bottom: none;
+}
+
+/* =================================
+   DASHBOARD LAYOUT
+================================= */
+
+.dashboard-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f4f9fc;
+  align-items: stretch;
+}
+.sidebar-menu-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}

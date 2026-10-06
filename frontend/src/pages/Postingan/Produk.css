@@ -1,0 +1,452 @@
+.produk-content {
+  padding: 22px 28px 40px;
+  background: #f4f9fc;
+  min-height: calc(100vh - 70px);
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.produk-title-card {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 28px 22px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.produk-title-card h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.produk-card {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 22px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.produk-card h2 {
+  margin: 0 0 18px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* =========================
+   TOOLBAR
+========================= */
+
+.produk-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.btn-tambah-produk {
+  border: none;
+  background: #83b2d0;
+  color: #ffffff;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-tambah-produk:hover {
+  background: #709fbe;
+}
+
+.produk-search {
+  position: relative;
+  width: 205px;
+}
+
+.produk-search input {
+  width: 100%;
+  height: 32px;
+  padding: 0 32px 0 12px;
+  border: 1px solid #d5d5d5;
+  border-radius: 5px;
+  outline: none;
+  font-size: 12px;
+  color: #555;
+   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+.produk-search input::placeholder {
+  color: #aaa;
+}
+
+.produk-search input:focus {
+  border-color: #83b2d0;
+}
+
+.produk-search span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 18px;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.produk-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.produk-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 11px;
+  color: #555;
+}
+
+.produk-table th {
+  background: #e3f0f8;
+  color: #444;
+  font-weight: 600;
+  padding: 9px 8px;
+  border: 1px solid #d5dfe5;
+  text-align: center;
+}
+
+.produk-table td {
+  padding: 10px 8px;
+  border: 1px solid #e0e0e0;
+  vertical-align: middle;
+}
+
+.produk-table th:nth-child(1) {
+  width: 5%;
+}
+
+.produk-table th:nth-child(2) {
+  width: 17%;
+}
+
+.produk-table th:nth-child(3) {
+  width: 20%;
+}
+
+.produk-table th:nth-child(4) {
+  width: 23%;
+}
+
+.produk-table th:nth-child(5) {
+  width: 14%;
+}
+
+.produk-table th:nth-child(6) {
+  width: 21%;
+}
+
+/* =========================
+   CONTENT TABLE
+========================= */
+
+.produk-name {
+  line-height: 1.35;
+}
+
+.produk-description {
+  line-height: 1.35;
+  text-align: justify;
+}
+
+.produk-kelebihan {
+  line-height: 1.35;
+}
+
+.produk-kelebihan ul {
+  margin: 0;
+  padding-left: 15px;
+}
+
+.produk-kelebihan li {
+  margin-bottom: 4px;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.produk-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.produk-image {
+  width: 70px;
+  height: 58px;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+}
+
+/* =========================
+   ACTION
+========================= */
+
+.produk-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.produk-actions button {
+  border: none;
+  border-radius: 4px;
+  padding: 5px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+
+.produk-detail-btn {
+  background: #69d58b;
+}
+
+.produk-detail-btn:hover {
+  background: #55c777;
+}
+
+.produk-edit-btn {
+  background: #ffc400;
+}
+
+.produk-edit-btn:hover {
+  background: #eab300;
+}
+
+.produk-delete-btn {
+  background: #ef3340;
+}
+
+.produk-delete-btn:hover {
+  background: #d92734;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.produk-empty-message {
+  text-align: center;
+  padding: 25px !important;
+  color: #999;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+  .produk-content {
+    padding: 18px;
+  }
+
+  .produk-card {
+    overflow: hidden;
+  }
+
+  .produk-table {
+    min-width: 950px;
+  }
+}
+.produk-tambah-btn {
+  height: 38px;
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #8bb9d5;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+
+  transition: all 0.2s ease;
+}
+
+.produk-tambah-btn:hover {
+  background: #78aac7;
+}
+
+.produk-tambah-btn:active {
+  transform: translateY(1px);
+}
+/* =========================
+   DELETE MODAL
+========================= */
+
+.produk-delete-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.22);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.produk-delete-modal {
+  width: 425px;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* HEADER */
+
+.produk-delete-header {
+  height: 57px;
+
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #dddddd;
+
+  box-sizing: border-box;
+}
+
+.produk-delete-header h2 {
+  margin: 0;
+
+  color: #555555;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.produk-delete-close {
+  border: none;
+
+  background: transparent;
+
+  color: #333333;
+
+  font-size: 30px;
+  font-weight: 300;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  padding: 0;
+}
+
+.produk-delete-close:hover {
+  color: #111111;
+}
+
+/* BODY */
+
+.produk-delete-body {
+  padding: 30px 34px 36px;
+}
+
+.produk-delete-body h3 {
+  margin: 0 0 14px;
+
+  color: #555555;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.produk-delete-body p {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 12px;
+}
+
+/* ACTION */
+
+.produk-delete-actions {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 34px;
+}
+
+.produk-delete-actions button {
+  border: none;
+
+  border-radius: 4px;
+
+  padding: 8px 16px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+
+  transition: 0.2s ease;
+}
+
+/* KEMBALI */
+
+.produk-delete-cancel {
+  background: #f0a061;
+
+  color: #ffffff;
+}
+
+.produk-delete-cancel:hover {
+  background: #e79250;
+}
+
+/* HAPUS */
+
+.produk-delete-confirm {
+  background: #d92525;
+
+  color: #ffffff;
+}
+
+.produk-delete-confirm:hover {
+  background: #bd1f1f;
+}

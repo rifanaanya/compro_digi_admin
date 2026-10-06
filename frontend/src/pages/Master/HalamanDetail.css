@@ -1,0 +1,106 @@
+.halaman-detail-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f9fc;
+}
+
+.halaman-detail-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.halaman-detail-content {
+  padding: 28px 32px;
+}
+
+/* HEADER */
+
+.halaman-detail-header {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 28px 30px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.halaman-detail-header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* CARD */
+
+.halaman-detail-card {
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.halaman-detail-card-title {
+  padding: 14px 20px;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+}
+
+.halaman-detail-card-content {
+  padding: 38px 48px 34px;
+}
+
+/* ROW */
+
+.halaman-detail-row {
+  display: grid;
+  grid-template-columns: 140px 20px 1fr;
+  align-items: center;
+  margin-bottom: 17px;
+}
+
+.halaman-detail-row span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+}
+
+.halaman-detail-row b {
+  font-size: 13px;
+  color: #555;
+  text-align: center;
+}
+
+.halaman-detail-row p {
+  margin: 0;
+  font-size: 13px;
+  color: #777;
+}
+
+/* BUTTON */
+
+.halaman-detail-back-button {
+  margin-top: 42px;
+
+  border: none;
+  border-radius: 4px;
+
+  padding: 9px 17px;
+
+  background: #eca269;
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+
+  transition: 0.2s ease;
+}
+
+.halaman-detail-back-button:hover {
+  background: #e3945b;
+}

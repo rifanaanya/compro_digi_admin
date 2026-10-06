@@ -1,0 +1,183 @@
+.tambah-sertifikat-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: #f4f9fc;
+  font-family: "Nunito Sans", Arial, sans-serif;
+}
+
+.tambah-sertifikat-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.tambah-sertifikat-content {
+  padding: 22px 28px 40px;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.tambah-sertifikat-header {
+  width: 100%;
+  background: #ffffff;
+  padding: 28px 20px;
+  border-radius: 5px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  box-sizing: border-box;
+}
+
+.tambah-sertifikat-header h1 {
+  margin: 0;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* ========================================
+   CARD
+======================================== */
+
+.tambah-sertifikat-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.tambah-sertifikat-card-title {
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #555;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   FORM
+======================================== */
+
+.tambah-sertifikat-card-content {
+  width: 100%;
+  padding: 28px 58px 34px;
+  box-sizing: border-box;
+}
+
+.tambah-sertifikat-form-group {
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.tambah-sertifikat-form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* ========================================
+   INPUT NAMA
+======================================== */
+
+.tambah-sertifikat-form-group input[type="text"] {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: #555;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 13px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+.tambah-sertifikat-form-group input[type="text"]::placeholder {
+  color: #b8b8b8;
+  font-family: "Nunito Sans", Arial, sans-serif;
+}
+
+.tambah-sertifikat-form-group input[type="text"]:focus {
+  outline: none;
+  border-color: #8db5cf;
+}
+
+/* ========================================
+   DESKRIPSI
+======================================== */
+
+.tambah-sertifikat-form-group textarea {
+  width: 100%;
+  height: 92px;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: #555;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  resize: none;
+  outline: none;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+.tambah-sertifikat-form-group textarea::placeholder {
+  color: #b8b8b8;
+  font-family: "Nunito Sans", Arial, sans-serif;
+}
+
+.tambah-sertifikat-form-group textarea:focus {
+  border-color: #8db5cf;
+}
+
+/* ========================================
+   UPLOAD GAMBAR
+======================================== */
+
+.tambah-sertifikat-form-group input[type="file"] {
+  width: 100%;
+  height: 44px;
+  padding: 9px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: #555;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 13px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+/* ========================================
+   SIMPAN
+======================================== */
+
+.tambah-sertifikat-save-button {
+  border: none;
+  background: #82abc5;
+  color: #ffffff;
+  padding: 9px 18px;
+  border-radius: 4px;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+.tambah-sertifikat-save-button:hover {
+  background: #719bb6;
+}

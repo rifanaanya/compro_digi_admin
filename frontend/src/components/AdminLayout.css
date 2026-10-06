@@ -1,0 +1,15 @@
+.admin-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f9fc;
+  align-items: stretch;
+}
+
+.admin-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

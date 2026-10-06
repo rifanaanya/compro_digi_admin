@@ -1,0 +1,383 @@
+/* =================================
+   PROFILE EDIT CONTENT
+================================= */
+
+.profile-edit-content {
+  padding: 30px;
+  background: #f4f9fc;
+  box-sizing: border-box;
+}
+
+/* =================================
+   HEADER
+================================= */
+
+.profile-edit-header {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  margin-bottom: 28px;
+  box-sizing: border-box;
+}
+
+.profile-edit-header h1 {
+  margin: 0;
+  padding: 25px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #5f6365;
+}
+
+/* =================================
+   EDIT PANEL
+================================= */
+
+.profile-edit-panel {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* =================================
+   EDIT TITLE
+================================= */
+
+.profile-edit-title {
+  padding: 18px 24px;
+  border-bottom: 1px solid #d8d8d8;
+  font-size: 18px;
+  font-weight: 600;
+  color: #62676a;
+}
+
+/* =================================
+   FORM
+================================= */
+
+.profile-edit-panel form {
+  width: 70%;
+  margin: 0 auto;
+  padding: 32px 0 40px;
+  box-sizing: border-box;
+}
+
+/* =================================
+   FORM GROUP
+================================= */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #606467;
+}
+
+/* =================================
+   TEXT INPUT
+================================= */
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%;
+  height: 50px;
+
+  padding: 0 17px;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  font-size: 13px;
+  color: #555555;
+
+  outline: none;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+  border-color: #86abc3;
+}
+
+/* =========================
+   UPLOAD FOTO PROFIL
+========================= */
+
+.profile-upload-box {
+  width: 100%;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+}
+
+.profile-file-input {
+  width: auto;
+  height: auto;
+
+  padding: 0;
+  margin: 0;
+
+  border: none;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  color: #555555;
+
+  cursor: pointer;
+}
+
+/* =========================
+   UPLOAD FOTO PROFIL
+========================= */
+
+.profile-upload-box {
+  width: 100%;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 8px 14px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.14);
+}
+
+.profile-file-input {
+  flex: 1;
+
+  width: auto;
+  height: auto;
+
+  padding: 0;
+  margin: 0;
+
+  border: none;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+
+  font-family: inherit;
+  font-size: 10px;
+  color: #999999;
+
+  cursor: pointer;
+}
+
+/* =================================
+   PROFILE PREVIEW
+================================= */
+
+.profile-preview {
+  width: 65px;
+
+  margin-left: 38px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+}
+
+/* =================================
+   PROFILE IMAGE
+================================= */
+
+.profile-preview img {
+  width: 55px;
+  height: 55px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+/* =================================
+   FILE NAME
+================================= */
+
+.profile-preview span {
+  display: block;
+
+  font-size: 9px;
+
+  color: #999999;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+/* =================================
+   SIMPAN
+================================= */
+
+.save-profile-button {
+  margin-top: 2px;
+
+  padding: 10px 18px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #83afca;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  transition: 0.2s ease;
+}
+
+.save-profile-button:hover {
+  background: #719db8;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+.profile-edit-content .dashboard-footer {
+  margin-top: 48px;
+}
+
+.profile-upload-box {
+  width: 100%;
+  height: 105px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+
+  overflow: hidden;
+}
+
+/* BUTTON CHOOSE FILE */
+.profile-file-input {
+  width: 68px !important;
+  height: 24px !important;
+
+  flex: 0 0 68px;
+
+  padding: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  font-size: 0;
+  color: transparent;
+
+  cursor: pointer;
+}
+
+.profile-file-input::file-selector-button {
+  width: 68px;
+  height: 22px;
+
+  padding: 0;
+
+  background: #eeeeee;
+  border: 1px solid #aaaaaa;
+  border-radius: 3px;
+
+  color: #555555;
+
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+
+  cursor: pointer;
+}
+
+/* PREVIEW */
+.profile-preview {
+  width: 60px;
+  height: 80px;
+
+  margin-left: 32px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  flex-shrink: 0;
+}
+
+.profile-preview img {
+  width: 52px;
+  height: 52px;
+
+  display: block;
+
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-preview span {
+  margin: 0;
+
+  font-size: 9px;
+  font-weight: 400;
+
+  color: #999999;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}

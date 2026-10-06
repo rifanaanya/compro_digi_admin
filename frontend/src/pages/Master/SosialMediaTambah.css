@@ -1,0 +1,275 @@
+/* =========================
+   LAYOUT
+========================= */
+
+.sosial-media-tambah-layout {
+  overflow: visible;
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f9fc;
+}
+
+.sosial-media-tambah-main {
+  overflow: visible !important;
+  flex: 1;
+  min-width: 0;
+}
+
+.sosial-media-tambah-content {
+  overflow: visible !important;
+  padding: 22px 25px 30px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.sosial-media-tambah-header {
+  background: #ffffff;
+  padding: 27px 22px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.sosial-media-tambah-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.sosial-media-tambah-card {
+  background: #ffffff;
+  border-radius: 5px;
+  overflow: visible;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.sosial-media-tambah-card-title {
+  padding: 18px 22px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #5d6063;
+  border-bottom: 1px solid #dddddd;
+}
+
+.sosial-media-tambah-card-content {
+  padding: 30px 60px 40px;
+  position: relative;
+  overflow: visible;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.sosial-media-tambah-form-group {
+  margin-bottom: 20px;
+}
+
+.sosial-media-tambah-form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+.sosial-media-tambah-form-group input,
+.sosial-media-tambah-form-group select {
+  width: 100%;
+  height: 43px;
+  box-sizing: border-box;
+  padding: 0 14px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  outline: none;
+  background-color: #ffffff;
+  color: #666666;
+  font-size: 11px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.sosial-media-tambah-form-group input::placeholder {
+  color: #b8b8b8;
+}
+
+.sosial-media-tambah-form-group input:focus,
+.sosial-media-tambah-form-group select:focus {
+  border-color: #82b1cc;
+}
+
+/* =========================
+   SELECT
+========================= */
+
+.sosial-media-tambah-form-group select {
+  color: #b8b8b8;
+  cursor: pointer;
+  appearance: auto;
+}
+
+/* =========================
+   SIMPAN
+========================= */
+
+.sosial-media-tambah-save-button {
+  margin-top: 2px;
+  padding: 9px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #82b1cc;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+.sosial-media-tambah-save-button:hover {
+  background-color: #709fb9;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .sosial-media-tambah-content {
+    padding: 18px;
+  }
+
+  .sosial-media-tambah-card-content {
+    padding: 25px 20px 30px;
+  }
+}
+.sosial-media-icon-dropdown {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+}
+
+.sosial-media-icon-dropdown-trigger {
+  width: 100%;
+  height: 40px;
+  padding: 0 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+  background: #ffffff;
+  color: #b8b8b8;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  text-align: left;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+.sosial-media-icon-dropdown-trigger.has-value {
+  color: #555;
+}
+
+.sosial-media-icon-dropdown-trigger.open {
+  border-color: #d5d5d5;
+  border-radius: 4px 4px 0 0;
+}
+
+.sosial-media-icon-dropdown-arrow {
+  width: 13px;
+  height: auto;
+
+  object-fit: contain;
+  flex-shrink: 0;
+
+  transition: transform 0.2s ease;
+}
+
+.sosial-media-icon-dropdown-arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.sosial-media-icon-dropdown-list {
+  position: absolute;
+  top: 40px;
+  left: 0;
+
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+
+  box-sizing: border-box;
+
+  z-index: 9999;
+
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.16);
+
+  overflow: hidden;
+}
+
+.sosial-media-icon-dropdown-option {
+  width: 100%;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 13px;
+
+  border: none;
+  outline: none;
+
+  background: #ffffff;
+  color: #666666;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  text-align: left;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.sosial-media-icon-dropdown-option:hover {
+  background: #e7f3fb;
+  color: #5f7b8d;
+}
+.sosial-media-tambah-card {
+  position: relative;
+  overflow: visible !important;
+}
+
+.sosial-media-tambah-card-content {
+  position: relative;
+  overflow: visible !important;
+}
+
+.sosial-media-tambah-form-group {
+  position: relative;
+}
+
+.sosial-media-icon-dropdown {
+  position: relative;
+  width: 100%;
+  z-index: 9999;
+}

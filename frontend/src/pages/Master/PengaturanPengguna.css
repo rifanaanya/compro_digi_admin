@@ -1,0 +1,675 @@
+/* ========================================
+   PENGATURAN PENGGUNA - LAYOUT
+======================================== */
+
+.pengaturan-pengguna-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f9fc;
+}
+
+.pengaturan-pengguna-main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.pengaturan-pengguna-content {
+  padding: 28px;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.pengaturan-pengguna-header {
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 28px 30px;
+  margin-bottom: 24px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.14);
+}
+
+.pengaturan-pengguna-header h1 {
+  margin: 0;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  color: #555;
+}
+
+/* ========================================
+   CARD
+======================================== */
+
+.pengaturan-pengguna-card {
+  background: #ffffff;
+  border-radius: 5px;
+
+  overflow: hidden;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.14);
+}
+
+/* ========================================
+   CARD TITLE
+======================================== */
+
+.pengaturan-pengguna-card-title {
+  padding: 18px 24px;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  color: #555;
+
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* ========================================
+   CARD CONTENT
+======================================== */
+
+.pengaturan-pengguna-card-content {
+  padding: 24px 28px 38px;
+}
+
+/* ========================================
+   TOP ACTION
+======================================== */
+
+.pengaturan-pengguna-top-action {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  margin-bottom: 16px;
+}
+
+/* ========================================
+   TAMBAH PENGGUNA
+======================================== */
+
+.pengaturan-pengguna-add-button {
+  height: 35px;
+
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #80b3d0;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  transition: 0.2s ease;
+}
+
+.pengaturan-pengguna-add-button:hover {
+  background: #70a7c8;
+}
+
+.pengaturan-pengguna-add-button:active {
+  transform: translateY(1px);
+}
+
+/* ========================================
+   SEARCH
+======================================== */
+
+.pengaturan-pengguna-search {
+  position: relative;
+
+  width: 205px;
+  height: 35px;
+}
+
+.pengaturan-pengguna-search input {
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+
+  padding: 0 34px 0 14px;
+
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #555;
+
+  font-size: 12px;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.pengaturan-pengguna-search input::placeholder {
+  color: #aaa;
+}
+
+.pengaturan-pengguna-search input:focus {
+  border-color: #83b5d2;
+}
+
+.pengaturan-pengguna-search-icon {
+  position: absolute;
+
+  right: 11px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #aaa;
+
+  pointer-events: none;
+}
+
+/* ========================================
+   TABLE WRAPPER
+======================================== */
+
+.pengaturan-pengguna-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* ========================================
+   TABLE
+======================================== */
+
+.pengaturan-pengguna-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+
+  font-size: 11px;
+
+  color: #555;
+}
+
+/* ========================================
+   TABLE HEADER
+======================================== */
+
+.pengaturan-pengguna-table thead {
+  background: #e3f1f8;
+}
+
+.pengaturan-pengguna-table th {
+  height: 34px;
+
+  padding: 0 8px;
+
+  text-align: left;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  color: #555;
+
+  border-bottom: 1px solid #d8e2e7;
+}
+
+/* ========================================
+   TABLE BODY
+======================================== */
+
+.pengaturan-pengguna-table td {
+  height: 45px;
+
+  padding: 0 8px;
+
+  border-bottom: 1px solid #e5e5e5;
+
+  vertical-align: middle;
+}
+
+.pengaturan-pengguna-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ========================================
+   COLUMN WIDTH
+======================================== */
+
+.pengaturan-pengguna-table th:nth-child(1),
+.pengaturan-pengguna-table td:nth-child(1) {
+  width: 38px;
+
+  text-align: center;
+}
+
+.pengaturan-pengguna-table th:nth-child(2),
+.pengaturan-pengguna-table td:nth-child(2) {
+  width: 70px;
+
+  text-align: center;
+}
+
+.pengaturan-pengguna-table th:nth-child(3),
+.pengaturan-pengguna-table td:nth-child(3) {
+  width: 145px;
+}
+
+.pengaturan-pengguna-table th:nth-child(4),
+.pengaturan-pengguna-table td:nth-child(4) {
+  width: 190px;
+}
+
+.pengaturan-pengguna-table th:nth-child(5),
+.pengaturan-pengguna-table td:nth-child(5) {
+  width: 125px;
+}
+
+.pengaturan-pengguna-table th:nth-child(6),
+.pengaturan-pengguna-table td:nth-child(6) {
+  width: 70px;
+}
+
+.pengaturan-pengguna-table th:nth-child(7),
+.pengaturan-pengguna-table td:nth-child(7) {
+  width: 145px;
+}
+
+/* ========================================
+   PROFILE ICON
+======================================== */
+
+.pengaturan-pengguna-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========================================
+   ACTION BUTTON
+======================================== */
+
+.pengaturan-pengguna-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pengaturan-pengguna-detail-button,
+.pengaturan-pengguna-edit-button,
+.pengaturan-pengguna-delete-button {
+  border: none;
+  border-radius: 3px;
+  padding: 4px 8px;
+  font-size: 9px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #5a4a4e;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: 0.2s ease;
+}
+
+/* DETAIL */
+.pengaturan-pengguna-detail-button {
+  background: #70cf87;
+}
+
+.pengaturan-pengguna-detail-button:hover {
+  background: #5fc377;
+}
+
+/* EDIT */
+.pengaturan-pengguna-edit-button {
+  background: #ffc400;
+}
+
+.pengaturan-pengguna-edit-button:hover {
+  background: #eeb700;
+}
+
+/* DELETE */
+.pengaturan-pengguna-delete-button {
+  background: #ed3340;
+}
+
+.pengaturan-pengguna-delete-button:hover {
+  background: #d92734;
+}
+
+/* ========================================
+   EMPTY
+======================================== */
+
+.pengaturan-pengguna-empty {
+  height: 60px;
+
+  text-align: center !important;
+
+  color: #999;
+
+  font-size: 12px;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1000px) {
+  .pengaturan-pengguna-content {
+    padding: 20px;
+  }
+
+  .pengaturan-pengguna-card-content {
+    padding: 22px;
+  }
+
+  .pengaturan-pengguna-top-action {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 700px) {
+  .pengaturan-pengguna-content {
+    padding: 15px;
+  }
+
+  .pengaturan-pengguna-header {
+    padding: 22px;
+  }
+
+  .pengaturan-pengguna-header h1 {
+    font-size: 19px;
+  }
+
+  .pengaturan-pengguna-card-content {
+    padding: 18px;
+  }
+
+  .pengaturan-pengguna-top-action {
+    flex-wrap: wrap;
+  }
+
+  .pengaturan-pengguna-search {
+    width: 205px;
+  }
+}
+/* ========================================
+   DELETE MODAL
+======================================== */
+
+.pengaturan-pengguna-delete-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: rgba(0, 0, 0, 0.28) !important;
+
+  z-index: 999999 !important;
+}
+
+/* ========================================
+   MODAL CARD
+======================================== */
+
+.pengaturan-pengguna-delete-modal {
+  width: 450px !important;
+
+  background: #ffffff !important;
+
+  border-radius: 8px !important;
+
+  overflow: hidden !important;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+
+  box-sizing: border-box !important;
+}
+
+/* ========================================
+   MODAL HEADER
+======================================== */
+
+.pengaturan-pengguna-delete-modal-header {
+  width: 100% !important;
+  height: 60px !important;
+
+  padding: 0 25px !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  box-sizing: border-box !important;
+
+  border-bottom: 1px solid #dddddd !important;
+}
+
+.pengaturan-pengguna-delete-modal-header h2 {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-family: "Nunito Sans", Arial, sans-serif !important;
+
+  font-size: 20px !important;
+  font-weight: 700 !important;
+
+  line-height: 1 !important;
+
+  color: #5d6063 !important;
+}
+
+/* ========================================
+   CLOSE BUTTON
+======================================== */
+
+.pengaturan-pengguna-delete-close {
+  width: 28px !important;
+  min-width: 28px !important;
+
+  height: 28px !important;
+  min-height: 28px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: none !important;
+  outline: none !important;
+
+  background: transparent !important;
+
+  box-shadow: none !important;
+
+  font-family: Arial, sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+
+  line-height: 28px !important;
+
+  color: #444444 !important;
+
+  cursor: pointer !important;
+
+  appearance: none !important;
+  -webkit-appearance: none !important;
+}
+
+.pengaturan-pengguna-delete-close:hover {
+  background: transparent !important;
+  color: #222222 !important;
+}
+
+/* ========================================
+   MODAL CONTENT
+======================================== */
+
+.pengaturan-pengguna-delete-modal-content {
+  width: 100% !important;
+
+  padding: 28px 32px 32px !important;
+
+  box-sizing: border-box !important;
+}
+
+/* ========================================
+   QUESTION
+======================================== */
+
+.pengaturan-pengguna-delete-question {
+  margin: 0 0 9px !important;
+  padding: 0 !important;
+
+  font-family: "Nunito Sans", Arial, sans-serif !important;
+
+  font-size: 16px !important;
+  font-weight: 700 !important;
+
+  line-height: 1.4 !important;
+
+  color: #666666 !important;
+}
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.pengaturan-pengguna-delete-description {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-family: "Nunito Sans", Arial, sans-serif !important;
+
+  font-size: 14px !important;
+  font-weight: 400 !important;
+
+  line-height: 1.4 !important;
+
+  color: #888888 !important;
+}
+
+/* ========================================
+   BUTTON AREA
+======================================== */
+
+.pengaturan-pengguna-delete-modal-actions {
+  width: 100% !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+
+  align-items: center !important;
+  justify-content: flex-start !important;
+
+  gap: 14px !important;
+
+  margin: 30px 0 0 0 !important;
+  padding: 0 !important;
+
+  box-sizing: border-box !important;
+}
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.pengaturan-pengguna-delete-cancel,
+.pengaturan-pengguna-delete-confirm {
+  width: auto !important;
+  min-width: 0 !important;
+
+  height: 36px !important;
+
+  padding: 0 19px !important;
+  margin: 0 !important;
+
+  border: none !important;
+
+  border-radius: 4px !important;
+
+  font-family: "Nunito Sans", Arial, sans-serif !important;
+
+  font-size: 12px !important;
+  font-weight: 700 !important;
+
+  line-height: 36px !important;
+
+  color: #ffffff !important;
+
+  cursor: pointer !important;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18) !important;
+
+  box-sizing: border-box !important;
+}
+
+/* ========================================
+   KEMBALI
+======================================== */
+
+.pengaturan-pengguna-delete-cancel {
+  background: #f5a15b !important;
+}
+
+.pengaturan-pengguna-delete-cancel:hover {
+  background: #e9924c !important;
+}
+
+/* ========================================
+   HAPUS
+======================================== */
+
+.pengaturan-pengguna-delete-confirm {
+  background: #e5232b !important;
+}
+
+.pengaturan-pengguna-delete-confirm:hover {
+  background: #d71921 !important;
+}
+.pengaturan-pengguna-profile {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto;
+}
+
+.pengaturan-pengguna-profile-icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+}

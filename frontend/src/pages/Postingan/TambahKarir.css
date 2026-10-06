@@ -1,0 +1,445 @@
+/* ========================================
+   CONTENT
+======================================== */
+
+.tambah-karir-content {
+  padding: 22px 26px;
+
+  background: #f4f9fd;
+
+  min-height: calc(100vh - 70px);
+
+  box-sizing: border-box;
+}
+
+/* ========================================
+   PAGE TITLE
+======================================== */
+
+.tambah-karir-title-card {
+  background: #ffffff;
+
+  padding: 28px 22px;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+
+  margin-bottom: 24px;
+
+  box-sizing: border-box;
+}
+
+.tambah-karir-title-card h1 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 21px;
+
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* ========================================
+   CONTENT CARD
+======================================== */
+
+.tambah-karir-card {
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+
+  overflow: visible;
+
+  box-sizing: border-box;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.tambah-karir-card-header {
+  padding: 18px 22px;
+
+  border-bottom: 1px solid #dddddd;
+
+  box-sizing: border-box;
+}
+
+.tambah-karir-card-header h2 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* ========================================
+   FORM
+======================================== */
+
+.tambah-karir-form {
+  padding: 28px 46px 35px;
+
+  box-sizing: border-box;
+}
+
+.tambah-karir-form-group {
+  margin-bottom: 20px;
+}
+
+.tambah-karir-form-group label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* ========================================
+   INPUT
+======================================== */
+
+.tambah-karir-form-group input {
+  width: 100%;
+
+  height: 40px;
+
+  padding: 0 12px;
+
+  border: 1px solid #d8d8d8;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  outline: none;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 11px;
+
+  color: #555555;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* ========================================
+   PLACEHOLDER
+======================================== */
+
+.tambah-karir-form-group input::placeholder {
+  color: #b8b8b8;
+}
+
+/* ========================================
+   INPUT FOCUS
+======================================== */
+
+.tambah-karir-form-group input:focus {
+  border-color: #82b3d1;
+
+  box-shadow:
+    0 0 0 2px rgba(130, 179, 209, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* ========================================
+   CUSTOM DROPDOWN
+======================================== */
+
+.tambah-karir-dropdown {
+  position: relative;
+
+  width: 100%;
+
+  box-sizing: border-box;
+}
+
+/* ========================================
+   DROPDOWN BUTTON
+======================================== */
+
+.tambah-karir-dropdown-button {
+  width: 100%;
+
+  height: 40px;
+
+  padding: 0 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border: 1px solid #d8d8d8;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  outline: none;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  color: #555555;
+
+  cursor: pointer;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+}
+
+.tambah-karir-dropdown-button:hover,
+.tambah-karir-dropdown-button.open {
+  border-color: #82b3d1;
+
+  box-shadow:
+    0 0 0 2px rgba(130, 179, 209, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* ========================================
+   DROPDOWN PLACEHOLDER
+======================================== */
+
+.tambah-karir-dropdown-button .placeholder {
+  color: #b8b8b8;
+}
+
+/* ========================================
+   ARROW SVG
+======================================== */
+
+.tambah-karir-dropdown-arrow {
+  width: 14px;
+
+  height: 14px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+
+  display: block;
+
+  transition: transform 0.2s ease;
+}
+
+.tambah-karir-dropdown-button.open .tambah-karir-dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* ========================================
+   DROPDOWN MENU
+======================================== */
+
+.tambah-karir-dropdown-menu {
+  position: absolute;
+
+  top: calc(100% + 1px);
+
+  left: 0;
+
+  width: 100%;
+
+  margin: 0;
+
+  padding: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #d8d8d8;
+
+  border-radius: 3px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  z-index: 99999;
+
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   DROPDOWN OPTION
+======================================== */
+
+.tambah-karir-dropdown-option {
+  width: 100%;
+
+  height: 38px;
+
+  padding: 0 12px;
+
+  margin: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  border: none;
+
+  border-radius: 0;
+
+  background: #ffffff;
+
+  color: #666666;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  outline: none;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  box-shadow: none;
+
+  transition: background 0.15s ease;
+}
+
+/* ========================================
+   OPTION HOVER
+======================================== */
+
+.tambah-karir-dropdown-option:hover {
+  background: #e5f2fb;
+
+  color: #555555;
+}
+
+/* ========================================
+   OPTION SELECTED
+======================================== */
+
+.tambah-karir-dropdown-option.selected {
+  background: #e5f2fb;
+
+  color: #555555;
+}
+
+/* ========================================
+   DROPDOWN FOCUS
+======================================== */
+
+.tambah-karir-dropdown-button:focus,
+.tambah-karir-dropdown-option:focus {
+  outline: none;
+}
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.tambah-karir-actions {
+  display: flex;
+
+  align-items: center;
+
+  margin-top: 6px;
+}
+
+.tambah-karir-save {
+  border: none;
+
+  background: #82aec8;
+
+  color: #ffffff;
+
+  padding: 8px 17px;
+
+  border-radius: 4px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  transition: 0.2s;
+}
+
+.tambah-karir-save:hover {
+  background: #6d9db9;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+  .tambah-karir-content {
+    padding: 18px;
+  }
+
+  .tambah-karir-form {
+    padding: 25px 30px 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tambah-karir-content {
+    padding: 15px;
+  }
+
+  .tambah-karir-title-card {
+    padding: 20px;
+  }
+
+  .tambah-karir-title-card h1 {
+    font-size: 19px;
+  }
+
+  .tambah-karir-form {
+    padding: 22px 20px 28px;
+  }
+}

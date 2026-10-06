@@ -1,0 +1,385 @@
+/* ========================================
+   CONTENT
+======================================== */
+
+.edit-karir-content {
+  padding: 22px 26px;
+
+  background: #f4f9fd;
+
+  min-height: calc(100vh - 70px);
+
+  box-sizing: border-box;
+}
+
+/* ========================================
+   PAGE TITLE
+======================================== */
+
+.edit-karir-title-card {
+  background: #ffffff;
+
+  padding: 28px 22px;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+
+  margin-bottom: 24px;
+
+  box-sizing: border-box;
+}
+
+.edit-karir-title-card h1 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 21px;
+
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* ========================================
+   CONTENT CARD
+======================================== */
+
+.edit-karir-card {
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+
+  overflow: visible;
+
+  box-sizing: border-box;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.edit-karir-card-header {
+  padding: 18px 22px;
+
+  border-bottom: 1px solid #dddddd;
+
+  box-sizing: border-box;
+}
+
+.edit-karir-card-header h2 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* ========================================
+   FORM
+======================================== */
+
+.edit-karir-form {
+  padding: 28px 46px 35px;
+
+  box-sizing: border-box;
+}
+
+.edit-karir-form-group {
+  margin-bottom: 20px;
+}
+
+.edit-karir-form-group label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* ========================================
+   INPUT
+======================================== */
+
+.edit-karir-form-group input {
+  width: 100%;
+
+  height: 40px;
+
+  padding: 0 12px;
+
+  border: 1px solid #d8d8d8;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  outline: none;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 11px;
+
+  color: #555555;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.edit-karir-form-group input::placeholder {
+  color: #b8b8b8;
+}
+
+.edit-karir-form-group input:focus {
+  border-color: #82b3d1;
+
+  box-shadow:
+    0 0 0 2px rgba(130, 179, 209, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* ========================================
+   CUSTOM DROPDOWN
+======================================== */
+
+.edit-karir-dropdown {
+  position: relative;
+
+  width: 100%;
+}
+
+/* ========================================
+   DROPDOWN BUTTON
+======================================== */
+
+.edit-karir-dropdown-button {
+  width: 100%;
+
+  height: 40px;
+
+  padding: 0 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border: 1px solid #d8d8d8;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  outline: none;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 11px;
+
+  color: #555555;
+
+  cursor: pointer;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.edit-karir-dropdown-button:hover,
+.edit-karir-dropdown-button.open {
+  border-color: #82b3d1;
+
+  box-shadow:
+    0 0 0 2px rgba(130, 179, 209, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.edit-karir-dropdown-button .placeholder {
+  color: #b8b8b8;
+}
+
+/* ========================================
+   ARROW
+======================================== */
+
+.edit-karir-dropdown-arrow {
+  width: 14px;
+
+  height: 14px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+
+  transition: transform 0.2s ease;
+}
+
+.edit-karir-dropdown-button.open .edit-karir-dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* ========================================
+   DROPDOWN MENU
+======================================== */
+
+.edit-karir-dropdown-menu {
+  position: absolute;
+
+  top: 100%;
+
+  left: 0;
+
+  width: 100%;
+
+  margin-top: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #d8d8d8;
+
+  border-radius: 0 0 3px 3px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  z-index: 9999;
+
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+}
+
+/* ========================================
+   DROPDOWN OPTION
+======================================== */
+
+.edit-karir-dropdown-option {
+  width: 100%;
+
+  height: 38px;
+
+  padding: 0 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  border: none;
+
+  background: #ffffff;
+
+  color: #666666;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+}
+
+.edit-karir-dropdown-option:hover,
+.edit-karir-dropdown-option.selected {
+  background: #e5f2fb;
+
+  color: #555555;
+}
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.edit-karir-actions {
+  display: flex;
+
+  align-items: center;
+
+  margin-top: 6px;
+}
+
+.edit-karir-save {
+  border: none;
+
+  background: #82aec8;
+
+  color: #ffffff;
+
+  padding: 8px 17px;
+
+  border-radius: 4px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  transition: 0.2s;
+}
+
+.edit-karir-save:hover {
+  background: #6d9db9;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+  .edit-karir-content {
+    padding: 18px;
+  }
+
+  .edit-karir-form {
+    padding: 25px 30px 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .edit-karir-content {
+    padding: 15px;
+  }
+
+  .edit-karir-title-card {
+    padding: 20px;
+  }
+
+  .edit-karir-title-card h1 {
+    font-size: 19px;
+  }
+
+  .edit-karir-form {
+    padding: 22px 20px 28px;
+  }
+}

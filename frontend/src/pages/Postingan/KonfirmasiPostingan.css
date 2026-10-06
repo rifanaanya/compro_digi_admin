@@ -1,0 +1,305 @@
+.konfirmasi-postingan-content {
+  padding: 22px 26px;
+  background: #f4f9fd;
+  min-height: calc(100vh - 70px);
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.konfirmasi-title-card {
+  background: #ffffff;
+  padding: 28px 22px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  margin-bottom: 14px;
+}
+
+.konfirmasi-title-card h1 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* =========================
+   INFO
+========================= */
+
+.konfirmasi-info-card {
+  background: #e7f2f9;
+  padding: 14px 20px;
+  border-radius: 6px;
+  border: 1px solid #d5e5ee;
+  margin-bottom: 16px;
+}
+
+.konfirmasi-info-card h2 {
+  margin: 0 0 5px;
+  font-size: 19px;
+  color: #555;
+}
+
+.konfirmasi-info-card p {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: #777;
+}
+
+/* =========================
+   TAB
+========================= */
+
+.konfirmasi-tabs {
+  display: flex;
+  gap: 0;
+}
+
+.tab-btn {
+  border: 1px solid #777;
+  background: #ffffff;
+  color: #444;
+  padding: 5px 17px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tab-btn:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.tab-btn:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+.tab-btn.active {
+  background: #292044;
+  color: #ffffff;
+  border-color: #292044;
+}
+
+/* =========================
+   TABLE CARD
+========================= */
+
+.konfirmasi-table-card {
+  background: #ffffff;
+  padding: 14px 20px 30px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.konfirmasi-table-card h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* =========================
+   STATUS SELECT
+========================= */
+
+.status-select {
+  width: 205px;
+  height: 30px;
+  padding: 0 10px;
+  margin-bottom: 14px;
+
+  border: 1px solid #cfcfcf;
+  border-radius: 5px;
+
+  background: #ffffff;
+  color: #999;
+
+  font-size: 11px;
+  outline: none;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.konfirmasi-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.konfirmasi-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 10px;
+}
+
+.konfirmasi-table thead {
+  background: #e5f2fa;
+}
+
+.konfirmasi-table th {
+  padding: 7px 5px;
+  border: 1px solid #d7d7d7;
+  text-align: center;
+  color: #444;
+  font-weight: 600;
+}
+
+.konfirmasi-table td {
+  padding: 7px 5px;
+  border: 1px solid #dedede;
+  color: #555;
+  vertical-align: middle;
+}
+
+.konfirmasi-table th:nth-child(1),
+.konfirmasi-table td:nth-child(1) {
+  width: 5%;
+  text-align: center;
+}
+
+.konfirmasi-table th:nth-child(2),
+.konfirmasi-table td:nth-child(2) {
+  width: 20%;
+}
+
+.konfirmasi-table th:nth-child(3),
+.konfirmasi-table td:nth-child(3) {
+  width: 10%;
+}
+
+.konfirmasi-table th:nth-child(4),
+.konfirmasi-table td:nth-child(4) {
+  width: 11%;
+  text-align: center;
+}
+
+.konfirmasi-table th:nth-child(5),
+.konfirmasi-table td:nth-child(5) {
+  width: 15%;
+  text-align: center;
+}
+
+.konfirmasi-table th:nth-child(6),
+.konfirmasi-table td:nth-child(6) {
+  width: 11%;
+  text-align: center;
+}
+
+.konfirmasi-table th:nth-child(7),
+.konfirmasi-table td:nth-child(7) {
+  width: 28%;
+  text-align: center;
+}
+
+.konfirmasi-table small {
+  display: block;
+  font-size: 8px;
+  color: #777;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 7px;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 9px;
+}
+
+.status-badge.publish {
+  background: #42b8e8;
+}
+
+.status-badge.pending {
+  background: #ffc107;
+}
+
+.status-badge.delete {
+  background: #e8323e;
+}
+
+/* =========================
+   ACTION
+========================= */
+
+.konfirmasi-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.konfirmasi-actions button {
+  border: none;
+  border-radius: 4px;
+  padding: 5px 9px;
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.detail-btn {
+  background: #70d58a;
+  color: white;
+}
+
+.detail-btn:hover {
+  background: #55c872;
+}
+
+.pending-btn {
+  background: #ffbd00;
+  color: white;
+}
+
+.pending-btn:hover {
+  background: #eaaa00;
+}
+
+.delete-btn {
+  background: #e8323e;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #c9212c;
+}
+.publish-btn {
+  background: #4bb9dc;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 9px;
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.publish-btn:hover {
+  background: #35a9cf;
+}
+.publish-btn {
+  background: #38aee5;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.publish-btn:hover {
+  background: #279fd7;
+}

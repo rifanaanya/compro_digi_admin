@@ -1,0 +1,242 @@
+.footer-column-edit-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f9fc;
+}
+
+.footer-column-edit-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.footer-column-edit-content {
+  padding: 22px 25px 30px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.footer-column-edit-header {
+  background: #ffffff;
+  padding: 27px 22px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.footer-column-edit-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.footer-column-edit-card {
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+
+  overflow: visible;
+}
+
+.footer-column-edit-card-title {
+  padding: 18px 22px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #5d6063;
+  border-bottom: 1px solid #dddddd;
+}
+
+.footer-column-edit-card-content {
+  padding: 32px 58px 35px;
+  position: relative;
+  overflow: visible;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.footer-column-edit-form-group {
+  margin-bottom: 20px;
+}
+
+.footer-column-edit-form-group label {
+  display: block;
+  margin-bottom: 11px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+.footer-column-edit-form-group input,
+.footer-column-edit-form-group select {
+  width: 100%;
+  height: 44px;
+  box-sizing: border-box;
+  padding: 0 14px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  outline: none;
+  background-color: #ffffff;
+  color: #666666;
+  font-size: 11px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.footer-column-edit-form-group input:focus,
+.footer-column-edit-form-group select:focus {
+  border-color: #82b1cc;
+}
+
+.footer-column-edit-form-group select {
+  cursor: pointer;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.footer-column-edit-button-wrapper {
+  margin-top: 10px;
+}
+
+.footer-column-edit-save-button {
+  padding: 9px 14px;
+  border: none;
+  border-radius: 4px;
+  background-color: #82b1cc;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+.footer-column-edit-save-button:hover {
+  background-color: #709fb9;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .footer-column-edit-content {
+    padding: 18px;
+  }
+
+  .footer-column-edit-card-content {
+    padding: 25px 25px 30px;
+  }
+}
+.footer-column-edit-custom-dropdown {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+}
+
+.footer-column-edit-dropdown-trigger {
+  width: 100%;
+  height: 40px;
+  padding: 0 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+  background: #ffffff;
+  color: #b8b8b8;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: left;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+.footer-column-edit-dropdown-trigger.has-value {
+  color: #555;
+}
+
+.footer-column-edit-dropdown-trigger.open {
+  border-color: #d5d5d5;
+  border-radius: 4px 4px 0 0;
+}
+
+.footer-column-edit-dropdown-arrow {
+  width: 13px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.footer-column-edit-dropdown-arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.footer-column-edit-dropdown-menu {
+  position: absolute;
+  top: 40px;
+  left: 0;
+
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+
+  box-sizing: border-box;
+
+  z-index: 9999;
+
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.16);
+
+  overflow: hidden;
+}
+
+.footer-column-edit-dropdown-option {
+  width: 100%;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 13px;
+
+  border: none;
+  outline: none;
+
+  background: #ffffff;
+  color: #666666;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  text-align: left;
+  cursor: pointer;
+
+  box-sizing: border-box;
+}
+
+.footer-column-edit-dropdown-option:hover,
+.footer-column-edit-dropdown-option.selected {
+  background: #e7f3fb;
+  color: #5f7b8d;
+}

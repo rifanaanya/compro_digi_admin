@@ -1,0 +1,473 @@
+/* =================================
+   NAVBAR
+================================= */
+
+.navbar {
+  width: 100%;
+  height: 58px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 18px;
+
+  background: #adc8da;
+
+  border-radius: 0 20px 20px 0;
+
+  flex-shrink: 0;
+}
+
+/* =================================
+   MENU BUTTON
+================================= */
+
+.menu-button {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+.menu-button svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* =================================
+   NAVBAR RIGHT
+================================= */
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* =================================
+   WEBSITE DIGI
+================================= */
+
+.website-button {
+  width: 97px;
+  height: 29px;
+  min-width: 97px;
+  max-width: 97px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  box-sizing: border-box;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #dcecf6;
+  color: #668197;
+
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+
+  cursor: pointer;
+}
+
+/* =================================
+   PROFILE
+================================= */
+
+.profile-dropdown {
+  position: relative;
+  width: 125px;
+  flex: 0 0 125px;
+}
+
+/* =================================
+   ADMIN PROFILE
+================================= */
+
+.admin-profile {
+  width: 125px;
+  min-width: 125px;
+  max-width: 125px;
+
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0 7px;
+  margin: 0;
+
+  box-sizing: border-box;
+
+  border: none;
+  border-radius: 4px 4px 0 0;
+
+  background: transparent;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+/* =================================
+   ADMIN PROFILE ICON
+================================= */
+
+.admin-profile-icon {
+  position: relative;
+
+  width: 21px;
+  height: 21px;
+
+  display: block;
+
+  flex-shrink: 0;
+}
+
+.admin-profile-icon img {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 21px;
+  height: 21px;
+
+  display: block;
+
+  transition: opacity 0.15s ease;
+}
+
+.admin-profile-icon-normal {
+  opacity: 1;
+}
+
+.admin-profile-icon-hover {
+  opacity: 0;
+}
+
+/* =================================
+   PROFILE HOVER
+================================= */
+
+.profile-dropdown:hover .admin-profile {
+  background: #eef5fa;
+  color: #668097;
+}
+
+.profile-dropdown:hover .admin-profile-icon-normal {
+  opacity: 0;
+}
+
+.profile-dropdown:hover .admin-profile-icon-hover {
+  opacity: 1;
+}
+
+/* =================================
+   PROFILE OPEN
+================================= */
+
+.admin-profile.profile-open {
+  background: #eef5fa;
+  color: #668097;
+}
+
+/* =================================
+   ADMIN PROFILE TEXT
+================================= */
+
+.admin-profile span {
+  white-space: nowrap;
+}
+
+/* =================================
+   ARROW
+================================= */
+
+.admin-profile svg:last-child {
+  width: 13px;
+  height: 13px;
+
+  margin-left: auto;
+
+  flex-shrink: 0;
+}
+
+.admin-profile .arrow-up {
+  transform: rotate(180deg);
+}
+
+/* =================================
+   DROPDOWN MENU
+================================= */
+
+.profile-menu {
+  position: absolute;
+
+  top: 34px;
+  right: 0;
+
+  width: 125px;
+  min-width: 125px;
+  max-width: 125px;
+
+  margin: 0;
+  padding: 4px 0;
+
+  box-sizing: border-box;
+
+  background: #eef5fa;
+
+  border: none;
+  border-radius: 0 0 3px 3px;
+
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+
+  overflow: hidden;
+
+  z-index: 9999;
+}
+
+/* =================================
+   DROPDOWN ITEM
+================================= */
+
+.profile-menu button {
+  width: calc(100% - 10px);
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 0 9px;
+  margin: 1px 5px;
+
+  box-sizing: border-box;
+
+  border: none;
+  border-radius: 2px;
+
+  background: transparent;
+
+  color: #668097;
+
+  font-size: 12px;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition: background 0.15s ease;
+}
+
+/* =================================
+   DROPDOWN ICON
+================================= */
+
+.profile-menu button svg {
+  width: 15px;
+  height: 15px;
+
+  flex-shrink: 0;
+
+  color: #668097;
+}
+
+/* =================================
+   DROPDOWN HOVER
+================================= */
+
+.profile-menu button:hover {
+  background: #f7dfe2;
+}
+
+.profile-menu button:hover svg {
+  color: #668097;
+}
+
+/* =================================
+   LOGOUT OVERLAY
+================================= */
+
+.logout-overlay {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.22);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+}
+
+/* =================================
+   LOGOUT MODAL
+================================= */
+
+.logout-modal {
+  width: 380px;
+  max-width: calc(100% - 40px);
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+}
+
+/* =================================
+   MODAL HEADER
+================================= */
+
+.logout-modal-header {
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px 0 30px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.logout-modal-header h2 {
+  margin: 0;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  color: #5f6365;
+}
+
+.logout-close {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #333333;
+
+  cursor: pointer;
+}
+
+.logout-close:hover {
+  color: #111111;
+}
+
+/* =================================
+   MODAL BODY
+================================= */
+
+.logout-modal-body {
+  padding: 38px 30px 30px;
+}
+
+.logout-modal-body p {
+  margin: 0 0 34px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color: #62676a;
+}
+
+/* =================================
+   BUTTON
+================================= */
+
+.logout-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+.logout-actions button {
+  min-width: 58px;
+  height: 30px;
+
+  padding: 0 14px;
+
+  border: none;
+  border-radius: 4px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+/* YA */
+
+.logout-yes {
+  background: #83aec9;
+  color: #ffffff;
+}
+
+.logout-yes:hover {
+  background: #719fbc;
+}
+
+/* TIDAK */
+
+.logout-no {
+  background: #d51f27;
+  color: #ffffff;
+}
+
+.logout-no:hover {
+  background: #bd181f;
+}

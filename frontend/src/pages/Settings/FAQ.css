@@ -1,0 +1,488 @@
+/* ========================================
+   FAQ LAYOUT
+======================================== */
+
+.faq-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f9fc;
+}
+
+.faq-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-content {
+  flex: 1;
+  padding: 20px 28px 30px;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.faq-header {
+  width: 100%;
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  padding: 0 22px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.18);
+  margin-bottom: 24px;
+}
+
+.faq-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #5d5d5d;
+}
+
+/* ========================================
+   FAQ CARD
+======================================== */
+
+.faq-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.18);
+  box-sizing: border-box;
+}
+
+.faq-card-content {
+  padding: 22px 28px 45px;
+}
+
+/* ========================================
+   TAMBAH FAQ
+======================================== */
+
+.faq-add-button {
+  height: 38px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 4px;
+  background: #7faac4;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.18);
+  margin-bottom: 30px;
+  transition: background 0.2s ease;
+}
+
+.faq-add-button:hover {
+  background: #6f9bb7;
+}
+
+/* ========================================
+   TABLE WRAPPER
+======================================== */
+
+.faq-table-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+/* ========================================
+   TABLE
+======================================== */
+
+.faq-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #555555;
+}
+
+/* ========================================
+   TABLE HEADER
+======================================== */
+
+.faq-table thead th {
+  height: 36px;
+  padding: 0 14px;
+  box-sizing: border-box;
+
+  background: #e7f2f8;
+
+  /* Hanya garis horizontal */
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #d8e3e8;
+
+  color: #4e5a61;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.faq-table thead th:first-child {
+  border-top-left-radius: 6px;
+}
+
+.faq-table thead th:last-child {
+  border-top-right-radius: 6px;
+}
+
+/* ========================================
+   TABLE BODY
+======================================== */
+
+.faq-table tbody td {
+  height: 43px;
+  padding: 0 14px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  /* Tidak ada garis vertikal */
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #e5e5e5;
+
+  color: #555555;
+  font-size: 11px;
+  font-weight: 400;
+  vertical-align: middle;
+}
+
+.faq-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ========================================
+   COLUMN WIDTH
+======================================== */
+
+.faq-table .faq-no {
+  width: 8%;
+  text-align: center;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.faq-table th:nth-child(2),
+.faq-table td:nth-child(2) {
+  width: 24%;
+}
+
+.faq-table th:nth-child(3),
+.faq-table td:nth-child(3) {
+  width: 48%;
+}
+
+.faq-action-header {
+  width: 20%;
+  text-align: center !important;
+}
+
+/* ========================================
+   ACTION COLUMN
+======================================== */
+
+.faq-action-header {
+  width: 13%;
+  text-align: center !important;
+}
+
+.faq-action-cell {
+  width: 13%;
+  padding: 0 10px !important;
+  vertical-align: middle;
+}
+
+/* ========================================
+   ACTION BUTTONS
+======================================== */
+
+.faq-actions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  box-sizing: border-box;
+
+  /* geser sedikit ke kiri */
+  transform: translateX(-30px);
+}
+
+/* ========================================
+   ACTION BUTTON
+======================================== */
+
+.faq-actions button {
+  height: 18px;
+  padding: 0 6px;
+  border: none;
+  border-radius: 3px;
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-sizing: border-box;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+/* DETAIL */
+
+.faq-detail-button {
+  min-width: 38px;
+  background: #65d37a;
+  color: #5a4a4e;
+}
+
+.faq-detail-button:hover {
+  background: #4fc568;
+}
+
+/* EDIT */
+
+.faq-edit-button {
+  min-width: 36px;
+  background: #ffc400;
+  color: #5a4a4e;
+}
+
+.faq-edit-button:hover {
+  background: #eeb600;
+}
+
+/* DELETE */
+
+.faq-delete-button {
+  min-width: 39px;
+  background: #ef3340;
+  color: #5a4a4e;
+}
+
+.faq-delete-button:hover {
+  background: #d92532;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+  .faq-content {
+    padding: 18px;
+  }
+
+  .faq-card-content {
+    padding: 18px;
+  }
+
+  .faq-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .faq-table {
+    min-width: 760px;
+  }
+}
+
+/* ========================================
+   DELETE MODAL OVERLAY
+======================================== */
+
+.faq-delete-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.22);
+}
+
+/* ========================================
+   DELETE MODAL
+======================================== */
+
+.faq-delete-modal {
+  width: 430px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+/* ========================================
+   MODAL HEADER
+======================================== */
+
+.faq-delete-modal-header {
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 24px;
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.faq-delete-modal-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  color: #5f5f5f;
+}
+
+/* ========================================
+   CLOSE
+======================================== */
+
+.faq-delete-close {
+  width: 28px;
+  height: 28px;
+
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 31px;
+  font-weight: 300;
+  line-height: 1;
+
+  color: #3f3f3f;
+  cursor: pointer;
+}
+
+.faq-delete-close:hover {
+  color: #222222;
+}
+
+/* ========================================
+   MODAL BODY
+======================================== */
+
+.faq-delete-modal-body {
+  padding: 36px 35px 40px;
+}
+
+/* ========================================
+   PERTANYAAN
+======================================== */
+
+.faq-delete-question {
+  margin: 0 0 14px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color: #666666;
+}
+
+/* ========================================
+   DESKRIPSI
+======================================== */
+
+.faq-delete-description {
+  margin: 0;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  color: #777777;
+}
+
+/* ========================================
+   MODAL BUTTON
+======================================== */
+
+.faq-delete-modal-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+  margin-top: 34px;
+}
+
+/* ========================================
+   KEMBALI
+======================================== */
+
+.faq-delete-cancel {
+  height: 38px;
+  padding: 0 17px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #f0a15f;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.faq-delete-cancel:hover {
+  background: #e8944f;
+}
+
+/* ========================================
+   HAPUS
+======================================== */
+
+.faq-delete-confirm {
+  height: 38px;
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #d92525;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.faq-delete-confirm:hover {
+  background: #c91f1f;
+}

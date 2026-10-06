@@ -1,0 +1,281 @@
+.pengaturan-lainnya-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f9fc;
+}
+
+.pengaturan-lainnya-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.pengaturan-lainnya-content {
+  padding: 22px 25px 30px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.pengaturan-lainnya-header {
+  background: #ffffff;
+  padding: 27px 22px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-lainnya-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.pengaturan-lainnya-card {
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.pengaturan-lainnya-card-content {
+  padding: 20px 28px 40px;
+}
+
+/* =========================
+   BUTTON TAMBAH
+========================= */
+
+.pengaturan-lainnya-add-button {
+  padding: 9px 16px;
+  margin-bottom: 24px;
+  border: none;
+  border-radius: 4px;
+  background-color: #82b1cc;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-lainnya-add-button:hover {
+  background-color: #709fb9;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.pengaturan-lainnya-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-lainnya-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  font-size: 10px;
+  color: #555555;
+  background: #ffffff;
+}
+
+/* HEADER TABLE */
+.pengaturan-lainnya-table th {
+  height: 28px;
+  padding: 0 12px;
+  box-sizing: border-box;
+
+  background-color: #e8f2f8;
+
+  border-top: 1px solid #dce8ee;
+  border-bottom: 1px solid #d8dfe3;
+  border-left: none;
+  border-right: none;
+
+  text-align: left;
+  vertical-align: middle;
+
+  font-size: 10px;
+  font-weight: 600;
+  color: #4f5559;
+}
+
+/* ISI TABLE */
+.pengaturan-lainnya-table td {
+  height: 52px;
+  padding: 0 12px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: none;
+  border-bottom: 1px solid #e1e1e1;
+
+  vertical-align: middle;
+
+  font-size: 10px;
+  color: #555555;
+}
+
+.pengaturan-lainnya-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================
+   COLUMN
+========================= */
+
+.pengaturan-lainnya-no {
+  width: 8%;
+  text-align: center !important;
+}
+
+.pengaturan-lainnya-table th:nth-child(2),
+.pengaturan-lainnya-table td:nth-child(2) {
+  width: 30%;
+}
+
+.pengaturan-lainnya-table th:nth-child(3),
+.pengaturan-lainnya-table td:nth-child(3) {
+  width: 42%;
+}
+
+.pengaturan-lainnya-action-header {
+  width: 20%;
+  text-align: center !important;
+}
+
+.pengaturan-lainnya-name {
+  font-weight: 500;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.pengaturan-lainnya-image-cell {
+  text-align: center !important;
+  vertical-align: middle !important;
+  padding: 0 12px !important;
+}
+
+.pengaturan-lainnya-image-box {
+  width: 55px;
+  height: 38px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pengaturan-lainnya-image-box img {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 48px;
+  max-height: 34px;
+
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* =========================
+   ACTION
+========================= */
+
+.pengaturan-lainnya-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  white-space: nowrap;
+}
+
+.pengaturan-lainnya-actions button {
+  height: 20px;
+
+  padding: 0 8px;
+  margin: 0;
+
+  border: none;
+  border-radius: 3px;
+
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* DETAIL */
+.pengaturan-lainnya-detail-button {
+  min-width: 42px;
+
+  background-color: #82c4df;
+  color: #5a4a4e;
+}
+
+.pengaturan-lainnya-detail-button:hover {
+  background-color: #6fb2cd;
+}
+
+/* EDIT */
+.pengaturan-lainnya-edit-button {
+  min-width: 38px;
+
+  background-color: #ffc107;
+  color: #5a4a4e;
+}
+
+.pengaturan-lainnya-edit-button:hover {
+  background-color: #e6ac00;
+}
+/* =========================
+   COLUMN TABLE
+========================= */
+
+.pengaturan-lainnya-col-no {
+  width: 8%;
+}
+
+.pengaturan-lainnya-col-name {
+  width: 30%;
+}
+
+.pengaturan-lainnya-col-image {
+  width: 42%;
+}
+
+.pengaturan-lainnya-col-action {
+  width: 20%;
+}
+
+/* HEADER ISI PENGATURAN */
+.pengaturan-lainnya-image-header {
+  text-align: center !important;
+}
+
+/* ISI KOLOM LOGO */
+.pengaturan-lainnya-image-cell {
+  text-align: center !important;
+  vertical-align: middle !important;
+}

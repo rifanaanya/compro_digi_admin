@@ -1,0 +1,236 @@
+/* =========================
+   LAYOUT
+========================= */
+
+.produk-digi-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f3f8fc;
+}
+
+.produk-digi-main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.produk-digi-content {
+  padding: 22px 25px 40px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.produk-digi-header {
+  background: #ffffff;
+  border-radius: 7px;
+  padding: 25px 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.produk-digi-header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.produk-digi-card {
+  background: #ffffff;
+  border-radius: 7px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.produk-digi-card-title {
+  padding: 18px 20px;
+  border-bottom: 1px solid #ddd;
+  font-size: 17px;
+  font-weight: 600;
+  color: #555;
+}
+
+.produk-digi-card-content {
+  padding: 30px 58px 55px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.produk-digi-form-group {
+  margin-bottom: 20px;
+}
+
+.produk-digi-form-group label {
+  display: block;
+  margin-bottom: 11px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.produk-digi-form-group input,
+.produk-digi-form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  font-family: inherit;
+  font-size: 13px;
+  color: #555;
+  outline: none;
+}
+
+.produk-digi-form-group input {
+  height: 44px;
+  padding: 0 14px;
+}
+
+.produk-digi-form-group textarea {
+  height: 110px;
+  padding: 14px;
+  resize: vertical;
+}
+
+.produk-digi-form-group input::placeholder,
+.produk-digi-form-group textarea::placeholder {
+  color: #c2c2c2;
+}
+
+.produk-digi-form-group input:focus,
+.produk-digi-form-group textarea:focus {
+  border-color: #8db4cc;
+}
+
+/* =========================
+   SIMPAN
+========================= */
+
+.produk-digi-save-button {
+  position: relative;
+  z-index: 10;
+
+  margin-top: 2px;
+  padding: 9px 16px;
+  border: none;
+  border-radius: 4px;
+  background: #82aec7;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  transition: 0.2s ease;
+}
+
+.produk-digi-save-button:hover {
+  background: #719db7;
+}
+
+.produk-digi-save-button:active {
+  transform: translateY(1px);
+}
+
+.produk-digi-save-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* =========================
+   NOTIFICATION
+========================= */
+
+.produk-digi-notification {
+  position: fixed;
+  top: 85px;
+  right: 25px;
+  z-index: 9999;
+
+  min-width: 280px;
+  padding: 13px 18px;
+
+  border-radius: 5px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+  pointer-events: none;
+
+  animation: produkDigiNotification 0.25s ease;
+}
+
+.produk-digi-notification.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-left: 4px solid #4caf50;
+}
+
+.produk-digi-notification.error {
+  background: #ffebee;
+  color: #c62828;
+  border-left: 4px solid #e53935;
+}
+
+@keyframes produkDigiNotification {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .produk-digi-content {
+    padding: 18px;
+  }
+
+  .produk-digi-card-content {
+    padding: 25px 30px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .produk-digi-content {
+    padding: 15px;
+  }
+
+  .produk-digi-header {
+    padding: 20px;
+  }
+
+  .produk-digi-header h1 {
+    font-size: 19px;
+  }
+
+  .produk-digi-card-content {
+    padding: 22px 20px 28px;
+  }
+
+  .produk-digi-notification {
+    left: 15px;
+    right: 15px;
+    min-width: auto;
+  }
+}

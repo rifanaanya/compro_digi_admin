@@ -1,0 +1,123 @@
+.pengaturan-menu-detail-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f9fc;
+}
+
+.pengaturan-menu-detail-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.pengaturan-menu-detail-content {
+  padding: 22px 25px 30px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.pengaturan-menu-detail-header {
+  background: #ffffff;
+  padding: 27px 22px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-menu-detail-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.pengaturan-menu-detail-card {
+  background: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-menu-detail-card-title {
+  padding: 18px 22px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #5d6063;
+  border-bottom: 1px solid #dddddd;
+}
+
+.pengaturan-menu-detail-card-content {
+  padding: 35px 50px 60px;
+}
+
+/* =========================
+   DETAIL ROW
+========================= */
+
+.pengaturan-menu-detail-row {
+  display: flex;
+  align-items: center;
+  min-height: 29px;
+  font-size: 11px;
+  color: #666666;
+}
+
+.pengaturan-menu-detail-label {
+  width: 135px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+.pengaturan-menu-detail-colon {
+  width: 20px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+.pengaturan-menu-detail-value {
+  color: #666666;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.pengaturan-menu-detail-back-button {
+  margin-top: 32px;
+  padding: 9px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #eca15f;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-menu-detail-back-button:hover {
+  background-color: #dc914f;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .pengaturan-menu-detail-content {
+    padding: 18px;
+  }
+
+  .pengaturan-menu-detail-card-content {
+    padding: 25px 20px 40px;
+  }
+
+  .pengaturan-menu-detail-label {
+    width: 120px;
+  }
+}

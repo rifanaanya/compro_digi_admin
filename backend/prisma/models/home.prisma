@@ -1,0 +1,23 @@
+model HomeSetting {
+  id          Int      @id @default(autoincrement())
+  slogan      String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  categories HomeCategory[]
+}
+
+model HomeCategory {
+  id           Int         @id @default(autoincrement())
+  name         String
+  sortOrder    Int         @default(0)
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  homeSettingId Int
+  homeSetting   HomeSetting @relation(fields: [homeSettingId], references: [id], onDelete: Cascade)
+
+  @@index([homeSettingId])
+  @@index([sortOrder])
+}

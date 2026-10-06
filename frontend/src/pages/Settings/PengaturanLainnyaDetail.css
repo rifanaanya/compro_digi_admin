@@ -1,0 +1,132 @@
+.pengaturan-lainnya-detail-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f9fc;
+}
+
+.pengaturan-lainnya-detail-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.pengaturan-lainnya-detail-content {
+  padding: 22px 25px 30px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.pengaturan-lainnya-detail-header {
+  background: #ffffff;
+  padding: 27px 22px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-lainnya-detail-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.pengaturan-lainnya-detail-card {
+  background: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-lainnya-detail-card-title {
+  padding: 18px 22px;
+  border-bottom: 1px solid #dddddd;
+  font-size: 16px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+.pengaturan-lainnya-detail-card-content {
+  padding: 38px 50px 45px;
+}
+
+/* =========================
+   ROW
+========================= */
+
+.pengaturan-lainnya-detail-row {
+  display: grid;
+  grid-template-columns: 155px 20px 1fr;
+  align-items: center;
+  margin-bottom: 27px;
+}
+
+.pengaturan-lainnya-detail-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+.pengaturan-lainnya-detail-separator {
+  font-size: 13px;
+  font-weight: 600;
+  color: #5d6063;
+  text-align: center;
+}
+
+.pengaturan-lainnya-detail-value {
+  font-size: 13px;
+  color: #666666;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.pengaturan-lainnya-detail-value.image-value {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.pengaturan-lainnya-detail-value.image-value img {
+  width: 43px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.pengaturan-lainnya-detail-value.image-value span {
+  font-size: 7px;
+  color: #aaaaaa;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.pengaturan-lainnya-detail-back-button {
+  margin-top: 15px;
+  padding: 9px 17px;
+  border: none;
+  border-radius: 4px;
+  background-color: #efa260;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-lainnya-detail-back-button:hover {
+  background-color: #e5904d;
+}
+
+.pengaturan-lainnya-detail-back-button:active {
+  transform: translateY(1px);
+}

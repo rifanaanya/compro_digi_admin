@@ -1,0 +1,470 @@
+/* ================================= */
+/* LAYOUT */
+/* ================================= */
+
+.sosial-media-edit-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f9fc;
+}
+
+.sosial-media-edit-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: visible;
+}
+
+.sosial-media-edit-content {
+  flex: 1;
+  padding: 22px 28px 40px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: visible;
+}
+
+/* ================================= */
+/* HEADER */
+/* ================================= */
+
+.sosial-media-edit-header {
+  width: 100%;
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-radius: 5px;
+
+  margin-bottom: 24px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.sosial-media-edit-header h1 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* ================================= */
+/* CARD */
+/* ================================= */
+
+.sosial-media-edit-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 5px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+
+  position: relative;
+
+  overflow: visible !important;
+}
+
+.sosial-media-edit-card-title {
+  width: 100%;
+
+  padding: 15px 20px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #dddddd;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+.sosial-media-edit-card-content {
+  padding: 28px 58px 34px;
+
+  box-sizing: border-box;
+
+  position: relative;
+
+  overflow: visible !important;
+}
+
+/* ================================= */
+/* FORM */
+/* ================================= */
+
+.sosial-media-edit-form-group {
+  margin-bottom: 22px;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+.sosial-media-edit-form-group:last-of-type {
+  z-index: 999999;
+}
+
+/* ================================= */
+/* INPUT */
+/* ================================= */
+
+.sosial-media-edit-form-group input[type="text"] {
+  width: 100%;
+  height: 44px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #555555;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 13px;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+
+  outline: none;
+}
+
+.sosial-media-edit-form-group input[type="text"]:focus {
+  border-color: #8db5cf;
+}
+
+/* ================================= */
+/* LABEL */
+/* ================================= */
+
+.sosial-media-edit-form-group label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* ================================= */
+/* ICON DROPDOWN */
+/* ================================= */
+
+.sosial-media-edit-icon-dropdown {
+  position: relative;
+
+  width: 100%;
+
+  z-index: 999999;
+}
+
+/* ================================= */
+/* DROPDOWN TRIGGER */
+/* ================================= */
+
+.sosial-media-edit-icon-dropdown-trigger {
+  width: 100%;
+  height: 58px;
+
+  padding: 0 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #555555;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+
+  outline: none;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.sosial-media-edit-icon-dropdown-trigger:hover {
+  border-color: #cccccc;
+}
+
+.sosial-media-edit-icon-dropdown-trigger.open {
+  border-radius: 4px 4px 0 0;
+}
+
+/* ================================= */
+/* SELECTED ICON */
+/* ================================= */
+
+.sosial-media-edit-selected-icon {
+  display: flex !important;
+
+  align-items: center !important;
+
+  gap: 12px !important;
+
+  width: auto !important;
+  height: 100% !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  position: static !important;
+
+  background: transparent !important;
+
+  color: #555555 !important;
+
+  overflow: visible !important;
+}
+
+.sosial-media-edit-selected-icon-image {
+  width: 44px !important;
+  height: 44px !important;
+
+  padding: 10px !important;
+
+  box-sizing: border-box !important;
+
+  object-fit: contain !important;
+
+  display: block !important;
+
+  flex-shrink: 0 !important;
+
+  background: #5a9bc9 !important;
+
+  border: none !important;
+
+  border-radius: 8px !important;
+}
+
+.sosial-media-edit-selected-icon-image.gmail {
+  width: 44px !important;
+  height: 44px !important;
+
+  padding: 10px !important;
+}
+
+/* ================================= */
+/* ARROW */
+/* ================================= */
+
+.sosial-media-edit-icon-dropdown-arrow {
+  width: 13px !important;
+  height: auto !important;
+
+  object-fit: contain;
+
+  display: block;
+
+  flex-shrink: 0;
+
+  transition: transform 0.2s ease;
+}
+
+.sosial-media-edit-icon-dropdown-arrow.rotate {
+  transform: rotate(180deg);
+}
+
+/* ================================= */
+/* DROPDOWN LIST */
+/* ================================= */
+
+.sosial-media-edit-icon-dropdown-list {
+  position: absolute;
+
+  top: 58px;
+  left: 0;
+
+  width: 100%;
+
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #dddddd;
+
+  border-top: none;
+
+  border-radius: 0 0 4px 4px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+
+  z-index: 9999999;
+
+  overflow: hidden;
+
+  pointer-events: auto;
+}
+
+/* ================================= */
+/* DROPDOWN OPTION */
+/* ================================= */
+
+.sosial-media-edit-icon-dropdown-option {
+  width: 100%;
+  height: 42px;
+
+  padding: 0 13px;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  box-sizing: border-box;
+
+  border: none !important;
+  outline: none;
+
+  background: #ffffff;
+
+  color: #666666;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  pointer-events: auto;
+
+  position: relative;
+
+  z-index: 10000000;
+}
+
+.sosial-media-edit-icon-dropdown-option:hover {
+  background: #e7f3fb;
+
+  color: #5f7b8d;
+}
+
+/* ================================= */
+/* OPTION ICON */
+/* ================================= */
+
+.sosial-media-edit-option-icon {
+  width: 22px !important;
+  height: 22px !important;
+
+  object-fit: contain !important;
+
+  display: block !important;
+
+  flex-shrink: 0 !important;
+
+  background: transparent !important;
+
+  border: none !important;
+
+  border-radius: 0 !important;
+}
+
+.sosial-media-edit-option-icon.whatsapp {
+  width: 22px !important;
+  height: 22px !important;
+}
+
+.sosial-media-edit-option-icon.instagram {
+  width: 23px !important;
+  height: 23px !important;
+}
+
+.sosial-media-edit-option-icon.gmail {
+  width: 25px !important;
+  height: 20px !important;
+}
+
+/* ================================= */
+/* SIMPAN */
+/* ================================= */
+
+.sosial-media-edit-save-button {
+  border: none;
+
+  background: #82abc5;
+
+  color: #ffffff;
+
+  padding: 9px 18px;
+
+  border-radius: 4px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  margin-top: 2px;
+}
+
+.sosial-media-edit-save-button:hover {
+  background: #719db8;
+}
+
+/* ================================= */
+/* DROPDOWN TIDAK TERPOTONG */
+/* ================================= */
+
+.sosial-media-edit-card,
+.sosial-media-edit-card-content,
+.sosial-media-edit-main,
+.sosial-media-edit-content {
+  overflow: visible !important;
+}

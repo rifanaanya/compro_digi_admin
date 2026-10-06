@@ -1,0 +1,372 @@
+.produk-layanan-content {
+  padding: 22px 28px 40px;
+  background: #f4f9fc;
+  min-height: calc(100vh - 70px);
+  box-sizing: border-box;
+}
+
+/* TITLE */
+
+.produk-layanan-title-card {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 30px 22px;
+  margin-bottom: 24px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.produk-layanan-title-card h1 {
+  margin: 0;
+  color: #555555;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* CARD */
+
+.produk-layanan-card {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 20px 22px 28px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.produk-layanan-card h2 {
+  margin: 0 0 18px;
+
+  color: #555555;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* TOOLBAR */
+
+.produk-layanan-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+}
+
+.btn-tambah-produk-layanan {
+  border: none;
+  border-radius: 4px;
+
+  padding: 9px 16px;
+
+  background: #83b1cc;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+
+  transition: 0.2s ease;
+}
+
+.btn-tambah-produk-layanan:hover {
+  background: #719fba;
+}
+
+/* SEARCH */
+
+.produk-layanan-search {
+  position: relative;
+  width: 205px;
+}
+
+.produk-layanan-search input {
+  width: 100%;
+  height: 34px;
+
+  padding: 0 34px 0 12px;
+
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+
+  outline: none;
+
+  font-size: 12px;
+
+  box-sizing: border-box;
+}
+
+.produk-layanan-search input:focus {
+  border-color: #83b1cc;
+}
+
+.produk-layanan-search span {
+  position: absolute;
+
+  right: 11px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #999999;
+
+  font-size: 17px;
+}
+
+/* TABLE */
+
+.produk-layanan-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.produk-layanan-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  table-layout: fixed;
+
+  font-size: 11px;
+  color: #555555;
+}
+
+.produk-layanan-table th {
+  background: #e3f1f9;
+
+  border: 1px solid #d7dfe4;
+
+  padding: 9px 7px;
+
+  text-align: center;
+
+  font-weight: 600;
+}
+
+.produk-layanan-table td {
+  border: 1px solid #dddddd;
+
+  padding: 12px 8px;
+
+  vertical-align: top;
+
+  line-height: 1.45;
+}
+
+/* COLUMN WIDTH */
+
+.produk-layanan-table th:nth-child(1) {
+  width: 4%;
+}
+
+.produk-layanan-table th:nth-child(2) {
+  width: 17%;
+}
+
+.produk-layanan-table th:nth-child(3) {
+  width: 23%;
+}
+
+.produk-layanan-table th:nth-child(4) {
+  width: 16%;
+}
+
+.produk-layanan-table th:nth-child(5) {
+  width: 17%;
+}
+
+.produk-layanan-table th:nth-child(6) {
+  width: 15%;
+}
+
+/* TEXT */
+
+.produk-layanan-name {
+  font-weight: 500;
+}
+
+.produk-layanan-description {
+  text-align: justify;
+}
+
+/* TOOLS */
+
+.produk-layanan-tools {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.produk-layanan-tools li {
+  margin-bottom: 4px;
+}
+
+/* ACTION */
+
+.produk-layanan-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  flex-wrap: wrap;
+}
+
+.produk-layanan-actions button {
+  border: none;
+  border-radius: 4px;
+
+  padding: 5px 8px;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  color: #ffffff;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.produk-layanan-detail-btn {
+  background: #61d486;
+}
+
+.produk-layanan-detail-btn:hover {
+  background: #4fc574;
+}
+
+.produk-layanan-edit-btn {
+  background: #ffbf00;
+}
+
+.produk-layanan-edit-btn:hover {
+  background: #eeb000;
+}
+
+.produk-layanan-delete-btn {
+  background: #ed2939;
+}
+
+.produk-layanan-delete-btn:hover {
+  background: #d91f2e;
+}
+
+/* EMPTY */
+
+.produk-layanan-empty {
+  text-align: center;
+  padding: 25px !important;
+  color: #999999;
+}
+
+/* =========================
+   DELETE MODAL
+========================= */
+
+.produk-layanan-delete-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.22);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+}
+
+.produk-layanan-delete-modal {
+  width: 425px;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.produk-layanan-delete-header {
+  height: 57px;
+
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.produk-layanan-delete-header h2 {
+  margin: 0;
+
+  color: #555555;
+
+  font-size: 18px;
+}
+
+.produk-layanan-delete-close {
+  border: none;
+  background: transparent;
+
+  font-size: 29px;
+
+  color: #333333;
+
+  cursor: pointer;
+}
+
+.produk-layanan-delete-body {
+  padding: 30px 34px 36px;
+}
+
+.produk-layanan-delete-body h3 {
+  margin: 0 0 14px;
+
+  color: #555555;
+
+  font-size: 15px;
+}
+
+.produk-layanan-delete-body p {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 12px;
+}
+
+.produk-layanan-delete-actions {
+  display: flex;
+  gap: 12px;
+
+  margin-top: 34px;
+}
+
+.produk-layanan-delete-actions button {
+  border: none;
+  border-radius: 4px;
+
+  padding: 8px 16px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+}
+
+.produk-layanan-delete-cancel {
+  background: #f0a061;
+}
+
+.produk-layanan-delete-confirm {
+  background: #d92525;
+}

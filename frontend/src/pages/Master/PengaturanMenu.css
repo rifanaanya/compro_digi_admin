@@ -1,0 +1,381 @@
+.pengaturan-menu-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f9fc;
+}
+
+.pengaturan-menu-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.pengaturan-menu-content {
+  padding: 22px 25px 30px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.pengaturan-menu-header {
+  background: #ffffff;
+  padding: 27px 22px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-menu-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.pengaturan-menu-card {
+  background: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-menu-card-title {
+  padding: 18px 22px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #5d6063;
+  border-bottom: 1px solid #dddddd;
+}
+
+.pengaturan-menu-card-content {
+  padding: 20px 22px 35px;
+}
+
+/* =========================
+   TOP ACTION
+========================= */
+
+.pengaturan-menu-top-action {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  margin-bottom: 15px;
+}
+
+.pengaturan-menu-add-button {
+  padding: 9px 14px;
+  border: none;
+  border-radius: 4px;
+  background-color: #82b1cc;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-menu-add-button:hover {
+  background-color: #709fb9;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.pengaturan-menu-search {
+  position: relative;
+  width: 205px;
+}
+
+.pengaturan-menu-search input {
+  width: 100%;
+  height: 30px;
+  box-sizing: border-box;
+
+  padding: 0 32px 0 12px;
+
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+
+  outline: none;
+
+  background-color: #ffffff;
+
+  color: #666666;
+  font-size: 11px;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+
+  transition: border-color 0.2s ease;
+}
+
+.pengaturan-menu-search input::placeholder {
+  color: #aaaaaa;
+}
+
+.pengaturan-menu-search input:focus {
+  border-color: #82b1cc;
+}
+
+.pengaturan-menu-search-icon {
+  position: absolute;
+
+  right: 9px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #aaaaaa;
+  font-size: 17px;
+
+  pointer-events: none;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.pengaturan-menu-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.pengaturan-menu-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 11px;
+  color: #555555;
+}
+
+.pengaturan-menu-table thead th {
+  height: 27px;
+  padding: 0 10px;
+  background-color: #e8f3f9;
+  border-bottom: 1px solid #d5dfe5;
+  text-align: left;
+  font-size: 10px;
+  font-weight: 600;
+  color: #4f565b;
+}
+
+.pengaturan-menu-table tbody td {
+  min-height: 39px;
+  padding: 9px 10px;
+  border-bottom: 1px solid #eeeeee;
+  vertical-align: middle;
+}
+
+.pengaturan-menu-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================
+   TABLE COLUMN
+========================= */
+
+.pengaturan-menu-no {
+  width: 35px;
+  text-align: center !important;
+}
+
+.pengaturan-menu-status {
+  width: 70px;
+}
+
+.pengaturan-menu-submenu {
+  width: 150px;
+  white-space: pre-line;
+  line-height: 18px;
+}
+
+.pengaturan-menu-action-header {
+  width: 90px;
+  text-align: center !important;
+}
+
+/* =========================
+   ACTION BUTTON
+========================= */
+
+.pengaturan-menu-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.pengaturan-menu-edit-button,
+.pengaturan-menu-delete-button {
+  height: 27px;
+  padding: 0 9px;
+  border: none;
+  border-radius: 4px;
+  margin: 0;
+  font-size: 9px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #5a4a4e;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+  transition: background-color 0.2s ease;
+}
+
+/* EDIT */
+.pengaturan-menu-edit-button {
+  background-color: #ffc107;
+}
+
+.pengaturan-menu-edit-button:hover {
+  background-color: #eab000;
+}
+
+/* DELETE */
+.pengaturan-menu-delete-button {
+  background-color: #e53935;
+}
+
+.pengaturan-menu-delete-button:hover {
+  background-color: #d32f2f;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.pengaturan-menu-empty {
+  height: 50px !important;
+  text-align: center;
+  color: #999999;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .pengaturan-menu-content {
+    padding: 18px;
+  }
+
+  .pengaturan-menu-card-content {
+    padding: 18px;
+  }
+
+  .pengaturan-menu-top-action {
+    gap: 15px;
+  }
+}
+
+/* =========================
+   DELETE MODAL
+========================= */
+
+.pengaturan-menu-delete-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.pengaturan-menu-delete-modal {
+  width: 430px;
+  background: #ffffff;
+  border-radius: 7px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.pengaturan-menu-delete-modal-header {
+  height: 58px;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #dddddd;
+  box-sizing: border-box;
+}
+
+.pengaturan-menu-delete-modal-header h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+.pengaturan-menu-delete-close {
+  border: none;
+  background: transparent;
+  color: #333333;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.pengaturan-menu-delete-close:hover {
+  color: #e3343a;
+}
+
+.pengaturan-menu-delete-modal-content {
+  padding: 30px 35px 35px;
+}
+
+.pengaturan-menu-delete-question {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+.pengaturan-menu-delete-description {
+  margin: 0;
+  font-size: 12px;
+  color: #777777;
+}
+
+.pengaturan-menu-delete-modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 35px;
+}
+
+.pengaturan-menu-delete-cancel,
+.pengaturan-menu-delete-confirm {
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-menu-delete-cancel {
+  background-color: #eca15f;
+}
+
+.pengaturan-menu-delete-cancel:hover {
+  background-color: #dc914f;
+}
+
+.pengaturan-menu-delete-confirm {
+  background-color: #e3343a;
+}
+
+.pengaturan-menu-delete-confirm:hover {
+  background-color: #c9272d;
+}

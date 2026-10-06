@@ -1,0 +1,320 @@
+.pengaturan-menu-edit-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f9fc;
+}
+
+.pengaturan-menu-edit-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.pengaturan-menu-edit-content {
+  padding: 22px 25px 30px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.pengaturan-menu-edit-header {
+  background: #ffffff;
+  padding: 27px 22px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-menu-edit-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.pengaturan-menu-edit-card {
+  background: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-menu-edit-card-title {
+  padding: 18px 22px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #5d6063;
+  border-bottom: 1px solid #dddddd;
+}
+
+.pengaturan-menu-edit-card-content {
+  padding: 30px 58px 35px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.pengaturan-menu-edit-form-group {
+  margin-bottom: 20px;
+}
+
+.pengaturan-menu-edit-form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+.pengaturan-menu-edit-form-group input,
+.pengaturan-menu-edit-form-group select {
+  width: 100%;
+  height: 43px;
+  box-sizing: border-box;
+  padding: 0 14px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  outline: none;
+  background-color: #ffffff;
+  color: #666666;
+  font-size: 11px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.pengaturan-menu-edit-form-group input:focus,
+.pengaturan-menu-edit-form-group select:focus {
+  border-color: #82b1cc;
+}
+
+.pengaturan-menu-edit-note {
+  color: #e3343a;
+  font-size: 9px;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+/* =========================
+   SUB MENU
+========================= */
+
+.pengaturan-menu-edit-submenu-section {
+  margin-top: 30px;
+}
+
+.pengaturan-menu-edit-submenu-section h3 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+.pengaturan-menu-edit-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #dddddd;
+  margin-bottom: 20px;
+}
+
+.pengaturan-menu-edit-submenu-button {
+  border: none;
+  border-radius: 4px;
+  padding: 9px 14px;
+  background-color: #788bc4;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-menu-edit-submenu-button:hover {
+  background-color: #687bb4;
+}
+
+/* =========================
+   SUB MENU LIST
+========================= */
+
+.pengaturan-menu-edit-submenu-list {
+  margin-top: 15px;
+}
+
+.pengaturan-menu-edit-submenu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.pengaturan-menu-edit-submenu-number {
+  width: 20px;
+  font-size: 11px;
+  color: #666666;
+}
+
+.pengaturan-menu-edit-submenu-item input {
+  flex: 1;
+  height: 35px;
+  padding: 0 10px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  outline: none;
+  font-size: 11px;
+}
+
+.pengaturan-menu-edit-submenu-delete {
+  border: none;
+  border-radius: 3px;
+  padding: 7px 10px;
+  background-color: #e3343a;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =========================
+   SIMPAN
+========================= */
+
+.pengaturan-menu-edit-save-button {
+  margin-top: 28px;
+  padding: 9px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #82b1cc;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-menu-edit-save-button:hover {
+  background-color: #709fb9;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .pengaturan-menu-edit-content {
+    padding: 18px;
+  }
+
+  .pengaturan-menu-edit-card-content {
+    padding: 25px 20px;
+  }
+}
+.status-menu-edit-dropdown {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+}
+
+.status-menu-edit-dropdown-trigger {
+  width: 100%;
+  height: 40px;
+  padding: 0 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+  background: #ffffff;
+  color: #b8b8b8;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  text-align: left;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+.status-menu-edit-dropdown-trigger.has-value {
+  color: #555;
+}
+
+.status-menu-edit-dropdown-trigger.open {
+  border-color: #d5d5d5;
+  border-radius: 4px 4px 0 0;
+}
+
+.status-menu-edit-dropdown-arrow {
+  width: 13px;
+  height: auto;
+
+  object-fit: contain;
+  flex-shrink: 0;
+
+  transition: transform 0.2s ease;
+}
+
+.status-menu-edit-dropdown-arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.status-menu-edit-dropdown-list {
+  position: absolute;
+  top: 40px;
+  left: 0;
+
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+
+  box-sizing: border-box;
+
+  z-index: 9999;
+
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.16);
+
+  overflow: hidden;
+}
+
+.status-menu-edit-dropdown-option {
+  width: 100%;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 13px;
+
+  border: none;
+  outline: none;
+
+  background: #ffffff;
+  color: #666666;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  text-align: left;
+  cursor: pointer;
+
+  box-sizing: border-box;
+}
+
+.status-menu-edit-dropdown-option:hover {
+  background: #e7f3fb;
+  color: #5f7b8d;
+}

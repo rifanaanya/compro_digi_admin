@@ -1,0 +1,294 @@
+/* =========================
+   CONTENT
+========================= */
+
+.detail-artikel-content {
+  padding: 22px 26px;
+
+  background: #f4f9fd;
+
+  min-height: calc(100vh - 70px);
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.detail-artikel-title-card {
+  background: #ffffff;
+
+  padding: 28px 22px;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+
+  margin-bottom: 24px;
+
+  box-sizing: border-box;
+}
+
+.detail-artikel-title-card h1 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 21px;
+
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* =========================
+   CONTENT CARD
+========================= */
+
+.detail-artikel-card {
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.detail-artikel-card-header {
+  padding: 18px 22px;
+
+  border-bottom: 1px solid #dddddd;
+
+  box-sizing: border-box;
+}
+
+.detail-artikel-card-header h2 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* =========================
+   BODY
+========================= */
+
+.detail-artikel-body {
+  padding: 30px 46px 30px;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   ROW
+========================= */
+
+.detail-artikel-row {
+  display: grid;
+
+  grid-template-columns: 105px 20px minmax(0, 1fr);
+
+  column-gap: 0;
+
+  margin-bottom: 12px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+
+  color: #555555;
+}
+
+/* =========================
+   LABEL
+========================= */
+
+.detail-artikel-label {
+  font-weight: 700;
+
+  color: #555555;
+}
+
+/* =========================
+   COLON
+========================= */
+
+.detail-artikel-colon {
+  font-weight: 600;
+
+  text-align: center;
+
+  color: #555555;
+}
+
+/* =========================
+   VALUE
+========================= */
+
+.detail-artikel-value {
+  min-width: 0;
+
+  color: #555555;
+
+  font-weight: 400;
+
+  white-space: pre-line;
+}
+
+/* =========================
+   ARTICLE CONTENT
+========================= */
+
+.detail-artikel-isi {
+  line-height: 1.55;
+}
+
+.detail-artikel-isi p {
+  margin: 0 0 12px;
+}
+
+.detail-artikel-isi p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.detail-artikel-image-row {
+  margin-top: 18px;
+
+  margin-bottom: 18px;
+}
+
+.detail-artikel-image {
+  width: 160px;
+
+  height: 115px;
+
+  object-fit: cover;
+
+  display: block;
+
+  border-radius: 4px;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================
+   META
+========================= */
+
+.detail-artikel-meta-row {
+  margin-top: 8px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.detail-artikel-actions {
+  display: flex;
+
+  align-items: center;
+
+  margin-top: 28px;
+}
+
+.detail-artikel-back {
+  border: none;
+
+  background: #eca06a;
+
+  color: #ffffff;
+
+  padding: 8px 17px;
+
+  border-radius: 4px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  transition: 0.2s;
+}
+
+.detail-artikel-back:hover {
+  background: #df8e56;
+}
+
+/* =========================
+   NOT FOUND
+========================= */
+
+.detail-artikel-not-found {
+  padding: 30px 46px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 12px;
+
+  color: #777777;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .detail-artikel-content {
+    padding: 18px;
+  }
+
+  .detail-artikel-body {
+    padding: 25px 30px 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .detail-artikel-content {
+    padding: 15px;
+  }
+
+  .detail-artikel-title-card {
+    padding: 20px;
+  }
+
+  .detail-artikel-title-card h1 {
+    font-size: 19px;
+  }
+
+  .detail-artikel-body {
+    padding: 22px 20px 28px;
+  }
+
+  .detail-artikel-row {
+    grid-template-columns: 90px 15px minmax(0, 1fr);
+  }
+
+  .detail-artikel-image {
+    width: 140px;
+    height: 100px;
+  }
+}

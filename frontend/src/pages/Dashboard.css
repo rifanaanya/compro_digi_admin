@@ -1,0 +1,744 @@
+/* =================================
+   DASHBOARD LAYOUT
+================================= */
+
+.dashboard-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f9fc;
+  overflow: hidden;
+}
+
+.dashboard-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f9fc;
+}
+
+.dashboard-content {
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 22px 24px 12px;
+  background: #f5f9fc;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* =================================
+   DASHBOARD TOP CARD
+================================= */
+
+.dashboard-top-card {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 16px 18px 15px;
+
+  background: #ffffff;
+
+  border: 1px solid #e8edf1;
+  border-radius: 7px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+
+  margin-bottom: 14px;
+}
+
+/* =================================
+   DASHBOARD HEADER
+================================= */
+
+.dashboard-header {
+  margin-bottom: 14px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+
+  font-size: 18px;
+  line-height: 1.3;
+
+  font-weight: 600;
+
+  color: #3f3f3f;
+}
+
+/* =================================
+   STAT CARDS
+================================= */
+
+.stat-cards {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 30px;
+
+  margin: 0;
+}
+
+.stat-card {
+  min-width: 0;
+
+  height: 78px;
+
+  padding: 10px 12px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 7px;
+
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* =================================
+   STAT ICON
+================================= */
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+
+  min-width: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  color: #173b5e;
+}
+
+.stat-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.stat-icon.blue {
+  background: #91c3e7;
+}
+
+.stat-icon.light-blue {
+  background: #dfeef8;
+}
+
+.stat-icon.red {
+  background: #eb8078;
+}
+
+.stat-icon.pink {
+  background: #efd6d7;
+}
+
+/* =================================
+   STAT TEXT
+================================= */
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.stat-info span {
+  font-size: 11px;
+  line-height: 1.3;
+
+  color: #4c4c4c;
+
+  font-weight: 400;
+
+  white-space: nowrap;
+}
+
+.stat-info strong {
+  font-size: 16px;
+
+  line-height: 1.2;
+
+  font-weight: 600;
+
+  color: #1f3550;
+}
+
+/* =================================
+   GENERAL PANEL
+================================= */
+
+.dashboard-panel {
+  background: #ffffff;
+  border: 1px solid #e7edf2;
+  border-radius: 9px;
+  box-shadow: 0 3px 10px rgba(46, 74, 99, 0.07);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.panel-title {
+  min-height: 45px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 15px;
+
+  font-size: 12px;
+  font-weight: 600;
+  color: #263b54;
+
+  border-bottom: 1px solid #edf1f4;
+}
+
+/* =================================
+   CHART
+================================= */
+
+.chart-panel {
+  width: 100%;
+  margin-bottom: 18px;
+
+  background: #ffffff;
+  border: 1px solid #e8edf1;
+  border-radius: 7px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+
+  overflow: hidden;
+}
+
+.chart-wrapper {
+  width: 100%;
+  height: 260px;
+
+  padding: 5px 14px 0;
+
+  box-sizing: border-box;
+}
+
+.chart-wrapper .recharts-wrapper {
+  font-family: Inter, Arial, sans-serif;
+}
+
+.chart-wrapper .recharts-cartesian-axis-tick-value {
+  fill: #555555;
+  font-size: 12px;
+}
+
+.chart-wrapper .recharts-cartesian-axis-line {
+  stroke: #a9a9a9;
+}
+
+.chart-wrapper .recharts-cartesian-grid-horizontal line {
+  stroke: #dedede;
+  stroke-width: 1;
+}
+
+.chart-wrapper .recharts-tooltip-wrapper {
+  font-size: 11px;
+}
+
+.chart-wrapper .recharts-default-tooltip {
+  border: 1px solid #e4e4e4 !important;
+  border-radius: 5px;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.chart-wrapper .recharts-line-curve {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* =================================
+   VISITOR SUMMARY
+================================= */
+
+.visitor-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  min-height: 84px;
+
+  border-top: 1px solid #e5e5e5;
+}
+
+.visitor-summary > div {
+  min-height: 84px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+}
+
+.visitor-summary > div + div {
+  border-left: none;
+}
+
+.visitor-summary strong {
+  font-size: 16px;
+  line-height: 1;
+
+  font-weight: 600;
+
+  color: #555555;
+}
+
+.visitor-summary span {
+  font-size: 15px;
+  line-height: 1.2;
+
+  font-weight: 400;
+
+  color: #555555;
+
+  text-align: center;
+}
+
+/* =================================
+   POPULAR SECTION
+================================= */
+
+.popular-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+/* =================================
+   POPULAR PANEL
+================================= */
+
+.popular-panel {
+  min-width: 0;
+
+  background: #ffffff;
+  border: 1px solid #e7edf2;
+  border-radius: 6px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
+
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* =================================
+   POPULAR HEADER
+================================= */
+
+.popular-panel .panel-title {
+  height: 38px;
+  min-height: 38px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #555555;
+
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* =================================
+   POPULAR LIST
+================================= */
+
+.popular-list {
+  padding: 4px 14px 8px;
+
+  box-sizing: border-box;
+}
+
+/* =================================
+   POPULAR ITEM
+================================= */
+
+.popular-item {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  align-items: center;
+
+  height: 29px;
+  min-height: 29px;
+
+  padding: 0 0 4px;
+  margin-bottom: 1px;
+
+  box-sizing: border-box;
+
+  font-size: 9px;
+  color: #555555;
+}
+
+.popular-item:last-child {
+  margin-bottom: 0;
+}
+
+/* =================================
+   NAMA
+================================= */
+
+.popular-item span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  font-size: 9px;
+
+  color: #555555;
+}
+
+/* =================================
+   JUMLAH
+================================= */
+
+.popular-item strong {
+  font-size: 9px;
+
+  font-weight: 400;
+
+  color: #555555;
+
+  padding-left: 10px;
+}
+
+/* =================================
+   PROGRESS LINE
+================================= */
+
+.progress-line {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 1px;
+
+  background: #d6ddd8;
+}
+
+.progress-fill {
+  width: 32%;
+  height: 1px;
+
+  background: #203f68;
+}
+.progress-fill {
+  width: 32%;
+  height: 1px;
+
+  background: #203f68;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+.dashboard-footer {
+  margin-top: auto;
+
+  height: 52px;
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border-top: 1px solid #e1e7ea;
+
+  color: #a0a0a0;
+
+  font-size: 9px;
+}
+
+/* =================================
+   SCROLLBAR
+================================= */
+
+.dashboard-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dashboard-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dashboard-content::-webkit-scrollbar-thumb {
+  background: #cbd7e1;
+  border-radius: 10px;
+}
+
+.dashboard-content::-webkit-scrollbar-thumb:hover {
+  background: #b6c5d2;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 1100px) {
+  .dashboard-content {
+    padding: 20px 18px 12px;
+  }
+
+  .stat-cards {
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 12px;
+  }
+
+  .stat-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+  }
+}
+
+@media (max-width: 900px) {
+  .stat-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .popular-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-content {
+    padding: 14px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 19px;
+  }
+
+  .stat-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .visitor-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .visitor-summary > div:nth-child(3) {
+    border-left: none;
+    border-top: 1px solid #edf1f4;
+  }
+
+  .visitor-summary > div:nth-child(4) {
+    border-top: 1px solid #edf1f4;
+  }
+
+  .chart-wrapper {
+    height: 190px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .popular-grid {
+    gap: 14px;
+  }
+}
+
+/* =================================
+   LOGOUT OVERLAY
+================================= */
+
+.logout-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(20, 35, 50, 0.25);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+}
+
+/* =================================
+   LOGOUT MODAL
+================================= */
+
+.logout-modal {
+  width: 500px;
+  max-width: calc(100vw - 40px);
+
+  background: #ffffff;
+
+  border-radius: 10px;
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+
+  overflow: hidden;
+}
+
+/* =================================
+   MODAL HEADER
+================================= */
+
+.logout-header {
+  height: 66px;
+
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #dddddd;
+
+  box-sizing: border-box;
+}
+
+.logout-header h2 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: #5f6368;
+}
+
+.logout-close {
+  width: 32px;
+  height: 32px;
+
+  border: none;
+  background: transparent;
+
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+
+  color: #555555;
+
+  cursor: pointer;
+}
+
+.logout-close:hover {
+  color: #222222;
+}
+
+/* =================================
+   MODAL BODY
+================================= */
+
+.logout-body {
+  padding: 48px 40px 38px;
+}
+
+.logout-body p {
+  margin: 0 0 38px;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  color: #65696d;
+}
+
+/* =================================
+   MODAL BUTTON
+================================= */
+
+.logout-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.logout-actions button {
+  min-width: 77px;
+  height: 36px;
+
+  border: none;
+  border-radius: 5px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.logout-actions button:hover {
+  transform: translateY(-1px);
+}
+
+.logout-yes {
+  background: #80aeca;
+}
+
+.logout-yes:hover {
+  background: #719fbc;
+}
+
+.logout-no {
+  background: #d62929;
+}
+
+.logout-no:hover {
+  background: #bd2020;
+}
+
+.stat-icon img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}

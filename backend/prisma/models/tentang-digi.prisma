@@ -1,0 +1,7 @@
+model TentangDigi {
+  id        Int      @id @default(autoincrement())
+  deskripsi String
+  gambar    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

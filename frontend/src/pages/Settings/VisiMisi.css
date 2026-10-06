@@ -1,0 +1,387 @@
+.visi-misi-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f9fc;
+}
+
+.visi-misi-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.visi-misi-content {
+  padding: 22px 25px 30px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.visi-misi-header {
+  background: #ffffff;
+  padding: 27px 22px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.visi-misi-header h1 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: #5d6063;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.visi-misi-card {
+  background: #ffffff;
+
+  border-radius: 5px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+
+  overflow: hidden;
+}
+
+.visi-misi-card-title {
+  padding: 18px 22px;
+
+  border-bottom: 1px solid #dddddd;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  color: #5d6063;
+}
+
+.visi-misi-card-content {
+  padding: 30px 60px 45px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.visi-misi-form-group {
+  margin-bottom: 24px;
+}
+
+.visi-misi-form-group label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #5d6063;
+}
+
+/* =========================
+   VISI TEXTAREA
+========================= */
+
+.visi-misi-form-group textarea {
+  width: 100%;
+  height: 108px;
+
+  box-sizing: border-box;
+
+  padding: 16px;
+
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #555555;
+
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+
+  resize: vertical;
+
+  outline: none;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+.visi-misi-form-group textarea::placeholder {
+  color: #c4c8cc;
+}
+
+.visi-misi-form-group textarea:focus {
+  border-color: #8bb4cf;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
+}
+
+/* =========================
+   MISI SECTION
+========================= */
+
+.misi-section {
+  margin-top: 5px;
+}
+
+/* =========================
+   TOMBOL TAMBAH MISI
+========================= */
+
+.visi-misi-add-button {
+  display: block;
+
+  margin-bottom: 16px;
+
+  padding: 7px 16px;
+
+  border: none;
+  border-radius: 4px;
+
+  background-color: #82b1cc;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  transition: background-color 0.2s ease;
+}
+
+.visi-misi-add-button:hover {
+  background-color: #709fb9;
+}
+
+.visi-misi-add-button:active {
+  transform: translateY(1px);
+}
+
+/* =========================
+   LIST MISI
+========================= */
+
+.visi-misi-list {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: 62px;
+  row-gap: 12px;
+
+  width: 100%;
+}
+
+/* =========================
+   ITEM MISI
+========================= */
+
+.visi-misi-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+/* =========================
+   INPUT MISI
+========================= */
+
+.visi-misi-item input {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 42px;
+
+  box-sizing: border-box;
+
+  padding: 0 13px;
+
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #555555;
+
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+
+  outline: none;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+.visi-misi-item input::placeholder {
+  color: #c4c8cc;
+}
+
+.visi-misi-item input:focus {
+  border-color: #8bb4cf;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
+}
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.visi-misi-delete-button {
+  flex-shrink: 0;
+
+  padding: 5px 8px;
+
+  border: none;
+  border-radius: 3px;
+
+  background-color: #e72f4d;
+
+  color: #5a4a4e;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+
+  transition: background-color 0.2s ease;
+}
+
+.visi-misi-delete-button:hover {
+  background-color: #cf2440;
+}
+
+.visi-misi-delete-button:active {
+  transform: translateY(1px);
+}
+
+/* =========================
+   TOMBOL SIMPAN
+========================= */
+
+.visi-misi-save-button {
+  margin-top: 35px;
+
+  padding: 9px 17px;
+
+  border: none;
+  border-radius: 4px;
+
+  background-color: #82b1cc;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  transition: background-color 0.2s ease;
+}
+
+.visi-misi-save-button:hover {
+  background-color: #709fb9;
+}
+
+.visi-misi-save-button:active {
+  transform: translateY(1px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .visi-misi-card-content {
+    padding: 30px 35px 45px;
+  }
+
+  .visi-misi-list {
+    grid-template-columns: 1fr;
+
+    column-gap: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .visi-misi-content {
+    padding: 15px;
+  }
+
+  .visi-misi-header {
+    padding: 22px 18px;
+  }
+
+  .visi-misi-header h1 {
+    font-size: 18px;
+  }
+
+  .visi-misi-card-content {
+    padding: 25px 20px 35px;
+  }
+}
+/* =========================
+   NOTIFICATION
+========================= */
+
+.visi-misi-notification {
+  position: fixed;
+
+  top: 85px;
+  right: 25px;
+
+  z-index: 9999;
+
+  min-width: 280px;
+
+  padding: 13px 18px;
+
+  border-radius: 5px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+  animation: visiMisiNotification 0.25s ease;
+}
+
+.visi-misi-notification.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-left: 4px solid #4caf50;
+}
+
+.visi-misi-notification.error {
+  background: #ffebee;
+  color: #c62828;
+  border-left: 4px solid #e53935;
+}
+
+@keyframes visiMisiNotification {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

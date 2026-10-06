@@ -1,0 +1,641 @@
+/* ========================================
+   LAYOUT
+======================================== */
+
+.sertifikasi-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f9fc;
+}
+
+.sertifikasi-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sertifikasi-content {
+  flex: 1;
+  padding: 28px 32px 40px;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.sertifikasi-header {
+  width: 100%;
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  padding: 0 30px;
+
+  margin-bottom: 24px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.sertifikasi-header h1 {
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  color: #555;
+}
+
+/* ========================================
+   CARD
+======================================== */
+
+.sertifikasi-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  overflow: hidden;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.sertifikasi-card-title {
+  padding: 18px 22px 12px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  color: #555;
+}
+
+.sertifikasi-card-content {
+  padding: 0 22px 25px;
+
+  box-sizing: border-box;
+}
+
+/* ========================================
+   BUTTON TAMBAH
+======================================== */
+
+.sertifikasi-top-action {
+  margin-bottom: 14px;
+}
+
+.sertifikasi-add-button {
+  height: 30px;
+
+  padding: 0 15px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #82abc5;
+
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+.sertifikasi-add-button:hover {
+  background: #719bb6;
+}
+
+/* ========================================
+   TABLE WRAPPER
+======================================== */
+
+.sertifikasi-table-wrapper {
+  width: 100%;
+  overflow: hidden;
+
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+
+  box-sizing: border-box;
+}
+
+/* ========================================
+   TABLE
+======================================== */
+
+.sertifikasi-table {
+  width: 100%;
+
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  background: #ffffff;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 12px;
+  color: #555;
+}
+
+/* ========================================
+   TABLE HEADER
+======================================== */
+
+.sertifikasi-table thead th {
+  height: 38px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  background: #e7f2f9;
+
+  border-bottom: 1px solid #d8d8d8;
+
+  color: #4f5b62;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-align: left;
+
+  vertical-align: middle;
+}
+
+/* ========================================
+   TABLE BODY
+======================================== */
+
+.sertifikasi-table tbody td {
+  height: 205px;
+
+  padding: 12px 14px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e2e2e2;
+
+  color: #555;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 12px;
+  font-weight: 400;
+
+  vertical-align: middle;
+}
+
+.sertifikasi-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ========================================
+   COLUMN WIDTH
+======================================== */
+
+.sertifikasi-no {
+  width: 8%;
+
+  text-align: center !important;
+}
+
+.sertifikasi-name-column {
+  width: 20%;
+}
+
+.sertifikasi-description-column {
+  width: 25%;
+}
+
+.sertifikasi-image-column {
+  width: 27%;
+
+  text-align: center !important;
+}
+
+.sertifikasi-action-column {
+  width: 20%;
+
+  text-align: center !important;
+}
+
+/* ========================================
+   NAMA
+======================================== */
+
+.sertifikasi-name {
+  padding-left: 16px !important;
+
+  text-align: left;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 12px !important;
+  font-weight: 600 !important;
+
+  line-height: 1.5;
+}
+
+/* ========================================
+   DESKRIPSI
+======================================== */
+
+.sertifikasi-description {
+  padding-right: 20px !important;
+
+  text-align: left;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 11px !important;
+  font-weight: 400 !important;
+
+  line-height: 1.5;
+
+  color: #666 !important;
+}
+
+/* ========================================
+   GAMBAR
+======================================== */
+
+.sertifikasi-image-cell {
+  text-align: center !important;
+}
+
+.sertifikasi-image-wrapper {
+  width: 100%;
+
+  height: 190px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sertifikasi-image {
+  width: 135px;
+
+  height: 180px;
+
+  display: block;
+
+  object-fit: contain;
+
+  background: #ffffff;
+}
+
+/* ========================================
+   ACTION
+======================================== */
+
+.sertifikasi-actions {
+  text-align: center !important;
+
+  white-space: nowrap;
+}
+
+.sertifikasi-edit-button,
+.sertifikasi-delete-button {
+  height: 23px;
+
+  padding: 0 10px;
+
+  margin: 0 2px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* EDIT */
+
+.sertifikasi-edit-button {
+  background: #ffc107;
+  color: #5a4a4e;
+}
+
+.sertifikasi-edit-button:hover {
+  background: #e0a800;
+}
+
+/* DELETE */
+
+.sertifikasi-delete-button {
+  background: #dc3545;
+  color: #5a4a4e;
+}
+
+.sertifikasi-delete-button:hover {
+  background: #c82333;
+}
+
+/* ========================================
+   PAGINATION
+======================================== */
+
+.sertifikasi-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: fit-content;
+  height: 32px;
+  margin: 22px 0 0 auto;
+  background: #ffffff;
+  border-radius: 0 0 7px 7px;
+  overflow: hidden;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.18);
+  font-family: "Nunito Sans", Arial, sans-serif;
+}
+
+.sertifikasi-page-button {
+  width: 36px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-right: 1px solid #eeeeee;
+  background: #ffffff;
+  color: #68716b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.sertifikasi-page-button:last-child {
+  border-right: none;
+}
+
+/* HOVER */
+.sertifikasi-page-button:hover:not(:disabled) {
+  background: #f7fafb;
+  color: #647d90;
+}
+
+/* KOTAK ANGKA AKTIF */
+.sertifikasi-page-button.active {
+  background: #dceef8;
+  color: #647d90;
+  font-weight: 700;
+  width: 29px;
+  height: 25px;
+  margin: 0 3px;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+}
+
+/* DISABLED */
+.sertifikasi-page-button:disabled {
+  background: #ffffff;
+  color: #aeb5b1;
+  cursor: default;
+}
+
+/* ANGKA */
+.sertifikasi-page-button:not(:disabled) {
+  font-family: "Nunito Sans", Arial, sans-serif;
+}
+
+/* ========================================
+   EMPTY
+======================================== */
+
+.sertifikasi-empty {
+  height: 100px !important;
+
+  text-align: center !important;
+
+  color: #999 !important;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1000px) {
+  .sertifikasi-content {
+    padding: 20px;
+  }
+
+  .sertifikasi-table {
+    min-width: 750px;
+  }
+
+  .sertifikasi-table-wrapper {
+    overflow-x: auto;
+  }
+}
+/* ========================================
+   DELETE MODAL
+======================================== */
+
+.sertifikasi-delete-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.25);
+
+  z-index: 9999;
+}
+
+/* MODAL */
+
+.sertifikasi-delete-modal {
+  width: 426px;
+  background: #ffffff;
+  border-radius: 7px;
+  overflow: hidden;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+}
+
+/* HEADER */
+
+.sertifikasi-delete-modal-header {
+  width: 100%;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 28px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.sertifikasi-delete-modal-header h3 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+
+  color: #5b5b5b;
+}
+
+/* CLOSE */
+
+.sertifikasi-delete-close {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  color: #333333;
+
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.sertifikasi-delete-close:hover {
+  color: #000000;
+}
+
+/* BODY */
+
+.sertifikasi-delete-modal-body {
+  padding: 29px 35px 35px;
+  box-sizing: border-box;
+}
+
+.sertifikasi-delete-modal-body h4 {
+  margin: 0 0 12px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+.sertifikasi-delete-modal-body p {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+
+  color: #777777;
+}
+
+/* ACTION */
+
+.sertifikasi-delete-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  margin-top: 35px;
+}
+
+/* KEMBALI */
+
+.sertifikasi-delete-cancel {
+  height: 27px;
+
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 3px;
+
+  background: #eba064;
+  color: #ffffff;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.sertifikasi-delete-cancel:hover {
+  background: #df9054;
+}
+
+/* HAPUS */
+
+.sertifikasi-delete-confirm {
+  height: 27px;
+
+  padding: 0 17px;
+
+  border: none;
+  border-radius: 3px;
+
+  background: #d71919;
+  color: #ffffff;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.sertifikasi-delete-confirm:hover {
+  background: #b91414;
+}

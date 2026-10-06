@@ -1,0 +1,288 @@
+/* =========================================
+   PENGATURAN HALAMAN SPAREPART
+========================================= */
+
+.pengaturan-sparepart-content {
+  min-height: calc(100vh - 70px);
+  padding: 22px 26px 40px;
+  background: #f4f9fd;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   PAGE TITLE
+========================================= */
+
+.pengaturan-sparepart-title-card {
+  width: 100%;
+  background: #ffffff;
+  padding: 28px 22px;
+  margin-bottom: 24px;
+
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+
+  box-sizing: border-box;
+}
+
+.pengaturan-sparepart-title-card h1 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.pengaturan-sparepart-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+
+  overflow: hidden;
+}
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.pengaturan-sparepart-card-header {
+  padding: 18px 22px;
+
+  border-bottom: 1px solid #dddddd;
+
+  box-sizing: border-box;
+}
+
+.pengaturan-sparepart-card-header h2 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+.pengaturan-sparepart-form {
+  padding: 28px 46px 35px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.pengaturan-sparepart-form-group {
+  margin-bottom: 20px;
+}
+
+.pengaturan-sparepart-form-group label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* =========================================
+   INPUT & TEXTAREA
+========================================= */
+
+.pengaturan-sparepart-form-group input,
+.pengaturan-sparepart-form-group textarea {
+  width: 100%;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  outline: none;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 11px;
+
+  color: #555555;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* INPUT */
+
+.pengaturan-sparepart-form-group input {
+  height: 40px;
+
+  padding: 0 12px;
+}
+
+/* TEXTAREA */
+
+.pengaturan-sparepart-form-group textarea {
+  min-height: 115px;
+
+  padding: 12px;
+
+  resize: vertical;
+
+  line-height: 1.5;
+}
+
+/* PLACEHOLDER */
+
+.pengaturan-sparepart-form-group input::placeholder,
+.pengaturan-sparepart-form-group textarea::placeholder {
+  color: #b8b8b8;
+}
+
+/* FOCUS */
+
+.pengaturan-sparepart-form-group input:focus,
+.pengaturan-sparepart-form-group textarea:focus {
+  border-color: #82b3d1;
+
+  box-shadow:
+    0 0 0 2px rgba(130, 179, 209, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.pengaturan-sparepart-actions {
+  display: flex;
+
+  align-items: center;
+
+  margin-top: 6px;
+}
+
+.pengaturan-sparepart-save {
+  height: 36px;
+
+  padding: 0 17px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #82aec8;
+  color: #ffffff;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  transition: background 0.2s ease;
+}
+
+.pengaturan-sparepart-save:hover {
+  background: #6d9db9;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .pengaturan-sparepart-content {
+    padding: 18px;
+  }
+
+  .pengaturan-sparepart-form {
+    padding: 25px 30px 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pengaturan-sparepart-content {
+    padding: 15px;
+  }
+
+  .pengaturan-sparepart-title-card {
+    padding: 20px;
+  }
+
+  .pengaturan-sparepart-title-card h1 {
+    font-size: 19px;
+  }
+
+  .pengaturan-sparepart-form {
+    padding: 22px 20px 28px;
+  }
+}
+
+/* ==========================================
+   NOTIFICATION
+========================================== */
+
+.pengaturan-sparepart-notification {
+  position: fixed;
+  top: 85px;
+  right: 25px;
+  z-index: 9999;
+
+  min-width: 280px;
+  padding: 13px 18px;
+
+  border-radius: 5px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+  animation: pengaturanSparepartNotification 0.25s ease;
+}
+
+.pengaturan-sparepart-notification.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-left: 4px solid #4caf50;
+}
+
+.pengaturan-sparepart-notification.error {
+  background: #ffebee;
+  color: #c62828;
+  border-left: 4px solid #e53935;
+}
+
+@keyframes pengaturanSparepartNotification {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

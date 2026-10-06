@@ -1,0 +1,412 @@
+/* =================================
+   PROFILE LAYOUT
+================================= */
+
+.profile-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f9fc;
+}
+
+.profile-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f4f9fc;
+}
+
+.profile-content {
+  flex: 1;
+  padding: 28px 30px;
+  box-sizing: border-box;
+}
+
+/* =================================
+   HEADER
+================================= */
+
+.profile-header {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 24px;
+  margin-bottom: 28px;
+  box-sizing: border-box;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.profile-header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+  color: #5f6366;
+}
+
+/* =================================
+   PROFILE CARD
+================================= */
+
+.profile-card {
+  width: 100%;
+  min-height: 470px;
+
+  background: #ffffff;
+  border-radius: 5px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+
+  padding: 70px 80px;
+  box-sizing: border-box;
+}
+
+.profile-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 75px;
+
+  width: 100%;
+}
+
+/* =================================
+   LEFT PROFILE
+================================= */
+
+.profile-left {
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-left h2 {
+  margin: 0 0 70px;
+
+  font-size: 24px;
+  font-weight: 600;
+
+  color: #5f6366;
+}
+
+/* =================================
+   AVATAR
+================================= */
+
+.profile-avatar {
+  width: 225px;
+  height: 225px;
+
+  border-radius: 50%;
+  background: #9da8a3;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.profile-avatar-icon {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  border-radius: 50%;
+}
+/* =================================
+   PROFILE INFO
+================================= */
+
+.profile-info {
+  min-width: 390px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 25px;
+}
+
+.profile-row {
+  display: grid;
+
+  grid-template-columns: 95px 20px 1fr;
+
+  align-items: center;
+
+  font-size: 16px;
+
+  color: #aeb4b8;
+}
+
+.profile-row strong {
+  color: #5f6366;
+  font-weight: 600;
+}
+
+.profile-row span:nth-child(2) {
+  text-align: center;
+  color: #aeb4b8;
+}
+
+/* =================================
+   BUTTONS
+================================= */
+
+.profile-actions {
+  display: flex;
+  gap: 28px;
+
+  margin-top: 25px;
+}
+
+.profile-actions button {
+  height: 38px;
+
+  padding: 0 30px;
+
+  border: none;
+  border-radius: 3px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.edit-profile {
+  background: #ffc107;
+  color: #4d4d4d;
+}
+
+.edit-profile:hover {
+  background: #ffca2c;
+}
+
+.reset-password {
+  background: #dc3545;
+  color: #ffffff;
+}
+
+.reset-password:hover {
+  background: #c82333;
+}
+/* =================================
+   RESET PASSWORD MODAL
+================================= */
+
+.reset-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.28);
+}
+
+/* =================================
+   MODAL
+================================= */
+
+.reset-password-modal {
+  width: 560px;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.22);
+
+  box-sizing: border-box;
+}
+
+/* =================================
+   MODAL HEADER
+================================= */
+
+.reset-modal-header {
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 24px;
+
+  border-bottom: 1px solid #d8d8d8;
+  box-sizing: border-box;
+}
+
+.reset-modal-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  color: #5f6365;
+}
+
+.reset-modal-close {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 1;
+
+  color: #3f4749;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.reset-modal-close:hover {
+  color: #111111;
+  transform: scale(1.05);
+}
+
+/* =================================
+   MODAL BODY
+================================= */
+
+.reset-modal-body {
+  padding: 20px 35px 38px;
+  box-sizing: border-box;
+}
+
+.reset-modal-body h3 {
+  margin: 0 0 22px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color: #5f6365;
+}
+
+/* =================================
+   FORM GROUP
+================================= */
+
+.reset-form-group {
+  margin-bottom: 18px;
+}
+
+.reset-form-group label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #606467;
+}
+
+.reset-form-group input {
+  width: 100%;
+  height: 43px;
+
+  padding: 0 15px;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  font-size: 12px;
+  color: #555555;
+
+  outline: none;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+.reset-form-group input::placeholder {
+  color: #b8b8b8;
+}
+
+.reset-form-group input:focus {
+  border-color: #83afca;
+}
+
+/* =================================
+   BUTTON
+================================= */
+
+.reset-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-top: 20px;
+}
+
+.reset-save-button,
+.reset-cancel-button {
+  min-width: 72px;
+  height: 34px;
+
+  padding: 0 15px;
+
+  border: none;
+  border-radius: 4px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  transition: 0.2s ease;
+}
+
+/* SIMPAN */
+
+.reset-save-button {
+  background: #83afca;
+  color: #ffffff;
+}
+
+.reset-save-button:hover {
+  background: #719db8;
+}
+
+/* BATAL */
+
+.reset-cancel-button {
+  background: #d7262e;
+  color: #ffffff;
+}
+
+.reset-cancel-button:hover {
+  background: #bd2027;
+}
+.profile-title {
+  font-family: "Nunito Sans", Arial, sans-serif;
+}
+.reset-password {
+  color: #5a4a4e;
+}

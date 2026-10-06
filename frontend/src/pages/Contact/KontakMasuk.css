@@ -1,0 +1,321 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.admin-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.kontak-masuk-content {
+  flex: 1;
+  padding: 22px 26px;
+  background: #f4f9fd;
+  min-height: calc(100vh - 70px);
+}
+
+.kontak-masuk-content {
+  padding: 22px 26px;
+  background: #f4f9fd;
+  min-height: calc(100vh - 70px);
+}
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.page-title-card {
+  background: #ffffff;
+  padding: 28px 22px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  margin-bottom: 24px;
+}
+
+.page-title-card h1 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.kontak-card {
+  background: #ffffff;
+  padding: 20px 26px 32px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.kontak-card h2 {
+  margin: 0 0 18px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.kontak-search {
+  position: relative;
+  width: 205px;
+  margin-bottom: 12px;
+}
+
+.kontak-search input {
+  width: 100%;
+  height: 30px;
+  padding: 0 32px 0 14px;
+  border: 1px solid #d5d5d5;
+  border-radius: 6px;
+  outline: none;
+  font-size: 12px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.kontak-search input:focus {
+  border-color: #82aec8;
+}
+
+.kontak-search span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 17px;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.kontak-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.kontak-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 11px;
+}
+
+.kontak-table thead {
+  background: #e6f2fa;
+}
+
+.kontak-table th {
+  padding: 8px 7px;
+  border: 1px solid #d8d8d8;
+  color: #444;
+  font-weight: 600;
+  text-align: center;
+}
+
+.kontak-table td {
+  padding: 10px 8px;
+  border: 1px solid #dedede;
+  color: #555;
+  vertical-align: middle;
+}
+
+.kontak-table th:nth-child(1),
+.kontak-table td:nth-child(1) {
+  width: 5%;
+  text-align: center;
+}
+
+.kontak-table th:nth-child(2),
+.kontak-table td:nth-child(2) {
+  width: 14%;
+}
+
+.kontak-table th:nth-child(3),
+.kontak-table td:nth-child(3) {
+  width: 16%;
+}
+
+.kontak-table th:nth-child(4),
+.kontak-table td:nth-child(4) {
+  width: 27%;
+}
+
+.kontak-table th:nth-child(5),
+.kontak-table td:nth-child(5) {
+  width: 18%;
+  text-align: center;
+}
+
+.kontak-table th:nth-child(6),
+.kontak-table td:nth-child(6) {
+  width: 20%;
+  text-align: center;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.kontak-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.kontak-actions button {
+  border: none;
+  border-radius: 4px;
+  padding: 5px 9px;
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-lihat {
+  background: #70d58a;
+  color: white;
+}
+
+.btn-lihat:hover {
+  background: #55c872;
+}
+
+.btn-delete {
+  background: #e8323e;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #c9212c;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty-message {
+  text-align: center;
+  padding: 25px !important;
+  color: #999 !important;
+}
+/* =========================
+   DELETE MODAL
+========================= */
+
+.delete-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.22);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.delete-modal {
+  width: 430px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+/* HEADER */
+
+.delete-modal-header {
+  height: 58px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.delete-modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+}
+
+.delete-modal-close {
+  border: none;
+  background: transparent;
+  font-size: 32px;
+  line-height: 1;
+  color: #444;
+  cursor: pointer;
+  padding: 0;
+}
+
+.delete-modal-close:hover {
+  color: #222;
+}
+
+/* BODY */
+
+.delete-modal-body {
+  padding: 30px 34px 34px;
+}
+
+.delete-modal-body h4 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #555;
+}
+
+.delete-modal-body p {
+  margin: 0;
+  font-size: 12px;
+  color: #777;
+}
+
+/* BUTTON */
+
+.delete-modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.delete-modal-actions button {
+  border: none;
+  border-radius: 4px;
+  padding: 8px 17px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.delete-cancel-btn {
+  background: #efa565;
+}
+
+.delete-cancel-btn:hover {
+  background: #df914e;
+}
+
+.delete-confirm-btn {
+  background: #e8323e;
+}
+
+.delete-confirm-btn:hover {
+  background: #c9212c;
+}

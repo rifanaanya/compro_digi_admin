@@ -1,0 +1,23 @@
+model VisiMisi {
+  id        Int      @id @default(autoincrement())
+  visi      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  misi      Misi[]
+}
+
+model Misi {
+  id          Int      @id @default(autoincrement())
+  isi         String
+  sortOrder   Int      @default(0)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  visiMisiId  Int
+  visiMisi    VisiMisi @relation(fields: [visiMisiId], references: [id], onDelete: Cascade)
+
+  @@index([visiMisiId])
+  @@index([sortOrder])
+}

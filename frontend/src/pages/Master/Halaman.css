@@ -1,0 +1,586 @@
+.halaman-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f9fc;
+}
+
+.halaman-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.halaman-content {
+  padding: 28px 32px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.halaman-header {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 28px 30px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.halaman-header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.halaman-card {
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.halaman-card-title {
+  padding: 24px 30px;
+  border-bottom: 1px solid #ddd;
+
+  font-size: 20px;
+  font-weight: 600;
+  color: #555;
+}
+
+.halaman-card-content {
+  padding: 26px 30px 32px;
+}
+
+/* =========================
+   TOP ACTION
+========================= */
+
+.halaman-top-action {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.halaman-add-button {
+  border: none;
+  border-radius: 5px;
+  padding: 12px 16px;
+
+  background: #80b4d3;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+
+  transition: 0.2s ease;
+}
+
+.halaman-add-button:hover {
+  background: #72a8c9;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.halaman-search {
+  position: relative;
+  width: 205px;
+}
+
+.halaman-search input {
+  width: 100%;
+  height: 40px;
+
+  box-sizing: border-box;
+
+  padding: 0 38px 0 13px;
+
+  border: 1px solid #ddd;
+  border-radius: 5px;
+
+  outline: none;
+
+  font-size: 13px;
+  color: #555;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.halaman-search input::placeholder {
+  color: #aaa;
+}
+
+.halaman-search input:focus {
+  border-color: #80b4d3;
+}
+
+.halaman-search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #aaa;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.halaman-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.halaman-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 12px;
+}
+
+.halaman-table thead {
+  background: #e4f1f8;
+}
+
+.halaman-table th {
+  height: 36px;
+  padding: 7px 8px;
+
+  color: #555;
+
+  font-weight: 600;
+
+  border-bottom: 1px solid #d5d5d5;
+  text-align: left;
+}
+
+.halaman-table td {
+  padding: 8px;
+
+  color: #555;
+
+  border-bottom: 1px solid #e1e1e1;
+
+  vertical-align: middle;
+}
+
+.halaman-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.halaman-table tbody tr:hover {
+  background: #fafafa;
+}
+
+/* COLUMN WIDTH */
+
+.halaman-table th:nth-child(1),
+.halaman-table td:nth-child(1) {
+  width: 38px;
+  text-align: center;
+}
+
+.halaman-table th:nth-child(2),
+.halaman-table td:nth-child(2) {
+  width: 17%;
+}
+
+.halaman-table th:nth-child(3),
+.halaman-table td:nth-child(3) {
+  width: 12%;
+}
+
+.halaman-table th:nth-child(4),
+.halaman-table td:nth-child(4) {
+  width: 11%;
+}
+
+.halaman-table th:nth-child(5),
+.halaman-table td:nth-child(5) {
+  width: 17%;
+}
+
+.halaman-table th:nth-child(6),
+.halaman-table td:nth-child(6) {
+  width: 11%;
+}
+
+.halaman-table th:nth-child(7),
+.halaman-table td:nth-child(7) {
+  width: 19%;
+}
+
+/* =========================
+   AUTHOR
+========================= */
+
+.halaman-author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.halaman-author small {
+  font-size: 9px;
+  color: #777;
+}
+
+/* =========================
+   ACTION
+========================= */
+
+.halaman-actions {
+  white-space: nowrap;
+}
+
+.halaman-actions button {
+  border: none;
+  border-radius: 4px;
+
+  padding: 6px 9px;
+
+  margin-right: 5px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.halaman-detail-button {
+  background: #70d58b;
+  color: white;
+}
+
+.halaman-detail-button:hover {
+  background: #61c77b;
+}
+
+.halaman-edit-button {
+  background: #ffc400;
+  color: white;
+}
+
+.halaman-edit-button:hover {
+  background: #eab500;
+}
+
+.halaman-delete-button {
+  background: #ee3038;
+  color: white;
+}
+
+.halaman-delete-button:hover {
+  background: #d9272f;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.halaman-empty {
+  text-align: center !important;
+  padding: 25px !important;
+  color: #999 !important;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .halaman-content {
+    padding: 20px;
+  }
+
+  .halaman-card-content {
+    padding: 20px;
+  }
+
+  .halaman-table {
+    min-width: 850px;
+  }
+}
+/* ========================================
+   DELETE MODAL
+======================================== */
+
+.halaman-delete-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: rgba(0, 0, 0, 0.28) !important;
+
+  z-index: 999999 !important;
+}
+
+/* ========================================
+   MODAL CARD
+======================================== */
+
+.halaman-delete-modal {
+  width: 450px !important;
+
+  background: #ffffff !important;
+
+  border-radius: 8px !important;
+
+  overflow: hidden !important;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+
+  box-sizing: border-box !important;
+}
+
+/* ========================================
+   MODAL HEADER
+======================================== */
+
+.halaman-delete-modal-header {
+  width: 100% !important;
+  height: 60px !important;
+
+  padding: 0 25px !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  box-sizing: border-box !important;
+
+  border-bottom: 1px solid #dddddd !important;
+}
+
+.halaman-delete-modal-header h2 {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-family: "Nunito Sans", Arial, sans-serif !important;
+
+  font-size: 20px !important;
+  font-weight: 700 !important;
+
+  line-height: 1 !important;
+
+  color: #5d6063 !important;
+}
+
+/* ========================================
+   CLOSE BUTTON
+======================================== */
+
+.halaman-delete-close {
+  width: 28px !important;
+  min-width: 28px !important;
+
+  height: 28px !important;
+  min-height: 28px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: none !important;
+  outline: none !important;
+
+  background: transparent !important;
+
+  box-shadow: none !important;
+
+  font-family: Arial, sans-serif !important;
+
+  font-size: 28px !important;
+  font-weight: 700 !important;
+
+  line-height: 28px !important;
+
+  color: #444444 !important;
+
+  cursor: pointer !important;
+
+  appearance: none !important;
+  -webkit-appearance: none !important;
+}
+
+.halaman-delete-close:hover {
+  background: transparent !important;
+  color: #222222 !important;
+}
+
+/* ========================================
+   MODAL CONTENT
+======================================== */
+
+.halaman-delete-modal-content {
+  width: 100% !important;
+
+  padding: 28px 32px 32px !important;
+
+  box-sizing: border-box !important;
+}
+
+/* ========================================
+   QUESTION
+======================================== */
+
+.halaman-delete-question {
+  margin: 0 0 9px !important;
+  padding: 0 !important;
+
+  font-family: "Nunito Sans", Arial, sans-serif !important;
+
+  font-size: 16px !important;
+  font-weight: 700 !important;
+
+  line-height: 1.4 !important;
+
+  color: #666666 !important;
+}
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.halaman-delete-description {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-family: "Nunito Sans", Arial, sans-serif !important;
+
+  font-size: 14px !important;
+  font-weight: 400 !important;
+
+  line-height: 1.4 !important;
+
+  color: #888888 !important;
+}
+
+/* ========================================
+   BUTTON AREA
+======================================== */
+
+.halaman-delete-modal-actions {
+  width: 100% !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+
+  align-items: center !important;
+  justify-content: flex-start !important;
+
+  gap: 14px !important;
+
+  margin: 30px 0 0 0 !important;
+  padding: 0 !important;
+
+  box-sizing: border-box !important;
+}
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.halaman-delete-cancel,
+.halaman-delete-confirm {
+  width: auto !important;
+  min-width: 0 !important;
+
+  height: 36px !important;
+
+  padding: 0 19px !important;
+  margin: 0 !important;
+
+  border: none !important;
+
+  border-radius: 4px !important;
+
+  font-family: "Nunito Sans", Arial, sans-serif !important;
+
+  font-size: 12px !important;
+  font-weight: 700 !important;
+
+  line-height: 36px !important;
+
+  color: #ffffff !important;
+
+  cursor: pointer !important;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18) !important;
+
+  box-sizing: border-box !important;
+}
+
+/* ========================================
+   KEMBALI
+======================================== */
+
+.halaman-delete-cancel {
+  background: #f5a15b !important;
+}
+
+.halaman-delete-cancel:hover {
+  background: #e9924c !important;
+}
+
+/* ========================================
+   HAPUS
+======================================== */
+
+.halaman-delete-confirm {
+  background: #e5232b !important;
+}
+
+.halaman-delete-confirm:hover {
+  background: #d71921 !important;
+}
+.halaman-detail-button,
+.halaman-edit-button,
+.halaman-delete-button {
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 9px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #5a4a4e !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.halaman-detail-button {
+  background: #70cf87;
+}
+
+.halaman-edit-button {
+  background: #ffc400;
+}
+
+.halaman-delete-button {
+  background: #ed3340;
+}

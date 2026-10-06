@@ -1,0 +1,101 @@
+.detail-kontak-content {
+  flex: 1;
+  padding: 22px 26px;
+  background: #f4f9fd;
+  min-height: calc(100vh - 70px);
+}
+
+/* PAGE TITLE */
+
+.detail-kontak-content .page-title-card {
+  background: #ffffff;
+  padding: 28px 22px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  margin-bottom: 24px;
+}
+
+.detail-kontak-content .page-title-card h1 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* CONTENT */
+
+.detail-kontak-card {
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.detail-kontak-card h2 {
+  margin: 0;
+  padding: 17px 20px;
+  border-bottom: 1px solid #ddd;
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* DETAIL */
+
+.detail-body {
+  padding: 32px 40px 42px;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 125px 20px 1fr;
+  align-items: start;
+  margin-bottom: 17px;
+  font-size: 12px;
+  color: #666;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #555;
+}
+
+.detail-separator {
+  text-align: center;
+  font-weight: 600;
+}
+
+/* BUTTON */
+
+.detail-actions {
+  display: flex;
+  gap: 12px;
+  padding: 0 20px 25px;
+}
+
+.detail-actions button {
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-kembali {
+  background: #efa565;
+}
+
+.btn-kembali:hover {
+  background: #df914e;
+}
+
+.btn-email {
+  background: #95628c;
+}
+
+.btn-email:hover {
+  background: #7e5077;
+}

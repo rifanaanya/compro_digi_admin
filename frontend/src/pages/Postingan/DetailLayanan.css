@@ -1,0 +1,241 @@
+/* =========================================
+   DETAIL LAYANAN
+========================================= */
+
+.detail-layanan-content {
+  min-height: calc(100vh - 70px);
+  padding: 20px 30px 40px;
+  background: #eef7fc;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   TITLE CARD
+========================================= */
+
+.detail-layanan-title-card {
+  width: 100%;
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  padding: 28px 22px;
+  margin-bottom: 24px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+  box-sizing: border-box;
+}
+
+.detail-layanan-title-card h1 {
+  margin: 0;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* =========================================
+   DETAIL CARD
+========================================= */
+
+.detail-layanan-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+  overflow: hidden;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.detail-layanan-card-header {
+  padding: 18px 22px;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.detail-layanan-card-header h2 {
+  margin: 0;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* =========================================
+   BODY
+========================================= */
+
+.detail-layanan-body {
+  padding: 38px 48px 42px;
+}
+
+/* =========================================
+   ROW
+========================================= */
+
+.detail-row {
+  display: grid;
+
+  grid-template-columns: 185px 25px minmax(0, 1fr);
+
+  align-items: start;
+
+  margin-bottom: 18px;
+
+  font-size: 13px;
+  color: #666666;
+}
+
+.detail-label {
+  font-weight: 600;
+}
+
+.detail-separator {
+  font-weight: 600;
+  text-align: center;
+}
+
+.detail-value {
+  line-height: 1.5;
+
+  color: #666666;
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.detail-row-description {
+  margin-bottom: 20px;
+}
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.detail-image-row {
+  align-items: flex-start;
+}
+
+.detail-image-wrapper {
+  width: 90px;
+}
+
+.detail-layanan-image {
+  display: block;
+
+  width: 70px;
+  height: 70px;
+
+  object-fit: cover;
+
+  border-radius: 3px;
+
+  border: 1px solid #dddddd;
+}
+
+.detail-image-placeholder {
+  width: 120px;
+  min-height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px;
+
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+
+  background: #fafafa;
+
+  color: #aaaaaa;
+
+  font-size: 11px;
+
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+/* =========================================
+   ACTION
+========================================= */
+
+.detail-layanan-actions {
+  margin-top: 28px;
+}
+
+.detail-kembali-btn {
+  height: 38px;
+
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #e99b62;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+.detail-kembali-btn:hover {
+  background: #dc8d54;
+}
+
+.detail-kembali-btn:active {
+  transform: translateY(1px);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .detail-layanan-content {
+    padding: 18px;
+  }
+
+  .detail-layanan-body {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 650px) {
+  .detail-layanan-content {
+    padding: 15px;
+  }
+
+  .detail-layanan-body {
+    padding: 25px 20px;
+  }
+
+  .detail-row {
+    grid-template-columns: 120px 20px minmax(0, 1fr);
+  }
+
+  .detail-layanan-title-card h1 {
+    font-size: 19px;
+  }
+}

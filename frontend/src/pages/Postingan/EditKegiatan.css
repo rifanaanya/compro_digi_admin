@@ -1,0 +1,155 @@
+.edit-kegiatan-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f9fc;
+}
+
+.edit-kegiatan-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.edit-kegiatan-content {
+  padding: 28px 32px;
+}
+
+/* HEADER */
+
+.edit-kegiatan-header {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 28px 30px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.edit-kegiatan-header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* CARD */
+
+.edit-kegiatan-card {
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.edit-kegiatan-card-title {
+  padding: 18px 22px;
+  border-bottom: 1px solid #ddd;
+
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* FORM */
+
+.edit-kegiatan-form {
+  padding: 30px 58px 35px;
+}
+
+.edit-kegiatan-form-group {
+  margin-bottom: 20px;
+}
+
+.edit-kegiatan-form-group label {
+  display: block;
+  margin-bottom: 10px;
+
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+}
+
+.edit-kegiatan-form-group input[type="text"],
+.edit-kegiatan-form-group input[type="date"],
+.edit-kegiatan-form-group select {
+  width: 100%;
+  height: 44px;
+
+  box-sizing: border-box;
+
+  padding: 0 14px;
+
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  font-size: 12px;
+  color: #666;
+
+  outline: none;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08);
+}
+
+.edit-kegiatan-form-group input:focus,
+.edit-kegiatan-form-group select:focus {
+  border-color: #8eb5ce;
+}
+
+/* FILE */
+
+.edit-kegiatan-file-box {
+  width: 100%;
+  min-height: 105px;
+
+  box-sizing: border-box;
+
+  padding: 10px 14px;
+
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.edit-kegiatan-file-box input[type="file"] {
+  font-size: 11px;
+}
+
+.edit-kegiatan-preview {
+  width: 115px;
+  height: 125px;
+
+  object-fit: cover;
+
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+
+/* BUTTON */
+
+.edit-kegiatan-save-button {
+  margin-top: 5px;
+
+  padding: 9px 17px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #82abc5;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+.edit-kegiatan-save-button:hover {
+  background: #719bb6;
+}

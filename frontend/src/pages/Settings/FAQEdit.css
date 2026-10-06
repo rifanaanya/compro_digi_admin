@@ -1,0 +1,149 @@
+.faq-edit-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f9fc;
+}
+
+.faq-edit-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-edit-content {
+  flex: 1;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.faq-edit-header {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.faq-edit-header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #5f5f5f;
+}
+
+.faq-edit-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.faq-edit-card-title {
+  padding: 18px 20px;
+  border-bottom: 1px solid #dddddd;
+  font-size: 15px;
+  font-weight: 600;
+  color: #5f5f5f;
+}
+
+.faq-edit-form {
+  padding: 32px 48px 50px;
+}
+
+.faq-edit-form-group {
+  margin-bottom: 24px;
+}
+
+.faq-edit-form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #666666;
+}
+
+.faq-edit-form-group textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  resize: vertical;
+  outline: none;
+  font-family: inherit;
+  font-size: 12px;
+  color: #666666;
+}
+
+.faq-edit-form-group textarea:focus {
+  border-color: #82a9c2;
+}
+
+.faq-edit-save-button {
+  padding: 9px 17px;
+  border: none;
+  border-radius: 4px;
+  background: #82a9c2;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.faq-edit-save-button:hover {
+  background: #7199b2;
+}
+/* =========================
+   NOTIFICATION
+========================= */
+
+.faq-edit-notification {
+  position: fixed;
+  top: 85px;
+  right: 25px;
+  z-index: 9999;
+
+  min-width: 280px;
+
+  padding: 13px 18px;
+
+  border-radius: 5px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+  animation: faqEditNotification 0.25s ease;
+}
+
+.faq-edit-notification.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-left: 4px solid #4caf50;
+}
+
+.faq-edit-notification.error {
+  background: #ffebee;
+  color: #c62828;
+  border-left: 4px solid #e53935;
+}
+
+@keyframes faqEditNotification {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

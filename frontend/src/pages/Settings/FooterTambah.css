@@ -1,0 +1,230 @@
+.footer-tambah-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f9fc;
+}
+
+.footer-tambah-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-tambah-content {
+  flex: 1;
+  padding: 22px 28px 40px;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.footer-tambah-header {
+  width: 100%;
+  height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  margin-bottom: 24px;
+}
+
+.footer-tambah-header h1 {
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 600;
+
+  color: #5b5b5b;
+}
+
+/* CARD */
+
+.footer-tambah-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  overflow: hidden;
+}
+
+/* =========================
+   CARD TITLE
+========================= */
+
+.footer-tambah-card-title {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  padding: 0 26px;
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #dddddd;
+
+  color: #5b5b5b;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.footer-tambah-form {
+  padding: 34px 76px 50px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   FIELD
+========================= */
+
+.footer-tambah-field {
+  margin-bottom: 25px;
+}
+
+.footer-tambah-field label {
+  display: block;
+
+  margin-bottom: 11px;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: #5b5b5b;
+}
+
+/* =========================
+   OPTIONAL TEXT
+========================= */
+
+.footer-optional {
+  margin-left: 12px;
+
+  color: #ff5555;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.footer-tambah-field input[type="text"] {
+  display: block;
+
+  width: 100%;
+  height: 52px;
+
+  padding: 0 16px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+
+  background: #ffffff;
+  color: #555555;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  outline: none;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.14);
+}
+
+.footer-tambah-field input[type="text"]::placeholder {
+  color: #c4c4c4;
+}
+
+.footer-tambah-field input[type="text"]:focus {
+  border-color: #80a9c3;
+
+  box-shadow:
+    0 0 0 2px rgba(128, 169, 195, 0.12),
+    0 2px 3px rgba(0, 0, 0, 0.14);
+}
+
+/* =========================
+   FILE / UPLOAD GAMBAR
+========================= */
+
+.footer-file-input {
+  display: block;
+
+  width: 100%;
+  height: 52px;
+
+  padding: 10px 16px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+
+  background: #ffffff;
+  color: #b5b5b5;
+
+  font-family: inherit;
+  font-size: 11px;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.14);
+}
+
+/* =========================
+   SIMPAN
+========================= */
+
+.footer-tambah-save-button {
+  height: 34px;
+
+  padding: 0 20px;
+
+  margin-top: 8px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #80a9c3;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+
+  transition: 0.2s ease;
+}
+
+.footer-tambah-save-button:hover {
+  background: #719bb7;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .footer-tambah-content {
+    padding: 18px;
+  }
+
+  .footer-tambah-form {
+    padding: 25px;
+  }
+}

@@ -1,0 +1,226 @@
+.edit-sertifikat-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: #f4f9fc;
+}
+
+.edit-sertifikat-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.edit-sertifikat-content {
+  padding: 22px 28px 40px;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.edit-sertifikat-header {
+  width: 100%;
+  background: #ffffff;
+  padding: 28px 20px;
+  border-radius: 5px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  box-sizing: border-box;
+}
+
+.edit-sertifikat-header h1 {
+  margin: 0;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* ========================================
+   CARD
+======================================== */
+
+.edit-sertifikat-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.edit-sertifikat-card-title {
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* ========================================
+   FORM
+======================================== */
+
+.edit-sertifikat-card-content {
+  padding: 28px 58px 34px;
+  box-sizing: border-box;
+}
+
+.edit-sertifikat-form-group {
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.edit-sertifikat-form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* ========================================
+   INPUT TEXT
+======================================== */
+
+.edit-sertifikat-form-group input[type="text"] {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: #fff;
+  color: #555;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 13px;
+  outline: none;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+.edit-sertifikat-form-group input[type="text"]::placeholder {
+  color: #b8b8b8;
+}
+
+.edit-sertifikat-form-group input[type="text"]:focus {
+  border-color: #8db5cf;
+}
+
+/* ========================================
+   TEXTAREA DESKRIPSI
+======================================== */
+
+.edit-sertifikat-form-group textarea {
+  width: 100%;
+  height: 86px;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: #fff;
+  color: #555;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  outline: none;
+  resize: none;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+.edit-sertifikat-form-group textarea:focus {
+  border-color: #8db5cf;
+}
+
+/* ========================================
+   FILE / GAMBAR
+======================================== */
+
+.edit-sertifikat-file-box {
+  width: 100%;
+  min-height: 235px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 12px 18px;
+  background: #fff;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+/* Tombol Choose File */
+
+.edit-sertifikat-file-box input[type="file"] {
+  width: 82px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Preview */
+
+.edit-sertifikat-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.edit-sertifikat-preview img {
+  width: 145px;
+  height: 190px;
+  display: block;
+  object-fit: contain;
+  border: none;
+  border-radius: 0;
+  background: #fff;
+}
+
+.edit-sertifikat-preview span {
+  display: block;
+  max-width: 145px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 9px;
+  color: #aaa;
+}
+
+/* ========================================
+   SIMPAN
+======================================== */
+
+.edit-sertifikat-save-button {
+  border: none;
+  background: #82abc5;
+  color: #ffffff;
+
+  padding: 9px 18px;
+  border-radius: 4px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+.edit-sertifikat-save-button:hover {
+  background: #719bb6;
+}

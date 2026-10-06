@@ -1,0 +1,208 @@
+.pengaturan-lainnya-edit-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f9fc;
+}
+
+.pengaturan-lainnya-edit-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.pengaturan-lainnya-edit-content {
+  padding: 22px 25px 30px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.pengaturan-lainnya-edit-header {
+  background: #ffffff;
+  padding: 27px 22px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-lainnya-edit-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.pengaturan-lainnya-edit-card {
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.pengaturan-lainnya-edit-card-title {
+  padding: 18px 22px;
+  border-bottom: 1px solid #dddddd;
+  font-size: 16px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+.pengaturan-lainnya-edit-card-content {
+  padding: 30px 60px 45px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.pengaturan-lainnya-edit-form-group {
+  margin-bottom: 24px;
+}
+
+.pengaturan-lainnya-edit-form-group label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5d6063;
+}
+
+.pengaturan-lainnya-edit-form-group input[type="text"] {
+  width: 100%;
+  height: 43px;
+  box-sizing: border-box;
+  padding: 0 14px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #555555;
+  font-size: 13px;
+  outline: none;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+.pengaturan-lainnya-edit-form-group input[type="text"]:focus {
+  border-color: #8bb4cf;
+}
+
+/* =========================
+   FILE
+========================= */
+
+.pengaturan-lainnya-edit-file-wrapper {
+  width: 100%;
+}
+
+.pengaturan-lainnya-edit-form-group input[type="file"] {
+  width: 100%;
+  height: 43px;
+  box-sizing: border-box;
+  padding: 9px 14px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #b8b8b8;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   PREVIEW GAMBAR
+========================= */
+
+.pengaturan-lainnya-edit-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -39px;
+  margin-left: 145px;
+  width: 55px;
+  position: relative;
+  pointer-events: none;
+}
+
+.pengaturan-lainnya-edit-preview img {
+  width: 42px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.pengaturan-lainnya-edit-preview span {
+  margin-top: 2px;
+  width: 180px;
+  text-align: center;
+  font-size: 7px;
+  color: #b8b8b8;
+}
+
+/* =========================
+   SIMPAN
+========================= */
+
+.pengaturan-lainnya-edit-save-button {
+  margin-top: 1px;
+  padding: 9px 17px;
+  border: none;
+  border-radius: 4px;
+  background-color: #82b1cc;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+.pengaturan-lainnya-edit-save-button:hover {
+  background-color: #709fb9;
+}
+
+.pengaturan-lainnya-edit-save-button:active {
+  transform: translateY(1px);
+}
+.pengaturan-lainnya-edit-notification {
+  position: fixed;
+  top: 85px;
+  right: 25px;
+  z-index: 9999;
+
+  min-width: 280px;
+  padding: 13px 18px;
+
+  border-radius: 5px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+  animation: pengaturanLainnyaEditNotification 0.25s ease;
+}
+
+.pengaturan-lainnya-edit-notification.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-left: 4px solid #4caf50;
+}
+
+.pengaturan-lainnya-edit-notification.error {
+  background: #ffebee;
+  color: #c62828;
+  border-left: 4px solid #e53935;
+}
+
+@keyframes pengaturanLainnyaEditNotification {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

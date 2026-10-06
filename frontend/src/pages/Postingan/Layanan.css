@@ -1,0 +1,445 @@
+/* =========================
+   CONTENT
+========================= */
+
+.layanan-content {
+  padding: 22px 26px;
+  background: #f4f9fd;
+  min-height: calc(100vh - 70px);
+}
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.layanan-title-card {
+  background: #ffffff;
+  padding: 28px 22px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  margin-bottom: 24px;
+}
+
+.layanan-title-card h1 {
+  margin: 0;
+
+  font-size: 21px;
+  font-weight: 600;
+
+  color: #555;
+}
+
+/* =========================
+   CONTENT CARD
+========================= */
+
+.layanan-card {
+  background: #ffffff;
+
+  padding: 20px 26px 32px;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.layanan-card h2 {
+  margin: 0 0 18px;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: #555;
+}
+
+/* =========================
+   TOOLBAR
+========================= */
+
+.layanan-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.btn-tambah-layanan {
+  border: none;
+
+  background: #82aec8;
+  color: #ffffff;
+
+  padding: 8px 12px;
+
+  border-radius: 4px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  transition: 0.2s;
+}
+
+.btn-tambah-layanan:hover {
+  background: #6d9db9;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.layanan-search {
+  position: relative;
+  width: 180px;
+  height: 32px;
+}
+
+.layanan-search input {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 30px 0 12px;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  outline: none;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 11px;
+  color: #555;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+
+.layanan-search input::placeholder {
+  color: #aaa;
+}
+
+.layanan-search input:focus {
+  border-color: #9bb8ca;
+}
+
+.layanan-search span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #9b9b9b;
+  pointer-events: none;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.layanan-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.layanan-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+
+  font-size: 11px;
+}
+
+.layanan-table thead {
+  background: #e6f2fa;
+}
+
+.layanan-table th {
+  padding: 8px 7px;
+
+  border: 1px solid #d8d8d8;
+
+  color: #444;
+
+  font-weight: 600;
+
+  text-align: center;
+}
+
+.layanan-table td {
+  padding: 10px 8px;
+
+  border: 1px solid #dedede;
+
+  color: #555;
+
+  vertical-align: middle;
+}
+
+/* =========================
+   COLUMN WIDTH
+========================= */
+
+.layanan-table th:nth-child(1),
+.layanan-table td:nth-child(1) {
+  width: 5%;
+
+  text-align: center;
+}
+
+.layanan-table th:nth-child(2),
+.layanan-table td:nth-child(2) {
+  width: 17%;
+}
+
+.layanan-table th:nth-child(3),
+.layanan-table td:nth-child(3) {
+  width: 28%;
+}
+
+.layanan-table th:nth-child(4),
+.layanan-table td:nth-child(4) {
+  width: 13%;
+
+  text-align: center;
+}
+
+.layanan-table th:nth-child(5),
+.layanan-table td:nth-child(5) {
+  width: 10%;
+
+  text-align: center;
+}
+
+.layanan-table th:nth-child(6),
+.layanan-table td:nth-child(6) {
+  width: 27%;
+
+  text-align: center;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.layanan-deskripsi {
+  line-height: 1.45;
+
+  text-align: left;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.layanan-image {
+  width: 60px;
+  height: 60px;
+
+  object-fit: cover;
+
+  border-radius: 3px;
+
+  display: block;
+
+  margin: 0 auto;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.layanan-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.layanan-actions button {
+  border: none;
+  border-radius: 4px;
+  padding: 5px 8px;
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.layanan-detail-btn {
+  background: #70d58a;
+  color: #5a4a4e;
+}
+
+.layanan-detail-btn:hover {
+  background: #55c872;
+}
+
+.layanan-edit-btn {
+  background: #ffbd00;
+  color: #5a4a4e;
+}
+
+.layanan-edit-btn:hover {
+  background: #e5a900;
+}
+
+.layanan-delete-btn {
+  background: #e8323e;
+  color: #5a4a4e;
+}
+
+.layanan-delete-btn:hover {
+  background: #c9212c;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.layanan-empty-message {
+  text-align: center;
+
+  padding: 25px !important;
+
+  color: #999 !important;
+}
+/* =========================
+   DELETE MODAL
+========================= */
+
+.delete-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+}
+
+.delete-modal {
+  width: 430px;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+
+  overflow: hidden;
+}
+
+/* HEADER */
+
+.delete-modal-header {
+  height: 58px;
+
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #dddddd;
+
+  box-sizing: border-box;
+}
+
+.delete-modal-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+.delete-modal-close {
+  border: none;
+
+  background: transparent;
+
+  font-size: 32px;
+  line-height: 1;
+
+  color: #333333;
+
+  cursor: pointer;
+
+  padding: 0;
+}
+
+/* BODY */
+
+.delete-modal-body {
+  padding: 30px 34px 34px;
+}
+
+.delete-modal-body h3 {
+  margin: 0 0 12px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+.delete-modal-body p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: #777777;
+}
+
+/* ACTION */
+
+.delete-modal-actions {
+  display: flex;
+  gap: 12px;
+
+  margin-top: 34px;
+}
+
+.delete-back-btn,
+.delete-confirm-btn {
+  height: 38px;
+
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 4px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* KEMBALI */
+
+.delete-back-btn {
+  background: #eca06a;
+}
+
+.delete-back-btn:hover {
+  background: #df8e56;
+}
+
+/* HAPUS */
+
+.delete-confirm-btn {
+  background: #dc2835;
+}
+
+.delete-confirm-btn:hover {
+  background: #c9212d;
+}

@@ -1,0 +1,745 @@
+/* ========================================
+   KARIR LAYOUT
+======================================== */
+
+.karir-content {
+  flex: 1;
+  padding: 20px 28px 30px;
+  box-sizing: border-box;
+  background: #f4f9fc;
+}
+
+/* ========================================
+   PAGE TITLE
+======================================== */
+
+.karir-title-card {
+  width: 100%;
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 22px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.18);
+
+  margin-bottom: 24px;
+}
+
+.karir-title-card h1 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 24px;
+  font-weight: 600;
+
+  color: #5d5d5d;
+}
+
+/* ========================================
+   CONTENT CARD
+======================================== */
+
+.karir-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.18);
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  padding-bottom: 55px;
+}
+
+/* ========================================
+   CARD HEADER
+======================================== */
+
+.karir-card-header {
+  width: 100%;
+
+  padding: 18px 22px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.karir-card-header h2 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* ========================================
+   TOOLBAR
+======================================== */
+
+.karir-toolbar {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 10px;
+
+  width: 100%;
+
+  padding: 18px 22px 15px;
+
+  box-sizing: border-box;
+}
+
+/* ========================================
+   TAMBAH KARIR
+======================================== */
+
+.karir-add-button {
+  height: 38px;
+
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #7faac4;
+
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.18);
+
+  transition: background 0.2s ease;
+}
+
+.karir-add-button:hover {
+  background: #6f9bb7;
+}
+
+/* ========================================
+   SEARCH
+======================================== */
+
+.karir-search {
+  position: relative;
+
+  width: 180px;
+  height: 32px;
+
+  flex-shrink: 0;
+}
+
+.karir-search input {
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+
+  padding: 0 32px 0 12px;
+
+  border: 1px solid #d8d8d8;
+
+  border-radius: 4px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 11px;
+
+  color: #555555;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.karir-search input::placeholder {
+  color: #aaaaaa;
+}
+
+.karir-search input:focus {
+  border-color: #9bb8ca;
+}
+
+/* SEARCH ICON */
+.karir-search svg {
+  position: absolute;
+
+  right: 10px;
+  top: 50%;
+
+  width: 13px;
+  height: 13px;
+
+  transform: translateY(-50%);
+
+  color: #9b9b9b;
+
+  pointer-events: none;
+}
+
+/* ========================================
+   TABLE WRAPPER
+======================================== */
+
+.karir-table-wrapper {
+  width: calc(100% - 44px);
+
+  margin: 0 22px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  box-sizing: border-box;
+}
+
+/* ========================================
+   TABLE
+======================================== */
+
+.karir-table {
+  width: 100%;
+
+  border-collapse: separate;
+
+  border-spacing: 0;
+
+  table-layout: fixed;
+
+  background: #ffffff;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 12px;
+
+  color: #555555;
+}
+
+/* ========================================
+   TABLE HEADER
+======================================== */
+
+.karir-table thead th {
+  height: 36px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  background: #e7f2f8;
+
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+  border-bottom: 1px solid #d8e3e8;
+
+  color: #4e5a61;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  text-align: left;
+
+  vertical-align: middle;
+}
+
+.karir-table thead th:first-child {
+  border-top-left-radius: 6px;
+}
+
+.karir-table thead th:last-child {
+  border-top-right-radius: 6px;
+}
+
+/* ========================================
+   TABLE BODY
+======================================== */
+
+.karir-table tbody td {
+  height: 43px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+  border-bottom: 1px solid #e5e5e5;
+
+  color: #555555;
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  vertical-align: middle;
+}
+
+.karir-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ========================================
+   COLUMN NO
+======================================== */
+
+.karir-no-column,
+.karir-no {
+  width: 8% !important;
+
+  text-align: center !important;
+
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+/* ========================================
+   POSISI
+======================================== */
+
+.karir-table th:nth-child(2),
+.karir-table td:nth-child(2) {
+  width: 24%;
+}
+
+/* ========================================
+   KATEGORI
+======================================== */
+
+.karir-table th:nth-child(3),
+.karir-table td:nth-child(3) {
+  width: 17%;
+}
+
+/* ========================================
+   LOKASI
+======================================== */
+
+.karir-table th:nth-child(4),
+.karir-table td:nth-child(4) {
+  width: 17%;
+}
+
+/* ========================================
+   TIPE PEKERJAAN
+======================================== */
+
+.karir-table th:nth-child(5),
+.karir-table td:nth-child(5) {
+  width: 14%;
+}
+
+/* ========================================
+   AKSI
+======================================== */
+
+.karir-action-column {
+  width: 18% !important;
+
+  text-align: center !important;
+}
+
+.karir-actions {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  box-sizing: border-box;
+
+  transform: translateX(-12px);
+}
+
+/* ========================================
+   ACTION BUTTON
+======================================== */
+
+.karir-actions button {
+  height: 18px;
+
+  padding: 0 6px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+/* ========================================
+   DETAIL
+======================================== */
+
+.karir-detail-button {
+  min-width: 38px;
+
+  background: #65d37a;
+
+  color: #5a4a4e;
+}
+
+.karir-detail-button:hover {
+  background: #4fc568;
+}
+
+/* ========================================
+   EDIT
+======================================== */
+
+.karir-edit-button {
+  min-width: 36px;
+
+  background: #ffc400;
+
+  color: #5a4a4e;
+}
+
+.karir-edit-button:hover {
+  background: #eeb600;
+}
+
+/* ========================================
+   DELETE
+======================================== */
+
+.karir-delete-button {
+  min-width: 39px;
+
+  background: #ef3340;
+
+  color: #5a4a4e;
+}
+
+.karir-delete-button:hover {
+  background: #d92532;
+}
+
+/* ========================================
+   EMPTY
+======================================== */
+
+.karir-empty {
+  text-align: center !important;
+
+  padding: 25px !important;
+
+  color: #999999 !important;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+  .karir-content {
+    padding: 18px;
+  }
+
+  .karir-toolbar {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .karir-table-wrapper {
+    width: calc(100% - 36px);
+
+    margin: 0 18px;
+
+    overflow-x: auto;
+  }
+
+  .karir-table {
+    min-width: 760px;
+  }
+}
+
+@media (max-width: 600px) {
+  .karir-content {
+    padding: 15px;
+  }
+
+  .karir-title-card {
+    min-height: 70px;
+
+    padding: 0 20px;
+  }
+
+  .karir-title-card h1 {
+    font-size: 21px;
+  }
+
+  .karir-card-header {
+    padding: 18px;
+  }
+
+  .karir-toolbar {
+    padding: 18px;
+  }
+
+  .karir-table-wrapper {
+    width: calc(100% - 30px);
+
+    margin: 0 15px;
+  }
+}
+/* ========================================
+   DELETE MODAL OVERLAY
+======================================== */
+
+.karir-delete-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.22);
+}
+
+/* ========================================
+   DELETE MODAL
+======================================== */
+
+.karir-delete-modal {
+  width: 360px;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+
+  overflow: hidden;
+}
+
+/* ========================================
+   MODAL HEADER
+======================================== */
+
+.karir-delete-modal-header {
+  height: 49px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 22px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.karir-delete-modal-header h2 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #5f5f5f;
+}
+
+/* ========================================
+   CLOSE
+======================================== */
+
+.karir-delete-close {
+  width: 24px;
+  height: 24px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 26px;
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #3f3f3f;
+
+  cursor: pointer;
+}
+
+.karir-delete-close:hover {
+  color: #222222;
+}
+
+/* ========================================
+   MODAL BODY
+======================================== */
+
+.karir-delete-modal-body {
+  padding: 25px 29px 31px;
+
+  box-sizing: border-box;
+}
+
+/* ========================================
+   QUESTION
+======================================== */
+
+.karir-delete-question {
+  margin: 0 0 10px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #666666;
+}
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.karir-delete-description {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 10px;
+  font-weight: 400;
+
+  color: #777777;
+}
+
+/* ========================================
+   MODAL ACTIONS
+======================================== */
+
+.karir-delete-modal-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 27px;
+}
+
+/* ========================================
+   KEMBALI
+======================================== */
+
+.karir-delete-cancel {
+  height: 23px;
+
+  padding: 0 12px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  background: #f0a15f;
+
+  color: #ffffff;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.karir-delete-cancel:hover {
+  background: #e8944f;
+}
+
+/* ========================================
+   HAPUS
+======================================== */
+
+.karir-delete-confirm {
+  height: 38px;
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #d92525;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.karir-delete-confirm:hover {
+  background: #c91f1f;
+}

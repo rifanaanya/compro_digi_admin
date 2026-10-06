@@ -1,0 +1,333 @@
+.tambah-produk-layanan-content {
+  padding: 22px 28px 40px;
+
+  background: #f4f9fc;
+
+  min-height: calc(100vh - 70px);
+
+  box-sizing: border-box;
+}
+
+/* TITLE */
+
+.tambah-produk-layanan-title-card {
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  padding: 30px 22px;
+
+  margin-bottom: 24px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.tambah-produk-layanan-title-card h1 {
+  margin: 0;
+
+  color: #555555;
+
+  font-size: 22px;
+
+  font-weight: 600;
+}
+
+/* CARD */
+
+.tambah-produk-layanan-card {
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+
+  overflow: hidden;
+}
+
+.tambah-produk-layanan-card h2 {
+  margin: 0;
+
+  padding: 18px 22px;
+
+  color: #555555;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+/* FORM */
+
+.tambah-produk-layanan-card form {
+  padding: 26px 38px 34px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #555555;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 4px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #555555;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08);
+}
+
+.form-group input,
+.form-group select {
+  height: 43px;
+
+  padding: 0 14px;
+}
+
+.form-group textarea {
+  height: 92px;
+
+  padding: 13px 14px;
+
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #b7b7b7;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #83b1cc;
+}
+
+/* DIVIDER */
+
+.form-divider {
+  height: 1px;
+
+  background: #dddddd;
+
+  margin: 28px 0 20px;
+}
+
+/* TOOLS */
+
+.tools-section {
+  margin-bottom: 30px;
+}
+
+.tool-input-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 10px;
+}
+
+.tool-input-row input {
+  flex: 1;
+
+  height: 40px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 4px;
+
+  outline: none;
+
+  font-size: 12px;
+
+  color: #555555;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08);
+}
+
+.tool-input-row input:focus {
+  border-color: #83b1cc;
+}
+
+.remove-tool-btn {
+  width: 34px;
+
+  height: 34px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #ed2939;
+
+  color: #ffffff;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+.remove-tool-btn:hover {
+  background: #d91f2e;
+}
+
+/* TAMBAH TOOLS */
+
+.btn-tambah-tools {
+  border: none;
+
+  border-radius: 4px;
+
+  padding: 9px 16px;
+
+  background: #707fb8;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.btn-tambah-tools:hover {
+  background: #5f70ad;
+}
+
+/* SIMPAN */
+
+.btn-simpan-produk-layanan {
+  border: none;
+
+  border-radius: 4px;
+
+  padding: 9px 17px;
+
+  background: #83b1cc;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.btn-simpan-produk-layanan:hover {
+  background: #719fba;
+}
+/* ========================================
+   TOOLS / KEGIATAN
+======================================== */
+
+.tools-section {
+  width: 100%;
+}
+
+/* Setiap blok tools yang ditambahkan */
+.tool-item {
+  width: 100%;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+/* Header Tools */
+.tool-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Tombol hapus tools */
+.remove-tool-btn {
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #dc3545;
+  color: white;
+
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.2s ease;
+}
+
+.remove-tool-btn:hover {
+  background: #c82333;
+}
+
+/* Upload gambar */
+.tool-image-upload {
+  width: 100%;
+}
+
+/* Preview gambar */
+.tool-image-preview {
+  margin-top: 12px;
+}
+
+.tool-image-preview img {
+  width: 120px;
+  height: 90px;
+
+  object-fit: cover;
+
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+  display: block;
+}

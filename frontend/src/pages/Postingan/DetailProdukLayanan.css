@@ -1,0 +1,272 @@
+/* ========================================
+   DETAIL PRODUK LAYANAN
+======================================== */
+
+.detail-produk-layanan-content {
+  padding: 22px 28px 40px;
+  background: #f4f9fd;
+  min-height: calc(100vh - 70px);
+}
+
+/* ========================================
+   TITLE CARD
+======================================== */
+
+.detail-produk-layanan-title-card {
+  background: #ffffff;
+  border-radius: 6px;
+
+  padding: 28px 30px;
+  margin-bottom: 24px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.detail-produk-layanan-title-card h1 {
+  margin: 0;
+
+  font-size: 22px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* ========================================
+   DETAIL CARD
+======================================== */
+
+.detail-produk-layanan-card {
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+
+  overflow: hidden;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.detail-card-header {
+  padding: 18px 22px;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.detail-card-header h2 {
+  margin: 0;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+/* ========================================
+   BODY
+======================================== */
+
+.detail-card-body {
+  padding: 38px 48px 42px;
+}
+
+/* ========================================
+   ROW
+======================================== */
+
+.detail-row {
+  display: grid;
+
+  grid-template-columns: 165px 25px minmax(0, 1fr);
+
+  align-items: start;
+
+  margin-bottom: 18px;
+
+  font-size: 13px;
+
+  color: #555555;
+}
+
+.detail-row-description {
+  margin-bottom: 22px;
+}
+
+.detail-label {
+  font-weight: 600;
+
+  line-height: 1.6;
+}
+
+.detail-separator {
+  text-align: center;
+
+  font-weight: 600;
+}
+
+.detail-value {
+  line-height: 1.6;
+
+  color: #666666;
+
+  word-break: break-word;
+}
+
+/* ========================================
+   DIVIDER
+======================================== */
+
+.detail-divider {
+  height: 1px;
+
+  background: #dddddd;
+
+  margin: 26px 0 24px;
+}
+
+/* ========================================
+   TOOL
+======================================== */
+
+.detail-tool {
+  width: 100%;
+}
+
+.detail-tool-divider {
+  height: 1px;
+
+  background: #eeeeee;
+
+  margin: 25px 0;
+}
+
+/* ========================================
+   IMAGE
+======================================== */
+
+.detail-image-row {
+  margin-bottom: 24px;
+}
+
+.detail-image-value {
+  display: flex;
+
+  align-items: flex-start;
+}
+
+.detail-image-wrapper {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.detail-product-image {
+  width: 58px;
+  height: 58px;
+
+  object-fit: cover;
+
+  border-radius: 3px;
+
+  border: 1px solid #d7d7d7;
+
+  background: #f5f5f5;
+}
+
+.detail-image-name {
+  margin-top: 5px;
+
+  max-width: 90px;
+
+  font-size: 7px;
+
+  color: #999999;
+
+  text-align: center;
+
+  line-height: 1.2;
+
+  word-break: break-word;
+}
+
+/* ========================================
+   META
+======================================== */
+
+.detail-meta {
+  margin-top: 32px;
+}
+
+/* ========================================
+   BUTTON KEMBALI
+======================================== */
+
+.btn-kembali-detail {
+  margin-top: 26px;
+
+  padding: 9px 18px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #f0a15f;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  transition: all 0.2s ease;
+}
+
+.btn-kembali-detail:hover {
+  background: #e78f4b;
+
+  transform: translateY(-1px);
+}
+
+.btn-kembali-detail:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+  .detail-produk-layanan-content {
+    padding: 18px;
+  }
+
+  .detail-card-body {
+    padding: 28px 25px;
+  }
+
+  .detail-row {
+    grid-template-columns: 150px 20px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .detail-row {
+    grid-template-columns: 1fr;
+
+    gap: 3px;
+  }
+
+  .detail-separator {
+    display: none;
+  }
+
+  .detail-value {
+    margin-bottom: 14px;
+  }
+}

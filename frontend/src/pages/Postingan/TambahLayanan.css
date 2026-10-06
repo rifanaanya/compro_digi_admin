@@ -1,0 +1,470 @@
+/* =========================================
+   TAMBAH LAYANAN
+========================================= */
+
+.tambah-layanan-content {
+  min-height: calc(100vh - 70px);
+  padding: 20px 30px 40px;
+  background: #eef7fc;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   PAGE TITLE
+========================================= */
+
+.tambah-layanan-title-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 28px 22px;
+  margin-bottom: 24px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+.tambah-layanan-title-card h1 {
+  margin: 0;
+
+  font-size: 22px;
+  font-weight: 600;
+  color: #555555;
+}
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.tambah-layanan-card {
+  position: relative;
+  z-index: 10;
+
+  width: 100%;
+  background: #ffffff;
+  border-radius: 6px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+  overflow: visible;
+}
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.tambah-layanan-card-header {
+  padding: 18px 22px;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.tambah-layanan-card-header h2 {
+  margin: 0;
+
+  font-size: 17px;
+  font-weight: 600;
+  color: #555555;
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+.tambah-layanan-form {
+  position: relative;
+  z-index: 20;
+
+  padding: 30px 58px 40px;
+
+  box-sizing: border-box;
+
+  overflow: visible;
+}
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.form-group {
+  position: relative;
+
+  margin-bottom: 22px;
+
+  overflow: visible;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: #555555;
+}
+
+/* =========================================
+   INPUT
+========================================= */
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select {
+  width: 100%;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  font-family: inherit;
+  font-size: 13px;
+  color: #555555;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input[type="text"] {
+  height: 45px;
+  padding: 0 14px;
+}
+
+.form-group textarea {
+  min-height: 175px;
+  padding: 14px;
+
+  resize: vertical;
+}
+
+.form-group select {
+  height: 45px;
+  padding: 0 14px;
+
+  cursor: pointer;
+}
+
+.form-group input[type="text"]::placeholder,
+.form-group textarea::placeholder {
+  color: #b8b8b8;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #82b3d1;
+
+  box-shadow: 0 0 0 2px rgba(130, 179, 209, 0.12);
+}
+
+/* =========================================
+   UPLOAD
+========================================= */
+
+.upload-wrapper {
+  width: 100%;
+}
+
+.upload-wrapper input[type="file"] {
+  width: 100%;
+  height: 45px;
+
+  padding: 10px;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  font-size: 13px;
+  color: #777777;
+
+  cursor: pointer;
+}
+
+.upload-wrapper input[type="file"]::file-selector-button {
+  margin-right: 12px;
+
+  padding: 5px 10px;
+
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+
+  background: #eeeeee;
+
+  font-size: 12px;
+  color: #555555;
+
+  cursor: pointer;
+}
+
+/* =========================================
+   IMAGE PREVIEW
+========================================= */
+
+.image-preview {
+  margin-top: 14px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.image-preview img {
+  width: 140px;
+  height: 90px;
+
+  object-fit: cover;
+
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+}
+
+.remove-image-btn {
+  padding: 7px 12px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #ed3b45;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.remove-image-btn:hover {
+  background: #d92f39;
+}
+
+/* =========================================
+   BUTTON ACTIONS
+========================================= */
+
+.form-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 8px;
+}
+
+.btn-simpan-layanan,
+.btn-batal-layanan {
+  height: 38px;
+
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 4px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+.btn-simpan-layanan {
+  background: #82b1cf;
+  color: #ffffff;
+}
+
+.btn-simpan-layanan:hover {
+  background: #709fbd;
+}
+
+.btn-batal-layanan {
+  background: #e99b62;
+  color: #ffffff;
+}
+
+.btn-batal-layanan:hover {
+  background: #dc8d54;
+}
+
+.btn-simpan-layanan:active,
+.btn-batal-layanan:active {
+  transform: translateY(1px);
+}
+
+/* =========================================
+   TIPE LAYANAN DROPDOWN
+========================================= */
+
+.layanan-type-dropdown {
+  position: relative;
+
+  width: 100%;
+
+  z-index: 100;
+}
+
+.layanan-type-dropdown-button {
+  width: 100%;
+  height: 44px;
+
+  padding: 0 14px 0 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+
+  background: #ffffff;
+  color: #666666;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.layanan-type-dropdown-button:hover {
+  border-color: #c9c9c9;
+}
+
+.layanan-type-dropdown-button .placeholder {
+  color: #b5b5b5;
+}
+
+/* =========================================
+   DROPDOWN ARROW
+========================================= */
+
+.layanan-type-dropdown-arrow {
+  width: 14px;
+  height: 14px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+
+  transition: transform 0.2s ease;
+}
+
+.layanan-type-dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+/* =========================================
+   DROPDOWN MENU
+========================================= */
+
+.layanan-type-dropdown-menu {
+  position: absolute;
+
+  top: calc(100% + 8px);
+  left: 0;
+
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.18);
+
+  overflow: visible;
+
+  z-index: 99999;
+
+  box-sizing: border-box;
+}
+
+/* =========================================
+   DROPDOWN OPTION
+========================================= */
+
+.layanan-type-dropdown-option {
+  width: 100%;
+  height: 38px;
+
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+
+  border: none;
+  outline: none;
+
+  background: #ffffff;
+  color: #666666;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+}
+
+.layanan-type-dropdown-option:hover {
+  background: #e5f2fb;
+}
+
+.layanan-type-dropdown-option.selected {
+  background: #e5f2fb;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .tambah-layanan-content {
+    padding: 18px;
+  }
+
+  .tambah-layanan-form {
+    padding: 25px 30px 35px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tambah-layanan-content {
+    padding: 15px;
+  }
+
+  .tambah-layanan-title-card {
+    padding: 20px;
+  }
+
+  .tambah-layanan-title-card h1 {
+    font-size: 19px;
+  }
+
+  .tambah-layanan-form {
+    padding: 22px 20px 30px;
+  }
+
+  .form-actions {
+    flex-wrap: wrap;
+  }
+}

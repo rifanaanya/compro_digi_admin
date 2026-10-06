@@ -1,0 +1,692 @@
+/* =================================
+   LAYOUT
+================================= */
+
+.beranda-setting-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f9fc;
+}
+
+.beranda-setting-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =================================
+   CONTENT
+================================= */
+
+.beranda-setting-content {
+  flex: 1;
+  padding: 24px 24px 0;
+  box-sizing: border-box;
+}
+
+/* =================================
+   HEADER
+================================= */
+
+.beranda-setting-header {
+  width: 100%;
+  height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 22px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border-radius: 6px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+
+  margin-bottom: 22px;
+}
+
+.beranda-setting-header h1 {
+  margin: 0;
+
+  color: #5f6365;
+
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+/* =================================
+   MAIN CARD
+================================= */
+
+.beranda-setting-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+/* =================================
+   CARD TITLE
+================================= */
+
+.beranda-setting-card-title {
+  width: 100%;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #d9d9d9;
+
+  color: #5f6365;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =================================
+   FORM
+================================= */
+
+.beranda-setting-form {
+  width: 82%;
+
+  margin: 0 auto;
+
+  padding: 32px 0 38px;
+
+  box-sizing: border-box;
+}
+
+/* =================================
+   FORM GROUP
+================================= */
+
+.beranda-form-group {
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.beranda-form-group label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #555b5f;
+
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* =================================
+   INPUT UTAMA
+================================= */
+
+.beranda-form-group > input {
+  width: 100%;
+  height: 43px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #555555;
+
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+
+  outline: none;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+}
+
+.beranda-form-group input::placeholder {
+  color: #c1c5c8;
+}
+
+.beranda-form-group input:focus {
+  border-color: #86abc3;
+}
+
+/* =================================
+   TEXTAREA
+================================= */
+
+.beranda-form-group textarea {
+  width: 100%;
+  height: 110px;
+
+  padding: 13px 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #555555;
+
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+
+  outline: none;
+
+  resize: none;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+}
+
+.beranda-form-group textarea::placeholder {
+  color: #c1c5c8;
+}
+
+.beranda-form-group textarea:focus {
+  border-color: #86abc3;
+}
+
+/* =================================
+   KATEGORI GROUP
+================================= */
+
+.kategori-group {
+  margin-bottom: 22px;
+}
+
+/* =================================
+   TOMBOL TAMBAH KATEGORI
+================================= */
+
+.tambah-kategori-button {
+  width: 145px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 0;
+  margin-bottom: 24px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #82aec9;
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+
+  transition: background 0.2s ease;
+}
+
+.tambah-kategori-button:hover {
+  background: #719db8;
+}
+
+.tambah-kategori-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =================================
+   KATEGORI LIST
+   2 KOLOM × 3 BARIS
+================================= */
+
+.kategori-list {
+  display: grid;
+
+  grid-template-columns: 285px 285px;
+
+  grid-template-rows: repeat(3, 32px);
+
+  grid-auto-flow: column;
+
+  column-gap: 30px;
+  row-gap: 9px;
+
+  width: 600px;
+
+  align-items: center;
+}
+
+/* =================================
+   KATEGORI ROW
+================================= */
+
+.kategori-row {
+  position: relative;
+
+  width: 285px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+/* =================================
+   INPUT KATEGORI
+================================= */
+
+.kategori-row input {
+  width: 190px;
+  height: 32px;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #555555;
+
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+
+  outline: none;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+}
+
+.kategori-row input::placeholder {
+  color: #c1c5c8;
+}
+
+.kategori-row input:focus {
+  border-color: #86abc3;
+}
+
+/* =================================
+   EDIT BUTTON
+================================= */
+
+.kategori-edit-button {
+  position: absolute;
+
+  left: 198px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 38px;
+  height: 21px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 3px;
+
+  background: #ffc107;
+  color: #5a4a4e;
+
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+
+  z-index: 2;
+}
+
+.kategori-edit-button:hover {
+  background: #eeb000;
+}
+
+/* =================================
+   DELETE BUTTON
+================================= */
+
+.kategori-delete-button {
+  position: absolute;
+
+  left: 240px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 43px;
+  height: 21px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 3px;
+
+  background: #dc3545;
+  color: #5a4a4e;
+
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+
+  z-index: 2;
+}
+
+.kategori-delete-button:hover {
+  background: #c82333;
+}
+
+/* =================================
+   SIMPAN
+================================= */
+
+.beranda-save-button {
+  width: 65px;
+  height: 30px;
+
+  margin-top: 4px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #82aec9;
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+
+  transition: background 0.2s ease;
+}
+
+.beranda-save-button:hover {
+  background: #719db8;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+.beranda-setting-footer {
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: auto;
+
+  padding: 0 24px;
+
+  box-sizing: border-box;
+
+  border-top: 1px solid #dfe5e9;
+
+  color: #9ba1a5;
+
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+}
+/* =================================
+   DELETE MODAL OVERLAY
+================================= */
+
+.delete-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.25);
+
+  z-index: 9999;
+}
+
+/* =================================
+   DELETE MODAL
+================================= */
+
+.delete-modal {
+  width: 445px;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  overflow: hidden;
+}
+
+/* =================================
+   MODAL HEADER
+================================= */
+
+.delete-modal-header {
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 26px 0 36px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.delete-modal-header h2 {
+  margin: 0;
+
+  color: #606467;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 600;
+}
+
+.delete-modal-close {
+  width: 30px;
+  height: 30px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #333333;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 31px;
+
+  font-weight: 300;
+
+  line-height: 30px;
+
+  cursor: pointer;
+}
+
+.delete-modal-close:hover {
+  color: #777777;
+}
+
+/* =================================
+   MODAL BODY
+================================= */
+
+.delete-modal-body {
+  padding: 31px 36px 40px;
+
+  box-sizing: border-box;
+}
+
+.delete-modal-body h3 {
+  margin: 0 0 12px;
+
+  color: #606467;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 600;
+}
+
+.delete-modal-body p {
+  margin: 0;
+
+  color: #686868;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+/* =================================
+   MODAL BUTTONS
+================================= */
+
+.delete-modal-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: 36px;
+}
+
+.delete-modal-actions button {
+  height: 27px;
+
+  padding: 0 14px;
+
+  border: none;
+
+  border-radius: 3px;
+
+  color: #ffffff;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+/* KEMBALI */
+
+.delete-modal-back {
+  background: #e9a066;
+}
+
+.delete-modal-back:hover {
+  background: #d98f55;
+}
+
+/* HAPUS */
+
+.delete-modal-confirm {
+  background: #c92329;
+}
+
+.delete-modal-confirm:hover {
+  background: #b51e24;
+}
+/* ================================
+   NOTIFICATION
+================================ */
+
+.beranda-notification {
+  position: fixed;
+  top: 85px;
+  right: 25px;
+  z-index: 9999;
+
+  min-width: 280px;
+
+  padding: 13px 18px;
+
+  border-radius: 5px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+  animation: berandaNotification 0.25s ease;
+}
+
+.beranda-notification.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-left: 4px solid #4caf50;
+}
+
+.beranda-notification.error {
+  background: #ffebee;
+  color: #c62828;
+  border-left: 4px solid #e53935;
+}
+
+@keyframes berandaNotification {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

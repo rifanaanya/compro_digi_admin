@@ -1,0 +1,287 @@
+/* =================================
+   ACTIVITY LAYOUT
+================================= */
+
+.activity-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f9fc;
+}
+
+.activity-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+}
+
+/* =================================
+   CONTENT
+================================= */
+
+.activity-content {
+  padding: 18px 20px 30px;
+  box-sizing: border-box;
+}
+
+/* =================================
+   HEADER
+================================= */
+
+.activity-header {
+  width: 100%;
+  min-height: 90px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 25px;
+  margin-bottom: 20px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+}
+
+.activity-header h1 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 600;
+
+  color: #5f6365;
+}
+
+/* =================================
+   ACTIVITY CARD
+================================= */
+
+.activity-card {
+  width: 100%;
+  min-height: 440px;
+
+  padding: 30px 32px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
+}
+
+/* =================================
+   TIMELINE
+================================= */
+
+.activity-timeline {
+  width: 100%;
+  position: relative;
+
+  padding-left: 8px;
+}
+
+/* =================================
+   DATE
+================================= */
+
+.activity-date {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.date-line {
+  width: 5px;
+  height: 38px;
+
+  margin-right: 13px;
+
+  background: #68869a;
+
+  border-radius: 3px;
+}
+
+.activity-date h2 {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  color: #5e6264;
+}
+
+/* =================================
+   ACTIVITY ITEM
+================================= */
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+
+  width: 100%;
+
+  margin-bottom: 18px;
+}
+
+/* =================================
+   ICON
+================================= */
+
+.activity-icon {
+  width: 28px;
+  height: 28px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 6px;
+  margin-right: 18px;
+
+  background: #68869a;
+
+  color: #ffffff;
+
+  border-radius: 50%;
+}
+
+/* =================================
+   DETAIL CARD
+================================= */
+
+.activity-detail {
+  flex: 1;
+
+  min-height: 66px;
+
+  padding: 12px 16px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 4px;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+/* =================================
+   TOP INFORMATION
+================================= */
+
+.activity-top {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 8px;
+}
+
+.activity-time {
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #414648;
+}
+
+.activity-dot {
+  width: 7px;
+  height: 7px;
+
+  background: #414648;
+
+  border-radius: 50%;
+}
+
+.activity-type {
+  font-size: 11px;
+  font-weight: 500;
+
+  color: #414648;
+}
+
+/* =================================
+   DESCRIPTION
+================================= */
+
+.activity-detail p {
+  margin: 0;
+
+  font-size: 10px;
+  line-height: 1.5;
+
+  color: #b8bec1;
+}
+
+/* =================================
+   DIVIDER
+================================= */
+
+.activity-divider {
+  width: calc(100% - 20px);
+
+  height: 2px;
+
+  margin: 20px 0 0 5px;
+
+  background: #bdbdbd;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+  .activity-content {
+    padding: 15px;
+  }
+
+  .activity-card {
+    padding: 25px 18px;
+  }
+
+  .activity-header {
+    min-height: 75px;
+  }
+
+  .activity-header h1 {
+    font-size: 24px;
+  }
+
+  .activity-detail p {
+    font-size: 9px;
+  }
+}
+
+.activity-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #6f8fa5;
+  border-radius: 50%;
+
+  flex-shrink: 0;
+}
+
+.activity-icon img {
+  width: 15px;
+  height: 18px;
+
+  display: block;
+}

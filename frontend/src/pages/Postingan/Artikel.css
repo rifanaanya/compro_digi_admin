@@ -1,0 +1,674 @@
+/* =========================
+   CONTENT
+========================= */
+
+.artikel-content {
+  padding: 22px 26px;
+  background: #f4f9fd;
+  min-height: calc(100vh - 70px);
+  box-sizing: border-box;
+}
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.artikel-title-card {
+  background: #ffffff;
+  padding: 28px 22px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  margin-bottom: 24px;
+  box-sizing: border-box;
+}
+
+.artikel-title-card h1 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+
+  color: #555;
+}
+
+/* =========================
+   CONTENT CARD
+========================= */
+
+.artikel-card {
+  background: #ffffff;
+
+  padding: 20px 26px 32px;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+
+  box-sizing: border-box;
+}
+
+.artikel-card-header {
+  margin-bottom: 18px;
+}
+
+.artikel-card-header h2 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+
+  color: #555;
+}
+
+/* =========================
+   TOOLBAR
+========================= */
+
+.artikel-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 10px;
+
+  width: 100%;
+
+  margin-bottom: 15px;
+}
+
+.artikel-add-button {
+  border: none;
+
+  background: #82aec8;
+  color: #ffffff;
+
+  padding: 8px 12px;
+
+  border-radius: 4px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  transition: 0.2s;
+}
+
+.artikel-add-button:hover {
+  background: #6d9db9;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.artikel-search {
+  position: relative;
+
+  width: 180px;
+  height: 32px;
+}
+
+.artikel-search input {
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+
+  padding: 0 30px 0 12px;
+
+  border: 1px solid #d8d8d8;
+
+  border-radius: 4px;
+
+  outline: none;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 11px;
+
+  color: #555;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+
+  background: #fff;
+}
+
+.artikel-search input::placeholder {
+  color: #aaa;
+}
+
+.artikel-search input:focus {
+  border-color: #9bb8ca;
+}
+
+.artikel-search svg {
+  position: absolute;
+
+  right: 10px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 14px;
+  height: 14px;
+
+  color: #9b9b9b;
+
+  pointer-events: none;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.artikel-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.artikel-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 11px;
+}
+
+.artikel-table thead {
+  background: #e6f2fa;
+}
+
+.artikel-table th {
+  padding: 8px 7px;
+
+  border: 1px solid #d8d8d8;
+
+  color: #444;
+
+  font-weight: 600;
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+.artikel-table td {
+  padding: 10px 8px;
+
+  border: 1px solid #dedede;
+
+  color: #555;
+
+  vertical-align: middle;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   COLUMN WIDTH
+========================= */
+
+.artikel-table th:nth-child(1),
+.artikel-table td:nth-child(1) {
+  width: 5%;
+  text-align: center;
+}
+
+.artikel-table th:nth-child(2),
+.artikel-table td:nth-child(2) {
+  width: 25%;
+  text-align: left;
+}
+
+.artikel-table th:nth-child(3),
+.artikel-table td:nth-child(3) {
+  width: 13%;
+  text-align: center;
+}
+
+.artikel-table th:nth-child(4),
+.artikel-table td:nth-child(4) {
+  width: 17%;
+  text-align: center;
+}
+
+.artikel-table th:nth-child(5),
+.artikel-table td:nth-child(5) {
+  width: 17%;
+  text-align: center;
+}
+
+.artikel-table th:nth-child(6),
+.artikel-table td:nth-child(6) {
+  width: 23%;
+  text-align: center;
+  overflow: visible;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.artikel-title {
+  line-height: 1.45;
+  text-align: left;
+
+  word-break: break-word;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.artikel-image {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.artikel-image img {
+  width: 100px;
+  height: 60px;
+
+  object-fit: cover;
+
+  border-radius: 3px;
+
+  display: block;
+
+  margin: 0 auto;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.artikel-actions {
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.artikel-actions button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 4px;
+
+  padding: 5px 8px;
+
+  margin: 0 2px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+/* DETAIL */
+
+.artikel-detail-button {
+  background: #70d58a;
+  color: #5a4a4e;
+}
+
+.artikel-detail-button:hover {
+  background: #55c872;
+}
+
+/* EDIT */
+
+.artikel-edit-button {
+  background: #ffbd00;
+  color: #5a4a4e;
+}
+
+.artikel-edit-button:hover {
+  background: #e5a900;
+}
+
+/* DELETE */
+
+.artikel-delete-button {
+  background: #e8323e;
+  color: #5a4a4e;
+}
+
+.artikel-delete-button:hover {
+  background: #c9212c;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.artikel-empty {
+  text-align: center;
+
+  padding: 25px !important;
+
+  color: #999 !important;
+}
+
+/* ========================================
+   PAGINATION
+======================================== */
+
+.artikel-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  width: fit-content;
+  height: 32px;
+
+  margin: 22px 0 0 auto;
+
+  background: #ffffff;
+
+  border-radius: 0 0 7px 7px;
+
+  overflow: hidden;
+
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.18);
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+}
+
+/* ========================================
+   TOMBOL PAGINATION
+======================================== */
+
+.artikel-pagination-number,
+.artikel-pagination-arrow {
+  width: 36px;
+  height: 32px;
+
+  padding: 0;
+  margin: 0;
+
+  border: none;
+  border-right: 1px solid #eeeeee;
+
+  background: #ffffff;
+
+  color: #68716b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  position: relative;
+}
+
+/* TOMBOL TERAKHIR */
+
+.artikel-pagination-number:last-child,
+.artikel-pagination-arrow:last-child {
+  border-right: none;
+}
+
+/* ========================================
+   HOVER
+======================================== */
+
+.artikel-pagination-number:hover:not(:disabled),
+.artikel-pagination-arrow:hover:not(:disabled) {
+  background: #f7fafb;
+  color: #647d90;
+}
+
+/* ========================================
+   KOTAK ANGKA AKTIF
+======================================== */
+
+.artikel-pagination-number.active {
+  background: #dceef8;
+
+  color: #647d90;
+
+  font-weight: 700;
+
+  width: 29px;
+  height: 25px;
+
+  margin: 0 3px;
+
+  border-radius: 3px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+}
+
+/* ========================================
+   DISABLED
+======================================== */
+
+.artikel-pagination-arrow:disabled {
+  background: #ffffff;
+
+  color: #aeb5b1;
+
+  cursor: default;
+}
+
+/* ========================================
+   ANGKA
+======================================== */
+
+.artikel-pagination-number:not(:disabled),
+.artikel-pagination-arrow:not(:disabled) {
+  font-family: "Nunito Sans", Arial, sans-serif;
+}
+
+/* =========================
+   DELETE MODAL
+========================= */
+
+.artikel-delete-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.25);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+}
+
+.artikel-delete-modal {
+  width: 430px;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+
+  overflow: hidden;
+}
+
+/* HEADER */
+
+.artikel-delete-modal-header {
+  height: 58px;
+
+  padding: 0 24px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #dddddd;
+
+  box-sizing: border-box;
+}
+
+.artikel-delete-modal-header h2 {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+.artikel-delete-close {
+  border: none;
+
+  background: transparent;
+
+  font-size: 32px;
+  line-height: 1;
+
+  color: #333333;
+
+  cursor: pointer;
+
+  padding: 0;
+}
+
+/* BODY */
+
+.artikel-delete-modal-content {
+  padding: 30px 34px 34px;
+}
+
+.artikel-delete-question {
+  margin: 0 0 12px;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  color: #555555;
+}
+
+.artikel-delete-description {
+  margin: 0;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 13px;
+
+  color: #777777;
+}
+
+/* ACTION */
+
+.artikel-delete-modal-actions {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 34px;
+}
+
+.artikel-delete-cancel,
+.artikel-delete-confirm {
+  height: 38px;
+
+  padding: 0 18px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  color: #ffffff;
+
+  font-family: "Nunito Sans", Arial, sans-serif;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* KEMBALI */
+
+.artikel-delete-cancel {
+  background: #eca06a;
+}
+
+.artikel-delete-cancel:hover {
+  background: #df8e56;
+}
+
+/* HAPUS */
+
+.artikel-delete-confirm {
+  background: #dc2835;
+}
+
+.artikel-delete-confirm:hover {
+  background: #c9212d;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .artikel-content {
+    padding: 18px;
+  }
+
+  .artikel-table {
+    min-width: 850px;
+  }
+}
+
+@media (max-width: 600px) {
+  .artikel-content {
+    padding: 15px;
+  }
+
+  .artikel-title-card {
+    padding: 20px;
+  }
+
+  .artikel-title-card h1 {
+    font-size: 19px;
+  }
+
+  .artikel-card {
+    padding: 18px;
+  }
+
+  .artikel-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .artikel-delete-modal {
+    width: calc(100% - 30px);
+  }
+}

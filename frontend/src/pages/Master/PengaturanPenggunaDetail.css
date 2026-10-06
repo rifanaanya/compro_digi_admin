@@ -1,0 +1,139 @@
+.pengguna-detail-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f9fc;
+}
+
+.pengguna-detail-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.pengguna-detail-content {
+  padding: 28px 32px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.pengguna-detail-header {
+  background: #ffffff;
+  padding: 30px 28px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.pengguna-detail-header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.pengguna-detail-card {
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.pengguna-detail-card-title {
+  padding: 18px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.pengguna-detail-card-content {
+  padding: 28px 20px 42px;
+}
+
+/* =========================
+   FOTO
+========================= */
+
+.pengguna-detail-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 24px;
+  color: #999;
+}
+
+.pengguna-detail-photo svg {
+  width: 80px;
+  height: 80px;
+}
+
+/* =========================
+   DATA
+========================= */
+
+.pengguna-detail-info {
+  width: 100%;
+  max-width: 500px;
+  margin-left: 22px;
+}
+
+.pengguna-detail-row {
+  display: grid;
+  grid-template-columns: 105px 20px 1fr;
+  align-items: center;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: #666;
+}
+
+.pengguna-detail-row span {
+  font-weight: 600;
+}
+
+.pengguna-detail-row b {
+  font-weight: 600;
+  text-align: center;
+}
+
+.pengguna-detail-row p {
+  margin: 0;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.pengguna-detail-back-button {
+  margin-top: 42px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background: #e9a15c;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  transition: 0.2s ease;
+}
+
+.pengguna-detail-back-button:hover {
+  background: #dc914b;
+}
+
+.pengguna-detail-not-found {
+  padding: 30px;
+  text-align: center;
+  color: #777;
+}
+.pengguna-detail-profile-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  display: block;
+}

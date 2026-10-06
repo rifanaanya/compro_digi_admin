@@ -1,0 +1,375 @@
+.kegiatan-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f9fc;
+}
+
+.kegiatan-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.kegiatan-content {
+  padding: 28px 32px;
+}
+
+/* HEADER */
+
+.kegiatan-header {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 28px 30px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.kegiatan-header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* CARD */
+
+.kegiatan-card {
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.kegiatan-card-title {
+  padding: 18px 22px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #555;
+}
+
+.kegiatan-card-content {
+  padding: 0 22px 28px;
+}
+
+/* TOP ACTION */
+
+.kegiatan-top-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.kegiatan-add-button {
+  border: none;
+  border-radius: 4px;
+  padding: 9px 16px;
+
+  background: #80abc5;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+.kegiatan-add-button:hover {
+  background: #709db8;
+}
+
+.kegiatan-search {
+  position: relative;
+  width: 205px;
+}
+
+.kegiatan-search input {
+  width: 100%;
+  height: 31px;
+  box-sizing: border-box;
+
+  padding: 0 12px;
+
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+  outline: none;
+
+  font-size: 12px;
+  color: #666;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.kegiatan-search input:focus {
+  border-color: #8db4cc;
+}
+
+/* TABLE */
+
+.kegiatan-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.kegiatan-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.kegiatan-table th {
+  background: #e7f2f8;
+  color: #555;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  padding: 8px 6px;
+
+  border: 1px solid #d7e2e8;
+  text-align: center;
+}
+
+.kegiatan-table td {
+  height: 70px;
+
+  padding: 7px 8px;
+
+  border: 1px solid #ddd;
+
+  font-size: 11px;
+  color: #555;
+
+  vertical-align: middle;
+  text-align: center;
+}
+
+.kegiatan-table th:nth-child(1) {
+  width: 40px;
+}
+
+.kegiatan-table th:nth-child(2) {
+  width: 220px;
+}
+
+.kegiatan-table th:nth-child(3) {
+  width: 70px;
+}
+
+.kegiatan-table th:nth-child(4) {
+  width: 105px;
+}
+
+.kegiatan-table th:nth-child(5) {
+  width: 120px;
+}
+
+.kegiatan-table th:nth-child(6) {
+  width: 125px;
+}
+
+.kegiatan-description {
+  text-align: left !important;
+  line-height: 1.4;
+}
+
+/* FOTO */
+
+.kegiatan-photo {
+  width: 148px;
+  height: 145px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.kegiatan-image,
+.kegiatan-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}
+
+.kegiatan-video {
+  background: #000;
+}
+
+.kegiatan-photo img {
+  width: 115px;
+  height: 115px;
+
+  object-fit: cover;
+
+  border-radius: 2px;
+
+  border: 1px solid #ddd;
+}
+
+/* ACTION */
+
+.kegiatan-actions {
+  white-space: nowrap;
+}
+
+.kegiatan-actions button {
+  border: none;
+  border-radius: 3px;
+
+  padding: 5px 8px;
+  margin: 0 2px;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* DETAIL */
+
+.kegiatan-detail-button {
+  background: #69dc83;
+  color: #fff;
+}
+
+.kegiatan-detail-button:hover {
+  background: #55ca70;
+}
+
+/* EDIT */
+
+.kegiatan-edit-button {
+  background: #ffc400;
+  color: #fff;
+}
+
+.kegiatan-edit-button:hover {
+  background: #eab400;
+}
+
+/* DELETE */
+
+.kegiatan-delete-button {
+  background: #ef3340;
+  color: #fff;
+}
+
+.kegiatan-delete-button:hover {
+  background: #d92733;
+}
+
+/* EMPTY */
+
+.kegiatan-empty {
+  padding: 25px !important;
+  color: #999 !important;
+}
+/* =========================
+   DELETE MODAL
+========================= */
+
+.delete-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+}
+
+.delete-modal {
+  width: 380px;
+
+  background: #ffffff;
+  border-radius: 8px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+
+  overflow: hidden;
+}
+
+/* TITLE */
+
+.delete-modal-title {
+  padding: 18px 22px;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  color: #555;
+
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* CONTENT */
+
+.delete-modal-content {
+  padding: 25px 22px;
+
+  font-size: 14px;
+  color: #666;
+
+  line-height: 1.5;
+}
+
+/* BUTTON */
+
+.delete-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  padding: 0 22px 20px;
+}
+
+.delete-modal-cancel,
+.delete-modal-confirm {
+  border: none;
+  border-radius: 4px;
+
+  padding: 9px 17px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.delete-modal-cancel {
+  background: #e9e9e9;
+  color: #666;
+}
+
+.delete-modal-cancel:hover {
+  background: #ddd;
+}
+
+.delete-modal-confirm {
+  background: #dc3545;
+  color: #ffffff;
+}
+
+.delete-modal-confirm:hover {
+  background: #c82333;
+}
+.kegiatan-image,
+.kegiatan-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.kegiatan-video {
+  background: #000;
+}

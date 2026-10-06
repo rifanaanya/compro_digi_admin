@@ -1,0 +1,100 @@
+.halaman-detail-content {
+  padding: 22px 26px;
+  background: #f4f9fd;
+  min-height: calc(100vh - 70px);
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.halaman-detail-title-card {
+  background: #ffffff;
+  padding: 28px 22px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  margin-bottom: 24px;
+}
+
+.halaman-detail-title-card h1 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* =========================
+   DETAIL CARD
+========================= */
+
+.halaman-detail-card {
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.halaman-detail-header {
+  padding: 18px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.halaman-detail-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+}
+
+.halaman-detail-body {
+  padding: 32px 44px 34px;
+}
+
+/* =========================
+   DETAIL ROW
+========================= */
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 115px 20px 1fr;
+  align-items: center;
+  margin-bottom: 14px;
+  font-size: 12px;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #555;
+}
+
+.detail-separator {
+  font-weight: 600;
+  color: #555;
+  text-align: center;
+}
+
+.detail-value {
+  color: #666;
+}
+
+/* =========================
+   KEMBALI
+========================= */
+
+.halaman-detail-kembali {
+  margin-top: 25px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background: #f2a261;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+}
+
+.halaman-detail-kembali:hover {
+  background: #df8c4b;
+}

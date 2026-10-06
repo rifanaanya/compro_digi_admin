@@ -1,0 +1,488 @@
+/* ========================================
+   FOOTER SETTING LAYOUT
+======================================== */
+
+.footer-setting-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f9fc;
+}
+
+/* ========================================
+   MAIN
+======================================== */
+
+.footer-setting-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.footer-setting-content {
+  flex: 1;
+  padding: 22px 28px;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.footer-setting-header {
+  width: 100%;
+  height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  margin-bottom: 24px;
+}
+
+.footer-setting-header h1 {
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 600;
+
+  color: #5b5b5b;
+}
+
+/* ========================================
+   CARD
+======================================== */
+
+.footer-setting-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+
+  box-sizing: border-box;
+}
+
+.footer-setting-card-content {
+  padding: 22px 28px 42px;
+}
+
+/* ========================================
+   BUAT PENGATURAN
+======================================== */
+
+.footer-create-button {
+  height: 38px;
+
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #80a9c3;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+
+  margin-bottom: 30px;
+}
+
+.footer-create-button:hover {
+  background: #719bb7;
+}
+
+/* ========================================
+   TABLE WRAPPER
+======================================== */
+
+.footer-table-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+/* ========================================
+   TABLE
+======================================== */
+
+.footer-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  background: #ffffff;
+  font-size: 12px;
+  color: #555555;
+}
+
+/* ========================================
+   TABLE HEADER
+======================================== */
+
+.footer-table thead th {
+  height: 34px;
+  padding: 0 14px;
+  box-sizing: border-box;
+
+  background: #e8f2f8;
+
+  border-top: 1px solid #dce8ee;
+  border-bottom: 1px solid #d8d8d8;
+  border-left: none;
+  border-right: none;
+
+  text-align: left;
+  vertical-align: middle;
+
+  font-size: 11px;
+  font-weight: 600;
+  color: #4f5b62;
+}
+
+.footer-table thead th:first-child {
+  border-top-left-radius: 5px;
+}
+
+.footer-table thead th:last-child {
+  border-top-right-radius: 5px;
+}
+
+/* ========================================
+   TABLE BODY
+======================================== */
+
+.footer-table tbody td {
+  height: 38px;
+  padding: 0 14px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+
+  font-size: 11px;
+  font-weight: 400;
+  color: #555555;
+
+  vertical-align: middle;
+}
+
+.footer-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ========================================
+   COLUMN WIDTH
+======================================== */
+
+.footer-no {
+  width: 8%;
+  text-align: center !important;
+}
+
+.footer-table th:nth-child(2),
+.footer-table td:nth-child(2) {
+  width: 30%;
+}
+
+.footer-table th:nth-child(3),
+.footer-table td:nth-child(3) {
+  width: 42%;
+}
+
+.footer-action-header {
+  width: 20%;
+  text-align: center !important;
+}
+
+/* ========================================
+   ACTION
+======================================== */
+
+.footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  transform: translateX(-10px);
+}
+
+/* ========================================
+   EDIT BUTTON
+======================================== */
+
+.footer-edit-button {
+  height: 22px;
+  padding: 0 10px;
+
+  border: none;
+  border-radius: 3px;
+
+  background: #ffc107;
+  color: #333333;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.footer-edit-button:hover {
+  background: #eab000;
+}
+
+/* ========================================
+   DELETE BUTTON
+======================================== */
+
+.footer-delete-button {
+  height: 20px;
+  padding: 0 8px;
+
+  border: none;
+  border-radius: 3px;
+
+  background: #dc3545;
+  color: #5a4a4e;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.footer-delete-button:hover {
+  background: #c82333;
+}
+
+/* ========================================
+   DELETE MODAL OVERLAY
+======================================== */
+
+.footer-delete-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.22);
+}
+
+/* ========================================
+   DELETE MODAL
+======================================== */
+
+.footer-delete-modal {
+  width: 430px;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* ========================================
+   MODAL HEADER
+======================================== */
+
+.footer-delete-modal-header {
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 24px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.footer-delete-modal-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  color: #5f5f5f;
+}
+
+/* ========================================
+   CLOSE
+======================================== */
+
+.footer-delete-close {
+  width: 28px;
+  height: 28px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 31px;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  color: #3f3f3f;
+
+  cursor: pointer;
+}
+
+.footer-delete-close:hover {
+  color: #222222;
+}
+
+/* ========================================
+   MODAL BODY
+======================================== */
+
+.footer-delete-modal-body {
+  padding: 36px 35px 40px;
+}
+
+.footer-delete-question {
+  margin: 0 0 14px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #666666;
+}
+
+.footer-delete-description {
+  margin: 0;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  color: #777777;
+}
+
+/* ========================================
+   MODAL BUTTONS
+======================================== */
+
+.footer-delete-modal-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 34px;
+}
+
+/* ========================================
+   KEMBALI
+======================================== */
+
+.footer-delete-cancel {
+  height: 38px;
+
+  padding: 0 17px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #f0a15f;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.footer-delete-cancel:hover {
+  background: #e8944f;
+}
+
+/* ========================================
+   HAPUS
+======================================== */
+
+.footer-delete-confirm {
+  height: 38px;
+
+  padding: 0 18px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background: #d92525;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.footer-delete-confirm:hover {
+  background: #c91f1f;
+}
