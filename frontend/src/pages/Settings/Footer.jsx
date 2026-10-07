@@ -41,24 +41,37 @@ function Footer() {
     fetchFooterData();
   }, []);
 
+  // ==========================================
+  // DATA YANG DITAMPILKAN DI TABLE
+  // ==========================================
+  const combinedFooterData = footerData;
+
+  // ==========================================
   // EDIT
+  // ==========================================
   const handleEdit = (id) => {
     navigate(`/settings/footer/edit/${id}`);
   };
 
+  // ==========================================
   // DELETE
+  // ==========================================
   const handleDeleteClick = (footer) => {
     setSelectedFooter(footer);
     setDeleteModal(true);
   };
 
+  // ==========================================
   // TUTUP MODAL
+  // ==========================================
   const handleCloseDelete = () => {
     setDeleteModal(false);
     setSelectedFooter(null);
   };
 
+  // ==========================================
   // KONFIRMASI DELETE
+  // ==========================================
   const handleConfirmDelete = async () => {
     if (!selectedFooter) return;
 
@@ -75,16 +88,23 @@ function Footer() {
       const result = await response.json();
 
       if (!response.ok || !result.success) {
-        throw new Error(result.message || "Gagal menghapus footer");
+        throw new Error(
+          result.message || "Gagal menghapus footer"
+        );
       }
 
       setFooterData((prev) =>
-        prev.filter((item) => item.id !== selectedFooter.id),
+        prev.filter((item) => item.id !== selectedFooter.id)
+      );
+
+      setFooterColumnData((prev) =>
+        prev.filter((item) => item.id !== selectedFooter.id)
       );
 
       handleCloseDelete();
     } catch (error) {
       console.error("Gagal menghapus footer:", error);
+      alert(error.message || "Gagal menghapus footer.");
     }
   };
 
@@ -100,14 +120,14 @@ function Footer() {
         <main className="footer-setting-content">
           {/* =========================
               HEADER
-          ========================= */}
+          ========================== */}
           <section className="footer-setting-header">
             <h1>Footer</h1>
           </section>
 
           {/* =========================
               FOOTER CARD
-          ========================= */}
+          ========================== */}
           <section className="footer-setting-card">
             <div className="footer-setting-card-content">
               {/* BUAT PENGATURAN */}
@@ -121,7 +141,7 @@ function Footer() {
 
               {/* =========================
                   TABLE
-              ========================= */}
+              ========================== */}
               <div className="footer-table-wrapper">
                 <table className="footer-table">
                   <thead>
@@ -132,25 +152,33 @@ function Footer() {
 
                       <th>Isi Pengaturan</th>
 
-                      <th className="footer-action-header">Aksi</th>
+                      <th className="footer-action-header">
+                        Aksi
+                      </th>
                     </tr>
                   </thead>
 
                   <tbody>
                     {combinedFooterData.map((item, index) => (
                       <tr key={item.id}>
-                        <td className="footer-no">{index + 1}</td>
+                        <td className="footer-no">
+                          {index + 1}
+                        </td>
 
                         <td>{item.nama}</td>
 
-                        <td>{item.isi || item.gambar || "-"}</td>
+                        <td>
+                          {item.isi || item.gambar || "-"}
+                        </td>
 
                         <td className="footer-actions">
                           {/* EDIT */}
                           <button
                             type="button"
                             className="footer-edit-button"
-                            onClick={() => handleEdit(item.id)}
+                            onClick={() =>
+                              handleEdit(item.id)
+                            }
                           >
                             Edit
                           </button>
@@ -159,13 +187,29 @@ function Footer() {
                           <button
                             type="button"
                             className="footer-delete-button"
-                            onClick={() => handleDeleteClick(item)}
+                            onClick={() =>
+                              handleDeleteClick(item)
+                            }
                           >
                             Delete
                           </button>
                         </td>
                       </tr>
                     ))}
+
+                    {combinedFooterData.length === 0 && (
+                      <tr>
+                        <td
+                          colSpan="4"
+                          style={{
+                            textAlign: "center",
+                            padding: "20px",
+                          }}
+                        >
+                          Belum ada data footer.
+                        </td>
+                      </tr>
+                    )}
                   </tbody>
                 </table>
               </div>
@@ -175,9 +219,12 @@ function Footer() {
 
         {/* =========================
             DELETE MODAL
-        ========================= */}
+        ========================== */}
         {deleteModal && (
-          <div className="footer-delete-overlay" onClick={handleCloseDelete}>
+          <div
+            className="footer-delete-overlay"
+            onClick={handleCloseDelete}
+          >
             <div
               className="footer-delete-modal"
               onClick={(e) => e.stopPropagation()}

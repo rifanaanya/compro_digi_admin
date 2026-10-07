@@ -48,7 +48,7 @@ function TambahArtikel() {
     setPreview(URL.createObjectURL(file));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!formData.judul.trim()) {
@@ -71,61 +71,33 @@ function TambahArtikel() {
       return;
     }
 
-    const handleSubmit = async (e) => {
-      e.preventDefault();
+    try {
+      const data = new FormData();
 
-      if (!formData.judul.trim()) {
-        alert("Judul artikel wajib diisi.");
-        return;
+      data.append("judul", formData.judul.trim());
+      data.append("ringkasan", formData.ringkasan.trim());
+      data.append("isi", formData.isi.trim());
+      data.append("gambar", formData.gambar);
+
+      const response = await fetch("http://localhost:5000/api/artikel", {
+        method: "POST",
+        body: data,
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Gagal menambahkan artikel");
       }
 
-      if (!formData.ringkasan.trim()) {
-        alert("Ringkasan artikel wajib diisi.");
-        return;
-      }
+      alert("Artikel berhasil ditambahkan.");
 
-      if (!formData.isi.trim()) {
-        alert("Isi artikel wajib diisi.");
-        return;
-      }
+      navigate("/artikel");
+    } catch (error) {
+      console.error("❌ Gagal menambahkan artikel:", error);
 
-      if (!formData.gambar) {
-        alert("Gambar artikel wajib diupload.");
-        return;
-      }
-
-      try {
-        const data = new FormData();
-
-        data.append("judul", formData.judul.trim());
-        data.append("ringkasan", formData.ringkasan.trim());
-        data.append("isi", formData.isi.trim());
-        data.append("gambar", formData.gambar);
-
-        const response = await fetch("http://localhost:5000/api/artikel", {
-          method: "POST",
-          body: data,
-        });
-
-        const result = await response.json();
-
-        if (!response.ok || !result.success) {
-          throw new Error(result.message || "Gagal menambahkan artikel");
-        }
-
-        alert("Artikel berhasil ditambahkan.");
-
-        navigate("/artikel");
-      } catch (error) {
-        console.error("❌ Gagal menambahkan artikel:", error);
-
-        alert(error.message || "Gagal menambahkan artikel.");
-      }
-    };
-
-    alert("Artikel berhasil ditambahkan.");
-
-    navigate("/artikel");
+      alert(error.message || "Gagal menambahkan artikel.");
+    }
   };
 
   return (

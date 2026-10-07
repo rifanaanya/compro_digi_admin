@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import Sidebar from "../../components/Sidebar";
@@ -10,68 +10,65 @@ function EditArtikel() {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const artikelData = {
-    1: {
-      judul:
-        "Engineering Service untuk Solusi Teknis Mesin dan Peralatan Industri",
-      ringkasan:
-        "Setiap kebutuhan industri memiliki kondisi dan permasalahan teknis yang berbeda. PT. Digi Tekno Indonesia menyediakan engineering service untuk membantu pelanggan menemukan solusi yang sesuai dengan kebutuhan mesin, komponen, dan proses kerja di lapangan.",
-      isi: "",
-      gambar: "/Artikel/artikel1.png",
-      namaGambar: "artikel1.png",
-    },
-
-    2: {
-      judul:
-        "Jasa Mekanikal & Engineering untuk Mendukung Performa Mesin Industri",
-      ringkasan:
-        "Memberikan layanan mekanikal dan engineering untuk mendukung kebutuhan industri.",
-      isi: "",
-      gambar: "/Artikel/artikel4.png",
-      namaGambar: "artikel2.png",
-    },
-
-    3: {
-      judul: "Jasa Machining Presisi untuk Komponen Mesin Industri",
-      ringkasan:
-        "Menyediakan jasa machining presisi untuk kebutuhan komponen mesin industri.",
-      isi: "",
-      gambar: "/Artikel/artikel3.png",
-      namaGambar: "artikel3.png",
-    },
-
-    4: {
-      judul:
-        "Repair & Maintenance Mesin Industri untuk Menjaga Kelancaran Operasional",
-      ringkasan:
-        "Memberikan layanan repair dan maintenance untuk menjaga performa serta kelancaran operasional mesin industri.",
-      isi: "",
-      gambar: "/Artikel/artikel2.png",
-      namaGambar: "artikel4.png",
-    },
-
-    5: {
-      judul: "Jasa Pengadaan Sparepart dan Komponen Mesin Industri",
-      ringkasan:
-        "Membantu kebutuhan pengadaan sparepart dan komponen untuk mendukung kebutuhan industri.",
-      isi: "",
-      gambar: "/Artikel/artikel5.png",
-      namaGambar: "artikel5.png",
-    },
-  };
-
-  const dataAwal = artikelData[id] || artikelData[1];
+  const [loading, setLoading] = useState(true);
 
   const [formData, setFormData] = useState({
-    judul: dataAwal.judul,
-    ringkasan: dataAwal.ringkasan,
-    isi: dataAwal.isi,
+    judul: "",
+    ringkasan: "",
+    isi: "",
     gambar: null,
   });
 
-  const [preview, setPreview] = useState(dataAwal.gambar);
+  const [preview, setPreview] = useState(null);
+  const [namaGambar, setNamaGambar] = useState("");
 
-  const [namaGambar, setNamaGambar] = useState(dataAwal.namaGambar);
+  // ==========================================
+  // GET DETAIL ARTIKEL
+  // ==========================================
+
+  useEffect(() => {
+    const fetchArtikel = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/api/artikel/${id}`);
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "Gagal mengambil data artikel");
+        }
+
+        const artikel = result.data;
+
+        setFormData({
+          judul: artikel.judul || "",
+          ringkasan: artikel.ringkasan || "",
+          isi: artikel.isi || "",
+          gambar: null,
+        });
+
+        if (artikel.gambar) {
+          setPreview(`http://localhost:5000${artikel.gambar}`);
+
+          const namaFile = artikel.gambar.split("/").pop();
+          setNamaGambar(namaFile || "");
+        }
+      } catch (error) {
+        console.error("❌ Gagal mengambil data artikel:", error);
+
+        alert(error.message || "Gagal mengambil data artikel.");
+
+        navigate("/artikel");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArtikel();
+  }, [id, navigate]);
+
+  // ==========================================
+  // HANDLE CHANGE
+  // ==========================================
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -81,6 +78,10 @@ function EditArtikel() {
       [name]: value,
     }));
   };
+
+  // ==========================================
+  // HANDLE IMAGE
+  // ==========================================
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -101,7 +102,11 @@ function EditArtikel() {
     setPreview(imageUrl);
   };
 
-  const handleSubmit = (e) => {
+  // ==========================================
+  // SUBMIT EDIT
+  // ==========================================
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!formData.judul.trim()) {
@@ -119,30 +124,68 @@ function EditArtikel() {
       return;
     }
 
-    const artikelUpdated = {
-      id: Number(id),
+    try {
+      const data = new FormData();
 
-      judul: formData.judul.trim(),
+      data.append("judul", formData.judul.trim());
+      data.append("ringkasan", formData.ringkasan.trim());
+      data.append("isi", formData.isi.trim());
 
-      ringkasan: formData.ringkasan.trim(),
+      // Hanya kirim gambar kalau user memilih gambar baru
+      if (formData.gambar) {
+        data.append("gambar", formData.gambar);
+      }
 
-      isi: formData.isi.trim(),
+      const response = await fetch(`http://localhost:5000/api/artikel/${id}`, {
+        method: "PUT",
+        body: data,
+      });
 
-      gambar: formData.gambar ? preview : dataAwal.gambar,
+      const result = await response.json();
 
-      namaGambar: namaGambar,
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Gagal memperbarui artikel");
+      }
 
-      penulis: "Admin DIGI",
+      alert("Artikel berhasil diperbarui.");
 
-      tanggal: "25 September 2026",
-    };
+      navigate("/artikel");
+    } catch (error) {
+      console.error("❌ Gagal mengedit artikel:", error);
 
-    console.log("Artikel berhasil diubah:", artikelUpdated);
-
-    alert("Artikel berhasil diperbarui.");
-
-    navigate("/artikel");
+      alert(error.message || "Gagal memperbarui artikel.");
+    }
   };
+
+  // ==========================================
+  // LOADING
+  // ==========================================
+
+  if (loading) {
+    return (
+      <div className="admin-layout">
+        <Sidebar />
+
+        <div className="admin-main">
+          <Navbar />
+
+          <main className="edit-artikel-content">
+            <div className="edit-artikel-title-card">
+              <h1>Edit Artikel</h1>
+            </div>
+
+            <div className="edit-artikel-card">
+              <div className="edit-artikel-card-header">
+                <h2>Edit</h2>
+              </div>
+
+              <div className="edit-artikel-form">Memuat data artikel...</div>
+            </div>
+          </main>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="admin-layout">
@@ -208,7 +251,6 @@ function EditArtikel() {
 
               {/* UPLOAD GAMBAR */}
 
-              {/* UPLOAD GAMBAR */}
               <div className="edit-artikel-form-group">
                 <label htmlFor="edit-gambar">Upload Gambar</label>
 
@@ -232,7 +274,7 @@ function EditArtikel() {
                     <div className="edit-artikel-preview">
                       <img src={preview} alt="Preview artikel" />
 
-                      <span>{formData.gambar?.name || "artikel1.png"}</span>
+                      <span>{formData.gambar?.name || namaGambar}</span>
                     </div>
                   )}
                 </div>

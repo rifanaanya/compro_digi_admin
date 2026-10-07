@@ -66,13 +66,36 @@ function Artikel() {
     setSelectedDeleteId(null);
   };
 
-  const handleConfirmDelete = () => {
-    setArtikelData((prev) =>
-      prev.filter((item) => item.id !== selectedDeleteId),
-    );
+  const handleConfirmDelete = async () => {
+    if (!selectedDeleteId) return;
 
-    setDeleteModal(false);
-    setSelectedDeleteId(null);
+    try {
+      const response = await fetch(
+        `http://localhost:5000/api/artikel/${selectedDeleteId}`,
+        {
+          method: "DELETE",
+        },
+      );
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Gagal menghapus artikel");
+      }
+
+      setArtikelData((prev) =>
+        prev.filter((item) => item.id !== selectedDeleteId),
+      );
+
+      setDeleteModal(false);
+      setSelectedDeleteId(null);
+
+      alert("Artikel berhasil dihapus.");
+    } catch (error) {
+      console.error("❌ Gagal menghapus artikel:", error);
+
+      alert(error.message || "Gagal menghapus artikel.");
+    }
   };
 
   return (
