@@ -7,6 +7,7 @@ import authRoutes from "./routes/auth.js";
 import homeRoutes from "./routes/home.js";
 import faqRoutes from "./routes/faq.js";
 import kegiatanRoutes from "./routes/kegiatan.js";
+import postinganKegiatanRoutes from "./routes/postingan-kegiatan.js";
 import tentangDigiRoutes from "./routes/tentang-digi.js";
 import visiMisiRoutes from "./routes/visi-misi.js";
 import pengaturanLainnyaRoutes from "./routes/pengaturan-lainnya.js";
@@ -21,6 +22,10 @@ import footerColumnRoutes from "./routes/footer-column.js";
 import footerColumnItemRoutes from "./routes/footer-column-item.js";
 import pengaturanMenuRoutes from "./routes/pengaturan-menu.js";
 import sosialMediaRoutes from "./routes/sosial-media.js";
+import footerRoutes from "./routes/footer.js";
+import mitraRoutes from "./routes/mitra.js";
+import layananDataRoutes from "./routes/layanan-data.js";
+import artikelDataRoutes from "./routes/artikel-data.js";
 
 const app = express();
 
@@ -53,6 +58,11 @@ app.use("/api/footer-column", footerColumnRoutes);
 app.use("/api/footer-column-item", footerColumnItemRoutes);
 app.use("/api/pengaturan-menu", pengaturanMenuRoutes);
 app.use("/api/sosial-media", sosialMediaRoutes);
+app.use("/api/postingan/kegiatan", postinganKegiatanRoutes);
+app.use("/api/footer", footerRoutes);
+app.use("/api/mitra", mitraRoutes);
+app.use("/api/layanan-data", layananDataRoutes);
+app.use("/api/artikel", artikelDataRoutes);
 
 // ==========================================
 // TEST ROUTE KONTAK

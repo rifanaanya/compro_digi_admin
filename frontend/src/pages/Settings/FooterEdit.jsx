@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import Sidebar from "../../components/Sidebar";
@@ -10,34 +10,50 @@ function FooterEdit() {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const footerData = {
-    1: {
-      name: "Footer Copyright",
-      content: "PT. Digi Tekno Indonesia",
-      image: "",
-    },
-    2: {
-      name: "Logo Footer",
-      content: "",
-      image: "uploads/settings/logofooter.png",
-    },
-    3: {
-      name: "Footer Column 1",
-      content: "Layanan Kami",
-      image: "",
-    },
-    4: {
-      name: "Footer Column 2",
-      content: "Kontak Kami",
-      image: "",
-    },
-  };
-
-  const selectedFooter = footerData[id] || footerData[1];
-
-  const [name, setName] = useState(selectedFooter.name);
-  const [content, setContent] = useState(selectedFooter.content);
+  const [name, setName] = useState("");
+  const [content, setContent] = useState("");
   const [image, setImage] = useState(null);
+  const [currentImage, setCurrentImage] = useState("");
+
+  useEffect(() => {
+    const fetchFooter = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/api/footer/${id}`);
+
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.message || "Gagal mengambil data footer");
+        }
+
+        setName(result.data.nama || "");
+        setContent(result.data.isi || "");
+        setCurrentImage(result.data.gambar || "");
+      } catch (error) {
+        console.error("Gagal mengambil data footer:", error);
+      }
+    };
+
+    fetchFooter();
+  }, [id]);
+
+  useEffect(() => {
+    const fetchFooterSettings = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/footer");
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          setFooterSettings(result.data);
+        }
+      } catch (error) {
+        console.error("❌ Error fetch footer settings:", error);
+      }
+    };
+
+    fetchFooterSettings();
+  }, []);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -47,18 +63,34 @@ function FooterEdit() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log({
-      id,
-      name,
-      content,
-      image,
-    });
+    try {
+      const formData = new FormData();
 
-    // Nanti disambungkan ke backend/database
-    navigate("/settings/footer");
+      formData.append("nama", name);
+      formData.append("isi", content);
+
+      if (image) {
+        formData.append("gambar", image);
+      }
+
+      const response = await fetch(`http://localhost:5000/api/footer/${id}`, {
+        method: "PUT",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || "Gagal memperbarui footer");
+      }
+
+      navigate("/settings/footer");
+    } catch (error) {
+      console.error("Gagal memperbarui footer:", error);
+    }
   };
 
   return (
@@ -129,10 +161,8 @@ function FooterEdit() {
                 </div>
 
                 {/* GAMBAR LAMA */}
-                {selectedFooter.image && !image && (
-                  <small className="footer-current-image">
-                    {selectedFooter.image}
-                  </small>
+                {currentImage && !image && (
+                  <small className="footer-current-image">{currentImage}</small>
                 )}
 
                 {/* GAMBAR BARU */}

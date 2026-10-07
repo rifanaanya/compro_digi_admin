@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Search } from "lucide-react";
 
@@ -15,46 +15,29 @@ function Artikel() {
   const [selectedDeleteId, setSelectedDeleteId] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const [artikelData, setArtikelData] = useState([
-    {
-      id: 1,
-      judul:
-        "Engineering Service untuk Solusi Teknis Mesin dan Peralatan Industri",
-      penulis: "Admin DIGI",
-      tanggal: "25 September 2026",
-      gambar: "/Artikel/artikel1.png",
-    },
-    {
-      id: 2,
-      judul:
-        "Jasa Mekanikal & Engineering untuk Mendukung Performa Mesin Industri",
-      penulis: "Admin DIGI",
-      tanggal: "25 September 2026",
-      gambar: "/Artikel/artikel4.png",
-    },
-    {
-      id: 3,
-      judul: "Jasa Machining Presisi untuk Komponen Mesin Industri",
-      penulis: "Admin DIGI",
-      tanggal: "25 September 2026",
-      gambar: "/Artikel/artikel3.png",
-    },
-    {
-      id: 4,
-      judul:
-        "Repair & Maintenance Mesin Industri untuk Menjaga Kelancaran Operasional",
-      penulis: "Admin DIGI",
-      tanggal: "25 September 2026",
-      gambar: "/Artikel/artikel2.png",
-    },
-    {
-      id: 5,
-      judul: "Jasa Pengadaan Sparepart dan Komponen Mesin Industri",
-      penulis: "Admin DIGI",
-      tanggal: "25 September 2026",
-      gambar: "/Artikel/artikel5.png",
-    },
-  ]);
+  const [artikelData, setArtikelData] = useState([]);
+
+  useEffect(() => {
+    fetchArtikel();
+  }, []);
+
+  const fetchArtikel = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/artikel");
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Gagal mengambil data artikel");
+      }
+
+      console.log("📦 Data artikel dari API:", result.data);
+
+      setArtikelData(result.data);
+    } catch (error) {
+      console.error("❌ Gagal mengambil data artikel:", error);
+    }
+  };
 
   const filteredData = artikelData.filter((item) =>
     item.judul.toLowerCase().includes(search.toLowerCase()),
@@ -172,10 +155,23 @@ function Artikel() {
 
                         <td className="artikel-author">{item.penulis}</td>
 
-                        <td className="artikel-date">{item.tanggal}</td>
+                        <td className="artikel-date">
+                          {item.createdAt
+                            ? new Date(item.createdAt).toLocaleDateString(
+                                "id-ID",
+                              )
+                            : "-"}
+                        </td>
 
                         <td className="artikel-image">
-                          <img src={item.gambar} alt={item.judul} />
+                          <img
+                            src={
+                              item.gambar
+                                ? `http://localhost:5000${item.gambar}`
+                                : ""
+                            }
+                            alt={item.judul}
+                          />
                         </td>
 
                         <td className="artikel-actions">

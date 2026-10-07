@@ -1,7 +1,7 @@
-model Kegiatan {
+model FooterSetting {
   id        Int      @id @default(autoincrement())
-  deskripsi String
-  caption   String
+  nama      String
+  isi       String?
   gambar    String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
 import Navbar from "../../components/Navbar";
@@ -6,22 +7,47 @@ import "./PengaturanLainnya.css";
 function PengaturanLainnya() {
   const navigate = useNavigate();
 
-  const pengaturanData = [
-    {
-      id: 1,
-      name: "Logo Sidebar",
-      image: "/Logo-Digi.png",
-    },
-    {
-      id: 2,
-      name: "Logo Header",
-      image: "/Logo-Digi.png",
-    },
-  ];
+  const [pengaturanData, setPengaturanData] = useState([]);
+
+  // ==========================================
+  // GET SEMUA PENGATURAN
+  // ==========================================
+
+  useEffect(() => {
+    const fetchPengaturan = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:5000/api/pengaturan-lainnya",
+        );
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(
+            result.message || "Gagal mengambil data Pengaturan Lainnya.",
+          );
+        }
+
+        setPengaturanData(result.data);
+      } catch (error) {
+        console.error("❌ Gagal mengambil Pengaturan Lainnya:", error);
+      }
+    };
+
+    fetchPengaturan();
+  }, []);
+
+  // ==========================================
+  // DETAIL
+  // ==========================================
 
   const handleDetail = (id) => {
     navigate(`/settings/pengaturan-lainnya/detail/${id}`);
   };
+
+  // ==========================================
+  // EDIT
+  // ==========================================
 
   const handleEdit = (id) => {
     navigate(`/settings/pengaturan-lainnya/edit/${id}`);
@@ -67,27 +93,39 @@ function PengaturanLainnya() {
                   <thead>
                     <tr>
                       <th className="pengaturan-lainnya-no">No.</th>
+
                       <th>Nama Pengaturan</th>
+
                       <th className="pengaturan-lainnya-image-header">
                         Isi Pengaturan
                       </th>
+
                       <th className="pengaturan-lainnya-action-header">Aksi</th>
                     </tr>
                   </thead>
 
                   <tbody>
-                    {pengaturanData.map((item) => (
+                    {pengaturanData.map((item, index) => (
                       <tr key={item.id}>
-                        <td className="pengaturan-lainnya-no">{item.id}</td>
+                        {/* NOMOR URUT */}
+                        <td className="pengaturan-lainnya-no">{index + 1}</td>
 
-                        <td className="pengaturan-lainnya-name">{item.name}</td>
+                        {/* NAMA PENGATURAN */}
+                        <td className="pengaturan-lainnya-name">{item.nama}</td>
 
+                        {/* GAMBAR */}
                         <td className="pengaturan-lainnya-image-cell">
                           <div className="pengaturan-lainnya-image-box">
-                            <img src={item.image} alt={item.name} />
+                            {item.gambar && (
+                              <img
+                                src={`http://localhost:5000${item.gambar}`}
+                                alt={item.nama}
+                              />
+                            )}
                           </div>
                         </td>
 
+                        {/* AKSI */}
                         <td className="pengaturan-lainnya-actions">
                           <button
                             type="button"

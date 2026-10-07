@@ -1,78 +1,79 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import dropdownArrow from "../../assets/icons/dropdown-arrow.svg";
 
 import Sidebar from "../../components/Sidebar";
 import Navbar from "../../components/Navbar";
 
 import "./EditLayanan.css";
+import "./TambahLayanan.css";
 
 function EditLayanan() {
   const navigate = useNavigate();
   const location = useLocation();
   const { id } = useParams();
 
-  const layananData = [
-    {
-      id: 1,
-      judul: "Software Development",
-      deskripsi:
-        "Mengembangkan aplikasi perangkat lunak dengan teknologi informasi berbasis web dan mobile aplikasi.",
-      gambar: "",
-      tipe: "Layanan",
-    },
-    {
-      id: 2,
-      judul: "Services and Maintenance",
-      deskripsi:
-        "Memberikan jasa perbaikan dan pemeliharaan baik untuk software, hardware ataupun infrastruktur.",
-      gambar: "",
-      tipe: "Layanan",
-    },
-    {
-      id: 3,
-      judul: "IT Equipment/Hardware & Networking",
-      deskripsi:
-        "Memasok barang dan suku cadang barang IT untuk bisnis dan produk yang sesuai dengan misi kepuasan pelanggan dan pengiriman cepat.",
-      gambar: "",
-      tipe: "Layanan",
-    },
-    {
-      id: 4,
-      judul: "IT Consultant & Problem Solving",
-      deskripsi:
-        "Memberikan solusi masukan dan mengevaluasi sistem IT di perusahaan untuk meningkatkan kinerja perusahaan.",
-      gambar: "",
-      tipe: "Layanan",
-    },
-    {
-      id: 5,
-      judul: "Procurement of Goods",
-      deskripsi:
-        "Kami siap membantu dalam pengadaan barang kebutuhan perusahaan.",
-      gambar: "",
-      tipe: "Layanan",
-    },
-  ];
+  const [dataAwal, setDataAwal] = useState(location.state?.layanan || null);
 
-  const dataAwal =
-    location.state?.layanan ||
-    layananData.find((item) => String(item.id) === String(id));
+  const [judul, setJudul] = useState(location.state?.layanan?.judul || "");
 
-  const [judul, setJudul] = useState(dataAwal?.judul || "");
-  const [deskripsi, setDeskripsi] = useState(dataAwal?.deskripsi || "");
-  const [gambar, setGambar] = useState(dataAwal?.gambar || "");
-  const [tipe, setTipe] = useState(dataAwal?.tipe || "Layanan");
+  const [deskripsi, setDeskripsi] = useState(
+    location.state?.layanan?.deskripsi || "",
+  );
+
+  const [gambar, setGambar] = useState(location.state?.layanan?.gambar || "");
+
+  const [gambarFile, setGambarFile] = useState(null);
+
+  const [tipe, setTipe] = useState(location.state?.layanan?.tipe || "Layanan");
+
+  const [typeDropdownOpen, setTypeDropdownOpen] = useState(false);
+
+  const [loading, setLoading] = useState(!location.state?.layanan);
+
+  useEffect(() => {
+    const fetchLayanan = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/api/layanan-data/${id}`,
+        );
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "Gagal mengambil data layanan");
+        }
+
+        const data = result.data;
+
+        setDataAwal(data);
+        setJudul(data.judul || "");
+        setDeskripsi(data.deskripsi || "");
+        setGambar(data.gambar || "");
+        setTipe(data.tipe || "Layanan");
+      } catch (error) {
+        console.error("❌ Gagal mengambil detail layanan:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchLayanan();
+  }, [id]);
 
   const handleImageChange = (e) => {
-    const file = e.target.files[0];
+    const file = e.target.files?.[0];
 
     if (!file) return;
+
+    setGambarFile(file);
 
     const imageUrl = URL.createObjectURL(file);
     setGambar(imageUrl);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!judul.trim()) {
@@ -85,22 +86,47 @@ function EditLayanan() {
       return;
     }
 
-    const layananUpdate = {
-      id: Number(id),
-      judul,
-      deskripsi,
-      gambar,
-      tipe,
-    };
+    if (!tipe) {
+      alert("Tipe Layanan wajib dipilih.");
+      return;
+    }
 
-    console.log("Data layanan berhasil diedit:", layananUpdate);
+    try {
+      const formData = new FormData();
 
-    alert("Data layanan berhasil disimpan.");
+      formData.append("judul", judul.trim());
+      formData.append("deskripsi", deskripsi.trim());
+      formData.append("tipe", tipe);
 
-    navigate("/layanan");
+      if (gambarFile) {
+        formData.append("gambar", gambarFile);
+      }
+
+      const response = await fetch(
+        `http://localhost:5000/api/layanan-data/${id}`,
+        {
+          method: "PUT",
+          body: formData,
+        },
+      );
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Gagal mengedit layanan");
+      }
+
+      alert("Data layanan berhasil disimpan.");
+
+      navigate("/layanan");
+    } catch (error) {
+      console.error("❌ Gagal mengedit layanan:", error);
+
+      alert(error.message || "Gagal menyimpan data layanan.");
+    }
   };
 
-  if (!dataAwal) {
+  if (loading) {
     return (
       <div className="admin-layout">
         <Sidebar />
@@ -114,15 +140,7 @@ function EditLayanan() {
             </div>
 
             <div className="edit-layanan-card">
-              <h2>Data layanan tidak ditemukan.</h2>
-
-              <button
-                type="button"
-                className="edit-kembali-btn"
-                onClick={() => navigate("/layanan")}
-              >
-                Kembali
-              </button>
+              <h2>Memuat data layanan...</h2>
             </div>
           </main>
         </div>
@@ -189,23 +207,102 @@ function EditLayanan() {
 
                   {gambar && (
                     <div className="edit-image-preview">
-                      <img src={gambar} alt={judul} />
+                      <img
+                        src={
+                          gambar
+                            ? gambar.startsWith("blob:")
+                              ? gambar
+                              : `http://localhost:5000${gambar}`
+                            : ""
+                        }
+                        alt={judul}
+                      />
                     </div>
                   )}
                 </div>
               </div>
 
               {/* TIPE */}
+              {/* TIPE LAYANAN */}
               <div className="edit-form-group">
                 <label htmlFor="tipe">Tipe Layanan</label>
 
-                <select
-                  id="tipe"
-                  value={tipe}
-                  onChange={(e) => setTipe(e.target.value)}
-                >
-                  <option value="Layanan">Layanan</option>
-                </select>
+                <div className="layanan-type-dropdown">
+                  <button
+                    id="tipe"
+                    type="button"
+                    className="layanan-type-dropdown-button"
+                    onClick={() => setTypeDropdownOpen((prev) => !prev)}
+                  >
+                    <span className={!tipe ? "placeholder" : ""}>
+                      {tipe || "Pilih Tipe Layanan"}
+                    </span>
+
+                    <img
+                      src={dropdownArrow}
+                      alt=""
+                      className={`layanan-type-dropdown-arrow ${
+                        typeDropdownOpen ? "open" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {typeDropdownOpen && (
+                    <div className="layanan-type-dropdown-menu">
+                      <button
+                        type="button"
+                        className={`layanan-type-dropdown-option ${
+                          !tipe ? "selected" : ""
+                        }`}
+                        onClick={() => {
+                          setTipe("");
+                          setTypeDropdownOpen(false);
+                        }}
+                      >
+                        Pilih Tipe Layanan
+                      </button>
+
+                      <button
+                        type="button"
+                        className={`layanan-type-dropdown-option ${
+                          tipe === "Layanan" ? "selected" : ""
+                        }`}
+                        onClick={() => {
+                          setTipe("Layanan");
+                          setTypeDropdownOpen(false);
+                        }}
+                      >
+                        Layanan
+                      </button>
+
+                      <button
+                        type="button"
+                        className={`layanan-type-dropdown-option ${
+                          tipe === "Produk Layanan" ? "selected" : ""
+                        }`}
+                        onClick={() => {
+                          setTipe("Produk Layanan");
+                          setTypeDropdownOpen(false);
+                        }}
+                      >
+                        Produk Layanan
+                      </button>
+
+                      <button
+                        type="button"
+                        className={`layanan-type-dropdown-option ${
+                          tipe === "Default" ? "selected" : ""
+                        }`}
+                        onClick={() => {
+                          setTipe("Default");
+                          setTypeDropdownOpen(false);
+                        }}
+                      >
+                        Default
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
 
               {/* SIMPAN */}

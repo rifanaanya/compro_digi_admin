@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import Sidebar from "../../components/Sidebar";
@@ -9,42 +10,55 @@ function MitraDetail() {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const mitraData = {
-    1: {
-      name: "PT. Japa Indotama",
-      logo: "/Mitra/JAPA.png",
-    },
-    2: {
-      name: "PT. Dwitama Mulya Persada",
-      logo: "/Mitra/DWITAMA.png",
-    },
-    3: {
-      name: "PT. PT Indonesia Chemical Alumina",
-      logo: "/Mitra/ICA.png",
-    },
-    4: {
-      name: "PT. Katalis Sinergi Indonesia",
-      logo: "/Mitra/KATALIS SINERGI INDONESIA.png",
-    },
-    5: {
-      name: "PT. Taka Turbomachinery Indonesia",
-      logo: "/Mitra/TAKA.png",
-    },
-    6: {
-      name: "PT. Tamaris Hydro",
-      logo: "/Mitra/TAMARIS HYDR.png",
-    },
-    7: {
-      name: "PT. Solusindo Integrata Praetoria",
-      logo: "/Mitra/SOLUSINDO.png",
-    },
-    8: {
-      name: "PT. PLN",
-      logo: "/Mitra/PLN.png",
-    },
+  const [mitra, setMitra] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchMitraDetail = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/api/mitra/${id}`);
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "Gagal mengambil detail Mitra.");
+        }
+
+        setMitra(result.data);
+      } catch (error) {
+        console.error("❌ Gagal mengambil detail Mitra:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMitraDetail();
+  }, [id]);
+
+  const getMitraLogoUrl = (logo) => {
+    if (!logo) return "";
+
+    if (logo.startsWith("http")) {
+      return logo;
+    }
+
+    return `http://localhost:5000${logo.startsWith("/") ? "" : "/"}${logo}`;
   };
 
-  const mitra = mitraData[id] || mitraData[1];
+  const formatTanggal = (tanggal) => {
+    if (!tanggal) return "-";
+
+    const date = new Date(tanggal);
+
+    const hari = String(date.getDate()).padStart(2, "0");
+    const bulan = String(date.getMonth() + 1).padStart(2, "0");
+    const tahun = date.getFullYear();
+
+    const jam = String(date.getHours()).padStart(2, "0");
+    const menit = String(date.getMinutes()).padStart(2, "0");
+
+    return `${hari}-${bulan}-${tahun}, ${jam}:${menit} WIB`;
+  };
 
   return (
     <div className="mitra-detail-layout">
@@ -74,7 +88,9 @@ function MitraDetail() {
 
                 <span className="mitra-detail-colon">:</span>
 
-                <span className="mitra-detail-value">{mitra.name}</span>
+                <span className="mitra-detail-value">
+                  {loading ? "Memuat..." : mitra?.nama || "-"}
+                </span>
               </div>
 
               {/* LOGO */}
@@ -87,7 +103,9 @@ function MitraDetail() {
 
                 <span className="mitra-detail-value">
                   <div className="mitra-detail-logo-box">
-                    <img src={mitra.logo} alt={mitra.name} />
+                    {mitra?.logo && (
+                      <img src={getMitraLogoUrl(mitra.logo)} alt={mitra.nama} />
+                    )}
                   </div>
                 </span>
               </div>
@@ -108,7 +126,7 @@ function MitraDetail() {
                 <span className="mitra-detail-colon">:</span>
 
                 <span className="mitra-detail-value">
-                  10-06-2025, 12:00 WIB
+                  {loading ? "Memuat..." : formatTanggal(mitra?.createdAt)}
                 </span>
               </div>
 

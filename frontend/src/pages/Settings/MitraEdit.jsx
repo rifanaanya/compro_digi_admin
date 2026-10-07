@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import Sidebar from "../../components/Sidebar";
@@ -10,48 +10,50 @@ function MitraEdit() {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const mitraData = {
-    1: {
-      name: "PT. Japa Indotama",
-      logo: "/Mitra/JAPA.png",
-    },
-    2: {
-      name: "PT. Dwitama Mulya Persada",
-      logo: "/Mitra/DWITAMA.png",
-    },
-    3: {
-      name: "PT. PT Indonesia Chemical Alumina",
-      logo: "/Mitra/ICA.png",
-    },
-    4: {
-      name: "PT. Katalis Sinergi Indonesia",
-      logo: "/Mitra/KATALIS SINERGI INDONESIA.png",
-    },
-    5: {
-      name: "PT. Taka Turbomachinery Indonesia",
-      logo: "/Mitra/TAKA.png",
-    },
-    6: {
-      name: "PT. Tamaris Hydro",
-      logo: "/Mitra/TAMARIS HYDR.png",
-    },
-    7: {
-      name: "PT. Solusindo Integrata Praetoria",
-      logo: "/Mitra/SOLUSINDO.png",
-    },
-    8: {
-      name: "PT. PLN",
-      logo: "/Mitra/PLN.png",
-    },
-  };
-
-  const selectedMitra = mitraData[id] || mitraData[1];
-
-  const [namaPerusahaan, setNamaPerusahaan] = useState(selectedMitra.name);
-
-  const [logoPreview, setLogoPreview] = useState(selectedMitra.logo);
-
+  const [namaPerusahaan, setNamaPerusahaan] = useState("");
+  const [logoPreview, setLogoPreview] = useState("");
   const [logoFile, setLogoFile] = useState(null);
+
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+    const fetchMitra = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/api/mitra/${id}`);
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "Gagal mengambil data Mitra.");
+        }
+
+        const data = result.data;
+
+        setNamaPerusahaan(data.nama || "");
+
+        if (data.logo) {
+          if (data.logo.startsWith("http")) {
+            setLogoPreview(data.logo);
+          } else {
+            setLogoPreview(
+              `http://localhost:5000${
+                data.logo.startsWith("/") ? "" : "/"
+              }${data.logo}`,
+            );
+          }
+        }
+      } catch (error) {
+        console.error("❌ Gagal mengambil data Mitra:", error);
+        alert(error.message || "Gagal mengambil data Mitra.");
+        navigate("/settings/mitra");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMitra();
+  }, [id, navigate]);
 
   const handleLogoChange = (e) => {
     const file = e.target.files[0];
@@ -64,18 +66,46 @@ function MitraEdit() {
     setLogoPreview(previewUrl);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Edit Mitra:", {
-      id,
-      namaPerusahaan,
-      logoFile,
-    });
+    if (!namaPerusahaan.trim()) {
+      alert("Nama perusahaan wajib diisi.");
+      return;
+    }
 
-    // Nanti disambungkan ke database
+    try {
+      setSaving(true);
 
-    navigate("/settings/mitra");
+      const formData = new FormData();
+
+      formData.append("nama", namaPerusahaan.trim());
+
+      // Logo hanya dikirim kalau user memilih logo baru
+      if (logoFile) {
+        formData.append("logo", logoFile);
+      }
+
+      const response = await fetch(`http://localhost:5000/api/mitra/${id}`, {
+        method: "PUT",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Gagal mengubah Mitra.");
+      }
+
+      alert("Mitra berhasil diubah.");
+
+      navigate("/settings/mitra");
+    } catch (error) {
+      console.error("❌ Gagal mengubah Mitra:", error);
+      alert(error.message || "Gagal mengubah Mitra.");
+    } finally {
+      setSaving(false);
+    }
   };
 
   return (
@@ -110,6 +140,7 @@ function MitraEdit() {
                   onChange={(e) => setNamaPerusahaan(e.target.value)}
                   placeholder="Masukkan Nama Perusahaan Mitra"
                   required
+                  disabled={loading}
                 />
               </div>
 
@@ -123,6 +154,7 @@ function MitraEdit() {
                     type="file"
                     accept="image/png,image/jpeg,image/jpg,image/webp"
                     onChange={handleLogoChange}
+                    disabled={loading}
                   />
 
                   {logoPreview && (
@@ -134,8 +166,12 @@ function MitraEdit() {
               </div>
 
               {/* SIMPAN */}
-              <button type="submit" className="mitra-edit-save-button">
-                Simpan
+              <button
+                type="submit"
+                className="mitra-edit-save-button"
+                disabled={loading || saving}
+              >
+                {saving ? "Menyimpan..." : "Simpan"}
               </button>
             </form>
           </section>

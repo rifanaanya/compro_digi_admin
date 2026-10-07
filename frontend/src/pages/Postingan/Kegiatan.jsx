@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Sidebar from "../../components/Sidebar";
@@ -10,98 +10,131 @@ function Kegiatan() {
   const navigate = useNavigate();
 
   const [search, setSearch] = useState("");
+  const [kegiatanData, setKegiatanData] = useState([]);
+  const [deleteId, setDeleteId] = useState(null);
 
-  const [kegiatanData, setKegiatanData] = useState([
-    {
-      id: 1,
-      deskripsi: "Buka Bersama PT. Digi Tekno Indonesia",
-      tipe: "Gambar",
-      tanggal: "16 / 05 / 2026",
-      foto: "/Kegiatan/kegiatan1.jpg",
-    },
-    {
-      id: 2,
-      deskripsi: "Rafting Citumang",
-      tipe: "Gambar",
-      tanggal: "16 / 05 / 2026",
-      foto: "/Kegiatan/kegiatan2.jpg",
-    },
-    {
-      id: 3,
-      deskripsi: "Rafting Citumang",
-      tipe: "Gambar",
-      tanggal: "16 / 05 / 2026",
-      foto: "/Kegiatan/kegiatan3.jpg",
-    },
-    {
-      id: 4,
-      deskripsi: "Rafting Citumang",
-      tipe: "Gambar",
-      tanggal: "16 / 05 / 2026",
-      foto: "/Kegiatan/kegiatan4.jpg",
-    },
-    {
-      id: 5,
-      deskripsi: "Arung Jeram",
-      tipe: "Gambar",
-      tanggal: "16 / 05 / 2026",
-      foto: "/Kegiatan/kegiatan5.jpg",
-    },
-    {
-      id: 6,
-      deskripsi: "Gathering PT. Digi Tekno Indonesia",
-      tipe: "Gambar",
-      tanggal: "16 / 05 / 2026",
-      foto: "/Kegiatan/kegiatan6.jpg",
-    },
+  const getMediaUrl = (media) => {
+    if (!media) return "";
 
-    // VIDEO
-    {
-      id: 7,
-      deskripsi: "Rafting Citumang",
-      tipe: "Video",
-      tanggal: "16 / 05 / 2026",
-      foto: "/Kegiatan/kegiatan7.mp4",
-    },
-    {
-      id: 8,
-      deskripsi: "Rafting Citumang",
-      tipe: "Video",
-      tanggal: "16 / 05 / 2026",
-      foto: "/Kegiatan/kegiatan8.mp4",
-    },
-  ]);
+    if (media.startsWith("http")) {
+      return media;
+    }
+
+    return `http://localhost:5000${media}`;
+  };
+
+  // ========================================
+  // AMBIL DATA KEGIATAN DARI API
+  // ========================================
+
+  useEffect(() => {
+    const fetchKegiatan = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:5000/api/postingan/kegiatan",
+        );
+
+        const result = await response.json();
+
+        if (result.success) {
+          setKegiatanData(result.data);
+        } else {
+          console.error("Gagal mengambil data kegiatan");
+        }
+      } catch (error) {
+        console.error("Error mengambil data kegiatan:", error);
+      }
+    };
+
+    fetchKegiatan();
+  }, []);
+
+  // ========================================
+  // FORMAT TANGGAL
+  // ========================================
+
+  const formatTanggal = (tanggal) => {
+    if (!tanggal) return "-";
+
+    const date = new Date(tanggal);
+
+    if (isNaN(date.getTime())) return "-";
+
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+
+    return `${day} / ${month} / ${year}`;
+  };
+
+  // ========================================
+  // SEARCH
+  // ========================================
 
   const filteredData = kegiatanData.filter((item) =>
-    `${item.deskripsi} ${item.tipe} ${item.tanggal}`
+    `${item.deskripsi} ${item.tipe} ${formatTanggal(item.tanggal)}`
       .toLowerCase()
       .includes(search.toLowerCase()),
   );
+
+  // ========================================
+  // TAMBAH
+  // ========================================
 
   const handleTambah = () => {
     navigate("/kegiatan/tambah");
   };
 
+  // ========================================
+  // DETAIL
+  // ========================================
+
   const handleDetail = (id) => {
     navigate(`/kegiatan/detail/${id}`);
   };
+
+  // ========================================
+  // EDIT
+  // ========================================
 
   const handleEdit = (id) => {
     navigate(`/kegiatan/edit/${id}`);
   };
 
-  const [deleteId, setDeleteId] = useState(null);
+  // ========================================
+  // DELETE
+  // ========================================
 
   const handleDelete = (id) => {
     setDeleteId(id);
   };
 
-  const confirmDelete = () => {
-    setKegiatanData((prevData) =>
-      prevData.filter((item) => item.id !== deleteId),
-    );
+  const confirmDelete = async () => {
+    if (!deleteId) return;
 
-    setDeleteId(null);
+    try {
+      const response = await fetch(
+        `http://localhost:5000/api/postingan/kegiatan/${deleteId}`,
+        {
+          method: "DELETE",
+        },
+      );
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Gagal menghapus kegiatan");
+      }
+
+      setKegiatanData((prevData) =>
+        prevData.filter((item) => item.id !== deleteId),
+      );
+
+      setDeleteId(null);
+    } catch (error) {
+      console.error("Error menghapus kegiatan:", error);
+      alert("Gagal menghapus kegiatan");
+    }
   };
 
   const cancelDelete = () => {
@@ -172,20 +205,20 @@ function Kegiatan() {
 
                           <td>{item.tipe}</td>
 
-                          <td>{item.tanggal}</td>
+                          <td>{formatTanggal(item.tanggal)}</td>
 
                           <td>
                             <div className="kegiatan-photo">
                               {item.tipe === "Video" ? (
                                 <video
-                                  src={item.foto}
+                                  src={getMediaUrl(item.media)}
                                   className="kegiatan-video"
                                   controls
                                   preload="metadata"
                                 />
                               ) : (
                                 <img
-                                  src={item.foto}
+                                  src={getMediaUrl(item.media)}
                                   alt={item.deskripsi}
                                   className="kegiatan-image"
                                 />
@@ -234,31 +267,55 @@ function Kegiatan() {
           </section>
         </main>
 
+        {/* =========================
+    DELETE MODAL
+========================= */}
         {deleteId !== null && (
-          <div className="delete-modal-overlay">
-            <div className="delete-modal">
-              <div className="delete-modal-title">Konfirmasi Hapus</div>
+          <div className="kegiatan-delete-overlay" onClick={cancelDelete}>
+            <div
+              className="kegiatan-delete-modal"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* MODAL HEADER */}
+              <div className="kegiatan-delete-modal-header">
+                <h2>Hapus</h2>
 
-              <div className="delete-modal-content">
-                Apakah Anda yakin ingin menghapus kegiatan ini?
-              </div>
-
-              <div className="delete-modal-actions">
                 <button
                   type="button"
-                  className="delete-modal-cancel"
+                  className="kegiatan-delete-close"
                   onClick={cancelDelete}
                 >
-                  Batal
+                  ×
                 </button>
+              </div>
 
-                <button
-                  type="button"
-                  className="delete-modal-confirm"
-                  onClick={confirmDelete}
-                >
-                  Hapus
-                </button>
+              {/* MODAL BODY */}
+              <div className="kegiatan-delete-modal-body">
+                <p className="kegiatan-delete-question">
+                  Apakah anda yakin akan menghapus data?
+                </p>
+
+                <p className="kegiatan-delete-description">
+                  Jika data dihapus, maka akan hilang secara permanen
+                </p>
+
+                <div className="kegiatan-delete-modal-actions">
+                  <button
+                    type="button"
+                    className="kegiatan-delete-cancel"
+                    onClick={cancelDelete}
+                  >
+                    Kembali
+                  </button>
+
+                  <button
+                    type="button"
+                    className="kegiatan-delete-confirm"
+                    onClick={confirmDelete}
+                  >
+                    Hapus
+                  </button>
+                </div>
               </div>
             </div>
           </div>

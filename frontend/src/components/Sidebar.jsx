@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 import halamanIcon from "../assets/icons/halaman.svg";
@@ -47,6 +47,32 @@ import "./Sidebar.css";
 function Sidebar({ collapsed = false }) {
   const navigate = useNavigate();
   const location = useLocation();
+
+  const [logoSidebar, setLogoSidebar] = useState("");
+
+  useEffect(() => {
+    const fetchLogoSidebar = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:5000/api/pengaturan-lainnya",
+        );
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          const logo = result.data.find((item) => item.nama === "Logo Sidebar");
+
+          if (logo?.gambar) {
+            setLogoSidebar(`http://localhost:5000${logo.gambar}`);
+          }
+        }
+      } catch (error) {
+        console.error("❌ Gagal mengambil Logo Sidebar:", error);
+      }
+    };
+
+    fetchLogoSidebar();
+  }, []);
 
   const user = JSON.parse(localStorage.getItem("admin")) || {};
   const isAdmin = user.role === "Admin";
@@ -229,7 +255,7 @@ function Sidebar({ collapsed = false }) {
           LOGO
       ========================= */}
       <div className="sidebar-logo">
-        <img src="/Logo-Digi.png" alt="Digi" />
+        <img src={logoSidebar || "/Logo-Digi.png"} alt="Digi" />
       </div>
 
       {/* =========================
@@ -825,14 +851,24 @@ function Sidebar({ collapsed = false }) {
               Layanan
             </div>
 
-            {/* PRODUK */}
+            {/* PORTOFOLIO */}
+            <div
+              className={`sidebar-submenu-item ${
+                location.pathname === "/portofolio" ? "active" : ""
+              }`}
+              onClick={() => navigate("/portofolio")}
+            >
+              Portofolio
+            </div>
+
+            {/* PRODUK & JASA */}
             <div
               className={`sidebar-submenu-item ${
                 location.pathname === "/produk" ? "active" : ""
               }`}
               onClick={() => navigate("/produk")}
             >
-              Produk
+              Produk & Jasa
             </div>
           </div>
         )}

@@ -1,76 +1,64 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import Sidebar from "../../components/Sidebar";
 import Navbar from "../../components/Navbar";
 
 import "./DetailLayanan.css";
-
 function DetailLayanan() {
   const navigate = useNavigate();
   const location = useLocation();
   const { id } = useParams();
 
-  /*
-   * Data dikirim dari halaman Layanan melalui navigate().
-   * Kalau halaman direfresh dan state hilang,
-   * digunakan data fallback berdasarkan ID.
-   */
-  const layananData = [
-    {
-      id: 1,
-      judul: "Software Development",
-      deskripsi:
-        "Mengembangkan aplikasi perangkat lunak dengan teknologi informasi berbasis web dan mobile aplikasi.",
-      gambar: "",
-      tipe: "Layanan",
-      author: "Admin Digi",
-      tanggal: "10-06-2025, 12:00 WIB",
-    },
-    {
-      id: 2,
-      judul: "Services and Maintenance",
-      deskripsi:
-        "Memberikan jasa perbaikan dan pemeliharaan baik untuk software, hardware ataupun infrastruktur.",
-      gambar: "",
-      tipe: "Layanan",
-      author: "Admin Digi",
-      tanggal: "10-06-2025, 12:00 WIB",
-    },
-    {
-      id: 3,
-      judul: "IT Equipment/Hardware & Networking",
-      deskripsi:
-        "Memasok barang dan suku cadang barang IT untuk bisnis dan produk yang sesuai dengan misi kepuasan pelanggan dan pengiriman cepat.",
-      gambar: "",
-      tipe: "Layanan",
-      author: "Admin Digi",
-      tanggal: "10-06-2025, 12:00 WIB",
-    },
-    {
-      id: 4,
-      judul: "IT Consultant & Problem Solving",
-      deskripsi:
-        "Memberikan solusi masukan dan mengevaluasi sistem IT di perusahaan untuk meningkatkan kinerja perusahaan.",
-      gambar: "",
-      tipe: "Layanan",
-      author: "Admin Digi",
-      tanggal: "10-06-2025, 12:00 WIB",
-    },
-    {
-      id: 5,
-      judul: "Procurement of Goods",
-      deskripsi:
-        "Kami siap membantu dalam pengadaan barang kebutuhan perusahaan.",
-      gambar: "",
-      tipe: "Layanan",
-      author: "Admin Digi",
-      tanggal: "10-06-2025, 12:00 WIB",
-    },
-  ];
+  const [layanan, setLayanan] = useState(location.state?.layanan || null);
 
-  const layanan = location.state?.layanan
-    ? location.state.layanan
-    : layananData.find((item) => String(item.id) === String(id));
+  const [loading, setLoading] = useState(!location.state?.layanan);
+
+  useEffect(() => {
+    const fetchLayanan = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/api/layanan-data/${id}`,
+        );
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "Gagal mengambil detail layanan");
+        }
+
+        setLayanan(result.data);
+      } catch (error) {
+        console.error("❌ Gagal mengambil detail layanan:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchLayanan();
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="admin-layout">
+        <Sidebar />
+
+        <div className="admin-main">
+          <Navbar />
+
+          <main className="detail-layanan-content">
+            <div className="detail-layanan-title-card">
+              <h1>Detail Layanan</h1>
+            </div>
+
+            <div className="detail-layanan-card">
+              <h2>Memuat data layanan...</h2>
+            </div>
+          </main>
+        </div>
+      </div>
+    );
+  }
 
   if (!layanan) {
     return (
@@ -154,7 +142,7 @@ function DetailLayanan() {
                   {layanan.gambar ? (
                     <div className="detail-image-wrapper">
                       <img
-                        src={layanan.gambar}
+                        src={`http://localhost:5000${layanan.gambar}`}
                         alt={layanan.judul}
                         className="detail-layanan-image"
                       />
@@ -194,7 +182,9 @@ function DetailLayanan() {
                 <div className="detail-separator">:</div>
 
                 <div className="detail-value">
-                  {layanan.tanggal || "10-06-2025, 12:00 WIB"}
+                  {layanan.createdAt
+                    ? new Date(layanan.createdAt).toLocaleString("id-ID")
+                    : "-"}
                 </div>
               </div>
 

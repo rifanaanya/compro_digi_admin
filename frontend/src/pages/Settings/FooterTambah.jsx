@@ -13,16 +13,34 @@ function FooterTambah() {
   const [isiPengaturan, setIsiPengaturan] = useState("");
   const [gambar, setGambar] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log({
-      namaPengaturan,
-      isiPengaturan,
-      gambar,
-    });
+    try {
+      const formData = new FormData();
 
-    navigate("/settings/footer");
+      formData.append("nama", namaPengaturan);
+      formData.append("isi", isiPengaturan);
+
+      if (gambar) {
+        formData.append("gambar", gambar);
+      }
+
+      const response = await fetch("http://localhost:5000/api/footer", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Gagal menambahkan footer");
+      }
+
+      navigate("/settings/footer");
+    } catch (error) {
+      console.error("Gagal menambahkan footer:", error);
+    }
   };
 
   return (

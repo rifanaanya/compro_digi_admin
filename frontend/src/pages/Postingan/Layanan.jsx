@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Sidebar from "../../components/Sidebar";
@@ -11,56 +11,26 @@ function Layanan() {
 
   const [search, setSearch] = useState("");
 
-  const [layananList, setLayananList] = useState([
-    {
-      id: 1,
-      judul: "Services and Maintenance",
-      deskripsi:
-        "Memberikan jasa perbaikan dan pemeliharaan baik untuk software, hardware ataupun infrastruktur.",
-      gambar: "/Layanan/Services and Maintanance.png",
-      tipe: "Layanan",
-    },
-    {
-      id: 2,
-      judul: "Procurement of Engine and Turbine Components and Spare Parts",
-      deskripsi:
-        "Kami siap membantu dalam pengadaan komponen industri baik berupa komponen yang sudah jadi ataupun masih berupa bahan baku atau masih berupa material.",
-      gambar: "/Layanan/Procurement of Engine.png",
-      tipe: "Layanan",
-    },
-    {
-      id: 3,
-      judul: "Instalasi Peralatan Listrik dan Otomasi",
-      deskripsi:
-        "Mengembangkan aplikasi perangkat lunak dengan teknologi informasi berbasis web dan mobile aplikasi.",
-      gambar: "/Layanan/Installlation Electrical.png",
-      tipe: "Layanan",
-    },
-    {
-      id: 4,
-      judul: "IT Equipment/Hardware & Networking",
-      deskripsi:
-        "Memasok barang dan suku cadang barang IT untuk bisnis dan produk yang sesuai dengan misi kepuasan pelanggan dan pengiriman cepat.",
-      gambar: "/Layanan/IT EquipmentHardware & Networking.png",
-      tipe: "Layanan",
-    },
-    {
-      id: 5,
-      judul: "Software Development",
-      deskripsi:
-        "Mengembangkan aplikasi perangkat lunak dengan teknologi informasi berbasis web dan mobile aplikasi.",
-      gambar: "/Layanan/Software Development.png",
-      tipe: "Layanan",
-    },
-    {
-      id: 6,
-      judul: "IT Consultant & Problem Solving",
-      deskripsi:
-        "Memberikan solusi masukan dan mengevaluasi sistem IT di perusahaan untuk meningkatkan kinerja perusahaan.",
-      gambar: "/Layanan/IT Consultant & Problem Solving.png",
-      tipe: "Layanan",
-    },
-  ]);
+  const [layananList, setLayananList] = useState([]);
+
+  useEffect(() => {
+    fetchLayanan();
+  }, []);
+
+  const fetchLayanan = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/layanan-data");
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Gagal mengambil data layanan");
+      }
+
+      setLayananList(result.data);
+    } catch (error) {
+      console.error("❌ Gagal mengambil data layanan:", error);
+    }
+  };
 
   const filteredLayanan = layananList.filter(
     (item) =>
@@ -75,15 +45,35 @@ function Layanan() {
     setShowDeleteModal(true);
   };
 
-  const confirmDelete = () => {
+  const confirmDelete = async () => {
     if (!selectedLayanan) return;
 
-    setLayananList((prev) =>
-      prev.filter((item) => item.id !== selectedLayanan.id),
-    );
+    try {
+      const response = await fetch(
+        `http://localhost:5000/api/layanan-data/${selectedLayanan.id}`,
+        {
+          method: "DELETE",
+        },
+      );
 
-    setSelectedLayanan(null);
-    setShowDeleteModal(false);
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Gagal menghapus layanan");
+      }
+
+      setLayananList((prev) =>
+        prev.filter((item) => item.id !== selectedLayanan.id),
+      );
+
+      setSelectedLayanan(null);
+      setShowDeleteModal(false);
+
+      alert("Layanan berhasil dihapus.");
+    } catch (error) {
+      console.error("❌ Gagal menghapus layanan:", error);
+      alert(error.message || "Gagal menghapus layanan.");
+    }
   };
 
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -166,7 +156,11 @@ function Layanan() {
 
                         <td>
                           <img
-                            src={item.gambar}
+                            src={
+                              item.gambar
+                                ? `http://localhost:5000${item.gambar}`
+                                : ""
+                            }
                             alt={item.judul}
                             className="layanan-image"
                           />

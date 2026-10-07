@@ -12,6 +12,7 @@ function MitraTambah() {
   const [namaPerusahaan, setNamaPerusahaan] = useState("");
   const [logoFile, setLogoFile] = useState(null);
   const [logoPreview, setLogoPreview] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleLogoChange = (e) => {
     const file = e.target.files[0];
@@ -22,17 +23,47 @@ function MitraTambah() {
     setLogoPreview(URL.createObjectURL(file));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Tambah Mitra:", {
-      namaPerusahaan,
-      logoFile,
-    });
+    if (!namaPerusahaan.trim()) {
+      alert("Nama perusahaan wajib diisi.");
+      return;
+    }
 
-    // Nanti disambungkan ke database
+    if (!logoFile) {
+      alert("Logo perusahaan wajib dipilih.");
+      return;
+    }
 
-    navigate("/settings/mitra");
+    try {
+      setLoading(true);
+
+      const formData = new FormData();
+
+      formData.append("nama", namaPerusahaan.trim());
+      formData.append("logo", logoFile);
+
+      const response = await fetch("http://localhost:5000/api/mitra", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Gagal menambahkan Mitra.");
+      }
+
+      alert("Mitra berhasil ditambahkan.");
+
+      navigate("/settings/mitra");
+    } catch (error) {
+      console.error("❌ Gagal menambahkan Mitra:", error);
+      alert(error.message || "Gagal menambahkan Mitra.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -89,8 +120,12 @@ function MitraTambah() {
               </div>
 
               {/* SIMPAN */}
-              <button type="submit" className="mitra-tambah-save-button">
-                Simpan
+              <button
+                type="submit"
+                className="mitra-tambah-save-button"
+                disabled={loading}
+              >
+                {loading ? "Menyimpan..." : "Simpan"}
               </button>
             </form>
           </section>

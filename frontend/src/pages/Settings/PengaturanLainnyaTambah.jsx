@@ -10,15 +10,46 @@ function PengaturanLainnyaTambah() {
   const [namaPengaturan, setNamaPengaturan] = useState("");
   const [gambar, setGambar] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Nama Pengaturan:", namaPengaturan);
-    console.log("Gambar:", gambar);
+    if (!namaPengaturan.trim()) {
+      alert("Nama Pengaturan wajib diisi.");
+      return;
+    }
 
-    // Nanti disambungkan ke database
+    if (!gambar) {
+      alert("Gambar wajib diupload.");
+      return;
+    }
 
-    navigate("/settings/pengaturan-lainnya");
+    try {
+      const formData = new FormData();
+
+      formData.append("nama", namaPengaturan.trim());
+      formData.append("gambar", gambar);
+
+      const response = await fetch(
+        "http://localhost:5000/api/pengaturan-lainnya",
+        {
+          method: "POST",
+          body: formData,
+        },
+      );
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Gagal membuat Pengaturan Lainnya.");
+      }
+
+      console.log("✅ Pengaturan berhasil dibuat:", result.data);
+
+      navigate("/settings/pengaturan-lainnya");
+    } catch (error) {
+      console.error("❌ Gagal membuat Pengaturan Lainnya:", error);
+      alert(error.message || "Gagal membuat Pengaturan Lainnya.");
+    }
   };
 
   return (

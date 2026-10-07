@@ -1,8 +1,7 @@
-model Kegiatan {
+model Mitra {
   id        Int      @id @default(autoincrement())
-  deskripsi String
-  caption   String
-  gambar    String?
+  nama      String
+  logo      String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

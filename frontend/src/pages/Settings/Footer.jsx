@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Sidebar from "../../components/Sidebar";
@@ -12,28 +12,34 @@ function Footer() {
   const [deleteModal, setDeleteModal] = useState(false);
   const [selectedFooter, setSelectedFooter] = useState(null);
 
-  const footerData = [
-    {
-      id: 1,
-      name: "Footer Copyright",
-      content: "PT. Digi Tekno Indonesia",
-    },
-    {
-      id: 2,
-      name: "Logo Footer",
-      content: "uploads/settings/logofooter.png",
-    },
-    {
-      id: 3,
-      name: "Footer Column 1",
-      content: "Layanan Kami",
-    },
-    {
-      id: 4,
-      name: "Footer Column 2",
-      content: "Kontak Kami",
-    },
-  ];
+  const [footerData, setFooterData] = useState([]);
+  const [footerColumnData, setFooterColumnData] = useState([]);
+
+  useEffect(() => {
+    const fetchFooterData = async () => {
+      try {
+        const [footerResponse, columnResponse] = await Promise.all([
+          fetch("http://localhost:5000/api/footer"),
+          fetch("http://localhost:5000/api/footer-column"),
+        ]);
+
+        const footerResult = await footerResponse.json();
+        const columnResult = await columnResponse.json();
+
+        if (footerResult.success) {
+          setFooterData(footerResult.data);
+        }
+
+        if (columnResult.success) {
+          setFooterColumnData(columnResult.data);
+        }
+      } catch (error) {
+        console.error("Gagal mengambil data footer:", error);
+      }
+    };
+
+    fetchFooterData();
+  }, []);
 
   // EDIT
   const handleEdit = (id) => {
@@ -53,11 +59,33 @@ function Footer() {
   };
 
   // KONFIRMASI DELETE
-  const handleConfirmDelete = () => {
-    console.log("Delete Footer:", selectedFooter?.id);
+  const handleConfirmDelete = async () => {
+    if (!selectedFooter) return;
 
-    // Nanti disambungkan ke database
-    handleCloseDelete();
+    try {
+      const endpoint =
+        selectedFooter.type === "column"
+          ? `http://localhost:5000/api/footer-column/${selectedFooter.id}`
+          : `http://localhost:5000/api/footer/${selectedFooter.id}`;
+
+      const response = await fetch(endpoint, {
+        method: "DELETE",
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Gagal menghapus footer");
+      }
+
+      setFooterData((prev) =>
+        prev.filter((item) => item.id !== selectedFooter.id),
+      );
+
+      handleCloseDelete();
+    } catch (error) {
+      console.error("Gagal menghapus footer:", error);
+    }
   };
 
   return (
@@ -109,13 +137,13 @@ function Footer() {
                   </thead>
 
                   <tbody>
-                    {footerData.map((item) => (
+                    {combinedFooterData.map((item, index) => (
                       <tr key={item.id}>
-                        <td className="footer-no">{item.id}</td>
+                        <td className="footer-no">{index + 1}</td>
 
-                        <td>{item.name}</td>
+                        <td>{item.nama}</td>
 
-                        <td>{item.content}</td>
+                        <td>{item.isi || item.gambar || "-"}</td>
 
                         <td className="footer-actions">
                           {/* EDIT */}
@@ -126,7 +154,7 @@ function Footer() {
                           >
                             Edit
                           </button>
-                          
+
                           {/* DELETE */}
                           <button
                             type="button"

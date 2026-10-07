@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
 import Navbar from "../../components/Navbar";
@@ -7,13 +8,35 @@ function PengaturanLainnyaDetail() {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  // Sementara data dummy
-  const settingData = {
-    id: id,
-    name: "Logo Sidebar",
-    image: "/Logo-Digi.png",
-    imagePath: "uploads/settings/logo_sidebar.png",
-  };
+  const [settingData, setSettingData] = useState(null);
+
+  useEffect(() => {
+    const fetchDetail = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/api/pengaturan-lainnya/${id}`,
+        );
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(
+            result.message || "Gagal mengambil detail pengaturan.",
+          );
+        }
+
+        setSettingData(result.data);
+      } catch (error) {
+        console.error("❌ Gagal mengambil detail Pengaturan Lainnya:", error);
+      }
+    };
+
+    fetchDetail();
+  }, [id]);
+
+  if (!settingData) {
+    return null;
+  }
 
   return (
     <div className="pengaturan-lainnya-detail-layout">
@@ -44,7 +67,7 @@ function PengaturanLainnyaDetail() {
                 <div className="pengaturan-lainnya-detail-separator">:</div>
 
                 <div className="pengaturan-lainnya-detail-value">
-                  {settingData.name}
+                  {settingData.nama}
                 </div>
               </div>
 
@@ -57,9 +80,16 @@ function PengaturanLainnyaDetail() {
                 <div className="pengaturan-lainnya-detail-separator">:</div>
 
                 <div className="pengaturan-lainnya-detail-value image-value">
-                  <img src={settingData.image} alt={settingData.name} />
+                  <img
+                    src={
+                      settingData.gambar
+                        ? `http://localhost:5000${settingData.gambar}`
+                        : ""
+                    }
+                    alt={settingData.nama}
+                  />
 
-                  <span>{settingData.imagePath}</span>
+                  <span>{settingData.gambar || "-"}</span>
                 </div>
               </div>
 

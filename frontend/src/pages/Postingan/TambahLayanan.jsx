@@ -32,7 +32,7 @@ function TambahLayanan() {
     setPreview(imageUrl);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!judul.trim()) {
@@ -50,20 +50,36 @@ function TambahLayanan() {
       return;
     }
 
-    // Untuk sementara data disimpan di console.
-    // Nanti bagian ini kita sambungkan ke API + PostgreSQL.
-    const layananBaru = {
-      judul: judul.trim(),
-      deskripsi: deskripsi.trim(),
-      gambar: gambar ? gambar.name : null,
-      tipe,
-    };
+    try {
+      const formData = new FormData();
 
-    console.log("Data layanan baru:", layananBaru);
+      formData.append("judul", judul.trim());
+      formData.append("deskripsi", deskripsi.trim());
+      formData.append("tipe", tipe);
 
-    alert("Layanan berhasil ditambahkan.");
+      if (gambar) {
+        formData.append("gambar", gambar);
+      }
 
-    navigate("/layanan");
+      const response = await fetch("http://localhost:5000/api/layanan-data", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Gagal menambahkan layanan");
+      }
+
+      alert("Layanan berhasil ditambahkan.");
+
+      navigate("/layanan");
+    } catch (error) {
+      console.error("❌ Gagal menambahkan layanan:", error);
+
+      alert(error.message || "Gagal menambahkan layanan.");
+    }
   };
 
   const handleCancel = () => {

@@ -71,17 +71,57 @@ function TambahArtikel() {
       return;
     }
 
-    const artikelBaru = {
-      id: Date.now(),
-      judul: formData.judul.trim(),
-      ringkasan: formData.ringkasan.trim(),
-      isi: formData.isi.trim(),
-      gambar: formData.gambar,
-      tanggal: new Date().toLocaleDateString("id-ID"),
-      penulis: "Admin DIGI",
-    };
+    const handleSubmit = async (e) => {
+      e.preventDefault();
 
-    console.log("Artikel baru:", artikelBaru);
+      if (!formData.judul.trim()) {
+        alert("Judul artikel wajib diisi.");
+        return;
+      }
+
+      if (!formData.ringkasan.trim()) {
+        alert("Ringkasan artikel wajib diisi.");
+        return;
+      }
+
+      if (!formData.isi.trim()) {
+        alert("Isi artikel wajib diisi.");
+        return;
+      }
+
+      if (!formData.gambar) {
+        alert("Gambar artikel wajib diupload.");
+        return;
+      }
+
+      try {
+        const data = new FormData();
+
+        data.append("judul", formData.judul.trim());
+        data.append("ringkasan", formData.ringkasan.trim());
+        data.append("isi", formData.isi.trim());
+        data.append("gambar", formData.gambar);
+
+        const response = await fetch("http://localhost:5000/api/artikel", {
+          method: "POST",
+          body: data,
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "Gagal menambahkan artikel");
+        }
+
+        alert("Artikel berhasil ditambahkan.");
+
+        navigate("/artikel");
+      } catch (error) {
+        console.error("❌ Gagal menambahkan artikel:", error);
+
+        alert(error.message || "Gagal menambahkan artikel.");
+      }
+    };
 
     alert("Artikel berhasil ditambahkan.");
 

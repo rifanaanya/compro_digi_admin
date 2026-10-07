@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import Sidebar from "../../components/Sidebar";
@@ -9,84 +10,124 @@ function DetailKegiatan() {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const kegiatanData = [
-    {
-      id: 1,
-      deskripsi: "Buka Bersama PT. Digi Tekno Indonesia",
-      tipe: "Gambar",
-      tanggal: "16 / 05 / 2026",
-      dibuatOleh: "Admin Digi",
-      tanggalDibuat: "10-06-2025, 12:00 WIB",
-      media: "/Kegiatan/kegiatan1.jpg",
-    },
-    {
-      id: 2,
-      deskripsi: "Rafting Citumang",
-      tipe: "Gambar",
-      tanggal: "16 / 05 / 2026",
-      dibuatOleh: "Admin Digi",
-      tanggalDibuat: "10-06-2025, 12:00 WIB",
-      media: "/Kegiatan/kegiatan2.jpg",
-    },
-    {
-      id: 3,
-      deskripsi: "Rafting Citumang",
-      tipe: "Gambar",
-      tanggal: "16 / 05 / 2026",
-      dibuatOleh: "Admin Digi",
-      tanggalDibuat: "10-06-2025, 12:00 WIB",
-      media: "/Kegiatan/kegiatan3.jpg",
-    },
-    {
-      id: 4,
-      deskripsi: "Rafting Citumang",
-      tipe: "Gambar",
-      tanggal: "16 / 05 / 2026",
-      dibuatOleh: "Admin Digi",
-      tanggalDibuat: "10-06-2025, 12:00 WIB",
-      media: "/Kegiatan/kegiatan4.jpg",
-    },
-    {
-      id: 5,
-      deskripsi: "Arung Jeram",
-      tipe: "Gambar",
-      tanggal: "16 / 05 / 2026",
-      dibuatOleh: "Admin Digi",
-      tanggalDibuat: "10-06-2025, 12:00 WIB",
-      media: "/Kegiatan/kegiatan5.jpg",
-    },
-    {
-      id: 6,
-      deskripsi: "Gathering PT. Digi Tekno Indonesia",
-      tipe: "Gambar",
-      tanggal: "16 / 05 / 2026",
-      dibuatOleh: "Admin Digi",
-      tanggalDibuat: "10-06-2025, 12:00 WIB",
-      media: "/Kegiatan/kegiatan6.jpg",
-    },
-    {
-      id: 7,
-      deskripsi: "Rafting Citumang",
-      tipe: "Video",
-      tanggal: "16 / 05 / 2026",
-      dibuatOleh: "Admin Digi",
-      tanggalDibuat: "10-06-2025, 12:00 WIB",
-      media: "/Kegiatan/kegiatan7.mp4",
-    },
-    {
-      id: 8,
-      deskripsi: "Rafting Citumang",
-      tipe: "Video",
-      tanggal: "16 / 05 / 2026",
-      dibuatOleh: "Admin Digi",
-      tanggalDibuat: "10-06-2025, 12:00 WIB",
-      media: "/Kegiatan/kegiatan8.mp4",
-    },
-  ];
+  const [kegiatan, setKegiatan] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-  const kegiatan = kegiatanData.find((item) => item.id === Number(id));
+  // ========================================
+  // AMBIL DETAIL KEGIATAN
+  // ========================================
 
-  if (!kegiatan) {
+  useEffect(() => {
+    const fetchDetailKegiatan = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/api/postingan/kegiatan/${id}`,
+        );
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "Data kegiatan tidak ditemukan");
+        }
+
+        setKegiatan(result.data);
+      } catch (error) {
+        console.error("Error mengambil detail kegiatan:", error);
+
+        setError(error.message || "Data kegiatan tidak ditemukan");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDetailKegiatan();
+  }, [id]);
+
+  // ========================================
+  // FORMAT TANGGAL KEGIATAN
+  // ========================================
+
+  const formatTanggal = (tanggal) => {
+    if (!tanggal) return "-";
+
+    const date = new Date(tanggal);
+
+    if (isNaN(date.getTime())) return "-";
+
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+
+    return `${day} / ${month} / ${year}`;
+  };
+
+  // ========================================
+  // FORMAT TANGGAL DIBUAT
+  // ========================================
+
+  const formatTanggalDibuat = (tanggal) => {
+    if (!tanggal) return "-";
+
+    const date = new Date(tanggal);
+
+    if (isNaN(date.getTime())) return "-";
+
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+
+    return `${day}-${month}-${year}, ${hours}:${minutes} WIB`;
+  };
+
+  // ========================================
+  // URL MEDIA
+  // ========================================
+
+  const getMediaUrl = (media) => {
+    if (!media) return "";
+
+    if (media.startsWith("http")) {
+      return media;
+    }
+
+    return `http://localhost:5000${media}`;
+  };
+
+  // ========================================
+  // LOADING
+  // ========================================
+
+  if (loading) {
+    return (
+      <div className="detail-kegiatan-layout">
+        <Sidebar />
+
+        <div className="detail-kegiatan-main">
+          <Navbar />
+
+          <main className="detail-kegiatan-content">
+            <section className="detail-kegiatan-header">
+              <h1>Detail Kegiatan</h1>
+            </section>
+
+            <section className="detail-kegiatan-card">
+              <p>Memuat data kegiatan...</p>
+            </section>
+          </main>
+        </div>
+      </div>
+    );
+  }
+
+  // ========================================
+  // DATA TIDAK DITEMUKAN
+  // ========================================
+
+  if (error || !kegiatan) {
     return (
       <div className="detail-kegiatan-layout">
         <Sidebar />
@@ -152,21 +193,21 @@ function DetailKegiatan() {
               <div className="detail-kegiatan-row">
                 <span>Tanggal Kegiatan</span>
                 <b>:</b>
-                <p>{kegiatan.tanggal}</p>
+                <p>{formatTanggal(kegiatan.tanggal)}</p>
               </div>
 
               {/* DIBUAT OLEH */}
               <div className="detail-kegiatan-row">
                 <span>Dibuat Oleh</span>
                 <b>:</b>
-                <p>{kegiatan.dibuatOleh}</p>
+                <p>Admin Digi</p>
               </div>
 
               {/* TANGGAL DIBUAT */}
               <div className="detail-kegiatan-row">
                 <span>Tanggal dibuat</span>
                 <b>:</b>
-                <p>{kegiatan.tanggalDibuat}</p>
+                <p>{formatTanggalDibuat(kegiatan.createdAt)}</p>
               </div>
 
               {/* MEDIA */}
@@ -181,11 +222,18 @@ function DetailKegiatan() {
 
                 <div className="detail-kegiatan-photo">
                   {kegiatan.tipe === "Video" ? (
-                    <video src={kegiatan.media} controls preload="metadata">
+                    <video
+                      src={getMediaUrl(kegiatan.media)}
+                      controls
+                      preload="metadata"
+                    >
                       Browser Anda tidak mendukung video.
                     </video>
                   ) : (
-                    <img src={kegiatan.media} alt="Foto Kegiatan" />
+                    <img
+                      src={getMediaUrl(kegiatan.media)}
+                      alt="Foto Kegiatan"
+                    />
                   )}
                 </div>
               </div>

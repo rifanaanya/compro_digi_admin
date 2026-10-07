@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Sidebar from "../../components/Sidebar";
@@ -10,56 +10,51 @@ function Mitra() {
   const navigate = useNavigate();
 
   // =========================
+  // DATA MITRA
+  // =========================
+  const [mitraData, setMitraData] = useState([]);
+
+  // =========================
   // DELETE MODAL
   // =========================
   const [deleteModal, setDeleteModal] = useState(false);
   const [selectedMitra, setSelectedMitra] = useState(null);
 
   // =========================
-  // DATA MITRA
+  // GET DATA MITRA
   // =========================
-  const mitraData = [
-    {
-      id: 1,
-      name: "PT. Japa Indotama",
-      logo: "/Mitra/JAPA.png",
-    },
-    {
-      id: 2,
-      name: "PT. Dwitama Mulya Persada",
-      logo: "/Mitra/DWITAMA.png",
-    },
-    {
-      id: 3,
-      name: "PT. PT Indonesia Chemical Alumina",
-      logo: "/Mitra/ICA.png",
-    },
-    {
-      id: 4,
-      name: "PT. Katalis Sinergi Indonesia",
-      logo: "/Mitra/KATALIS SINERGI INDONESIA.png",
-    },
-    {
-      id: 5,
-      name: "PT. Taka Turbomachinery Indonesia",
-      logo: "/Mitra/TAKA.png",
-    },
-    {
-      id: 6,
-      name: "PT. Tamaris Hydro",
-      logo: "/Mitra/TAMARIS HYDR.png",
-    },
-    {
-      id: 7,
-      name: "PT. Solusindo Integrata Praetoria",
-      logo: "/Mitra/SOLUSINDO.png",
-    },
-    {
-      id: 8,
-      name: "PT. PLN",
-      logo: "/Mitra/PLN.png",
-    },
-  ];
+  useEffect(() => {
+    const fetchMitra = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/mitra");
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "Gagal mengambil data Mitra.");
+        }
+
+        setMitraData(result.data);
+      } catch (error) {
+        console.error("❌ Gagal mengambil data Mitra:", error);
+      }
+    };
+
+    fetchMitra();
+  }, []);
+
+  // =========================
+  // URL LOGO MITRA
+  // =========================
+  const getMitraLogoUrl = (logo) => {
+    if (!logo) return "";
+
+    if (logo.startsWith("http")) {
+      return logo;
+    }
+
+    return `http://localhost:5000${logo.startsWith("/") ? "" : "/"}${logo}`;
+  };
 
   // =========================
   // DETAIL
@@ -94,12 +89,36 @@ function Mitra() {
   // =========================
   // KONFIRMASI DELETE
   // =========================
-  const handleConfirmDelete = () => {
-    console.log("Delete Mitra:", selectedMitra?.id);
+  const handleConfirmDelete = async () => {
+    if (!selectedMitra) {
+      return;
+    }
 
-    // Nanti disambungkan ke database
+    try {
+      const response = await fetch(
+        `http://localhost:5000/api/mitra/${selectedMitra.id}`,
+        {
+          method: "DELETE",
+        },
+      );
 
-    handleCloseDelete();
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Gagal menghapus Mitra.");
+      }
+
+      // Hapus dari tampilan setelah berhasil di database
+      setMitraData((prev) =>
+        prev.filter((item) => item.id !== selectedMitra.id),
+      );
+
+      handleCloseDelete();
+    } catch (error) {
+      console.error("❌ Gagal menghapus Mitra:", error);
+
+      alert(error.message || "Gagal menghapus Mitra.");
+    }
   };
 
   return (
@@ -156,24 +175,26 @@ function Mitra() {
                   </thead>
 
                   <tbody>
-                    {mitraData.map((mitra) => (
+                    {mitraData.map((mitra, index) => (
                       <tr key={mitra.id}>
                         {/* NO */}
-                        <td className="mitra-no">{mitra.id}</td>
+                        <td className="mitra-no">{index + 1}</td>
 
                         {/* NAMA */}
-                        <td className="mitra-name">{mitra.name}</td>
+                        <td className="mitra-name">{mitra.nama}</td>
 
                         {/* LOGO */}
                         <td className="mitra-logo-cell">
                           <div className="mitra-logo-box">
-                            <img
-                              src={mitra.logo}
-                              alt={mitra.name}
-                              onError={(e) => {
-                                e.currentTarget.style.display = "none";
-                              }}
-                            />
+                            {mitra.logo && (
+                              <img
+                                src={getMitraLogoUrl(mitra.logo)}
+                                alt={mitra.nama}
+                                onError={(e) => {
+                                  e.currentTarget.style.display = "none";
+                                }}
+                              />
+                            )}
                           </div>
                         </td>
 

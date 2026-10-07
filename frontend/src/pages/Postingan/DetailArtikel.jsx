@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import Sidebar from "../../components/Sidebar";
@@ -9,71 +10,59 @@ function DetailArtikel() {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const artikelData = [
-    {
-      id: 1,
-      judul:
-        "Engineering Service untuk Solusi Teknis Mesin dan Peralatan Industri",
-      ringkasan:
-        "Setiap kebutuhan industri memiliki kondisi dan permasalahan teknis yang berbeda. PT. Digi Tekno Indonesia menyediakan engineering service untuk membantu pelanggan menemukan solusi yang sesuai dengan kebutuhan mesin, komponen, dan proses kerja di lapangan.",
-      isi: `Setiap kebutuhan industri memiliki kondisi dan permasalahan teknis yang berbeda. PT. Digi Tekno Indonesia menyediakan engineering service untuk membantu pelanggan menemukan solusi yang sesuai dengan kebutuhan mesin, komponen, dan proses kerja di lapangan.
+  const [artikel, setArtikel] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-Layanan engineering mencakup analisis kebutuhan teknis, perencanaan pekerjaan, pengembangan solusi, hingga dukungan dalam proses pengerjaan komponen dan peralatan. Pendekatan dilakukan dengan mempertimbangkan kondisi aktual dan kebutuhan operasional pelanggan.
+  useEffect(() => {
+    const fetchArtikel = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/api/artikel/${id}`);
 
-Kami berkomitmen memberikan solusi engineering yang efektif dan tepat guna untuk mendukung performa serta keandalan peralatan industri.`,
-      gambar: "/Artikel/artikel1.png",
-      penulis: "Admin Digi",
-      tanggal: "10-06-2025, 12:00 WIB",
-    },
+        const result = await response.json();
 
-    {
-      id: 2,
-      judul:
-        "Jasa Mekanikal & Engineering untuk Mendukung Performa Mesin Industri",
-      ringkasan:
-        "PT. Digi Tekno Indonesia menyediakan jasa mekanikal dan engineering untuk membantu menjaga performa mesin dan peralatan industri.",
-      isi: "Kami menyediakan layanan mekanikal dan engineering yang disesuaikan dengan kebutuhan industri.",
-      gambar: "/Artikel/artikel2.png",
-      penulis: "Admin Digi",
-      tanggal: "10-06-2025, 12:00 WIB",
-    },
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "Gagal mengambil detail artikel");
+        }
 
-    {
-      id: 3,
-      judul: "Jasa Machining Presisi untuk Komponen Mesin Industri",
-      ringkasan:
-        "Layanan machining presisi untuk kebutuhan komponen mesin industri.",
-      isi: "Kami menyediakan layanan machining presisi untuk menghasilkan komponen sesuai kebutuhan dan spesifikasi pelanggan.",
-      gambar: "/Artikel/artikel3.png",
-      penulis: "Admin Digi",
-      tanggal: "10-06-2025, 12:00 WIB",
-    },
+        setArtikel(result.data);
+      } catch (error) {
+        console.error("❌ Gagal mengambil detail artikel:", error);
+        setArtikel(null);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    {
-      id: 4,
-      judul:
-        "Repair & Maintenance Mesin Industri untuk Menjaga Kelancaran Operasional",
-      ringkasan:
-        "Layanan repair dan maintenance untuk menjaga kondisi mesin industri.",
-      isi: "PT. Digi Tekno Indonesia menyediakan layanan perbaikan dan pemeliharaan mesin industri.",
-      gambar: "/Artikel/artikel4.png",
-      penulis: "Admin Digi",
-      tanggal: "10-06-2025, 12:00 WIB",
-    },
+    fetchArtikel();
+  }, [id]);
 
-    {
-      id: 5,
-      judul: "Jasa Pengadaan Sparepart dan Komponen Mesin Industri",
-      ringkasan:
-        "Menyediakan kebutuhan sparepart dan komponen untuk mendukung operasional industri.",
-      isi: "Kami membantu pelanggan dalam pengadaan sparepart dan komponen mesin industri sesuai kebutuhan.",
-      gambar: "/Artikel/artikel5.png",
-      penulis: "Admin Digi",
-      tanggal: "10-06-2025, 12:00 WIB",
-    },
-  ];
+  if (loading) {
+    return (
+      <div className="admin-layout">
+        <Sidebar />
 
-  const artikel = artikelData.find((item) => item.id === Number(id));
+        <div className="admin-main">
+          <Navbar />
+
+          <main className="detail-artikel-content">
+            <div className="detail-artikel-title-card">
+              <h1>Detail Artikel</h1>
+            </div>
+
+            <div className="detail-artikel-card">
+              <div className="detail-artikel-card-header">
+                <h2>Detail</h2>
+              </div>
+
+              <div className="detail-artikel-not-found">
+                Memuat data artikel...
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    );
+  }
 
   if (!artikel) {
     return (
@@ -172,7 +161,11 @@ Kami berkomitmen memberikan solusi engineering yang efektif dan tepat guna untuk
 
                 <div className="detail-artikel-value">
                   <img
-                    src={artikel.gambar}
+                    src={
+                      artikel.gambar
+                        ? `http://localhost:5000${artikel.gambar}`
+                        : ""
+                    }
                     alt={artikel.judul}
                     className="detail-artikel-image"
                   />
@@ -194,7 +187,17 @@ Kami berkomitmen memberikan solusi engineering yang efektif dan tepat guna untuk
 
                 <div className="detail-artikel-colon">:</div>
 
-                <div className="detail-artikel-value">{artikel.tanggal}</div>
+                <div className="detail-artikel-value">
+                  {artikel.createdAt
+                    ? new Date(artikel.createdAt).toLocaleString("id-ID", {
+                        day: "2-digit",
+                        month: "long",
+                        year: "numeric",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      })
+                    : "-"}
+                </div>
               </div>
 
               {/* BUTTON */}

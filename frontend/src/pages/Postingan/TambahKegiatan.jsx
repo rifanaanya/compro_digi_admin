@@ -13,18 +13,50 @@ function TambahKegiatan() {
   const [tipe, setTipe] = useState("");
   const [tanggal, setTanggal] = useState("");
   const [foto, setFoto] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleSimpan = (e) => {
+  const handleSimpan = async (e) => {
     e.preventDefault();
 
-    console.log({
-      deskripsi,
-      tipe,
-      tanggal,
-      foto,
-    });
+    if (!deskripsi || !tipe || !tanggal || !foto) {
+      alert("Semua data kegiatan wajib diisi");
+      return;
+    }
 
-    navigate("/kegiatan");
+    try {
+      setLoading(true);
+
+      const formData = new FormData();
+
+      formData.append("deskripsi", deskripsi);
+      formData.append("tipe", tipe);
+      formData.append("tanggal", tanggal);
+      formData.append("media", foto);
+
+      const response = await fetch(
+        "http://localhost:5000/api/postingan/kegiatan",
+        {
+          method: "POST",
+          body: formData,
+        },
+      );
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Gagal menambahkan kegiatan");
+      }
+
+      alert("Kegiatan berhasil ditambahkan");
+
+      navigate("/kegiatan");
+    } catch (error) {
+      console.error("Error menambahkan kegiatan:", error);
+
+      alert(error.message || "Gagal menambahkan kegiatan");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -69,7 +101,10 @@ function TambahKegiatan() {
                 <select
                   id="tipe"
                   value={tipe}
-                  onChange={(e) => setTipe(e.target.value)}
+                  onChange={(e) => {
+                    setTipe(e.target.value);
+                    setFoto(null);
+                  }}
                   required
                 >
                   <option value="">Pilih Tipe</option>
@@ -91,21 +126,32 @@ function TambahKegiatan() {
                 />
               </div>
 
-              {/* FOTO */}
+              {/* FOTO / MEDIA */}
               <div className="tambah-kegiatan-form-group">
                 <label htmlFor="foto">Foto Kegiatan</label>
 
                 <input
                   id="foto"
                   type="file"
-                  accept="image/*"
+                  accept={
+                    tipe === "Video"
+                      ? "video/*"
+                      : tipe === "Gambar"
+                        ? "image/*"
+                        : "image/*,video/*"
+                  }
                   onChange={(e) => setFoto(e.target.files[0])}
+                  required
                 />
               </div>
 
               {/* SIMPAN */}
-              <button type="submit" className="tambah-kegiatan-save-button">
-                Simpan
+              <button
+                type="submit"
+                className="tambah-kegiatan-save-button"
+                disabled={loading}
+              >
+                {loading ? "Menyimpan..." : "Simpan"}
               </button>
             </form>
           </section>
